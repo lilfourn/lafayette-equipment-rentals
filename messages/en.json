@@ -1,0 +1,862 @@
+{
+  "navigation": {
+    "home": "Home",
+    "equipment": "Equipment Rental",
+    "equipmentAndTools": "Equipment and Tools",
+    "rentals": "Rentals",
+    "about": "About",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "industries": "Industries",
+    "resources": "Resources",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "getQuote": "Get Quote",
+    "viewAllEquipment": "View All Equipment",
+    "viewAllIndustries": "View All Industries",
+    "allCategories": "All Categories",
+    "popular": "Popular",
+    "featured": "Featured"
+  },
+  "industries": {
+    "constructionInfrastructure": "Construction & Infrastructure",
+    "industrialManufacturing": "Industrial & Manufacturing",
+    "energyUtilities": "Energy & Utilities",
+    "transportationLogistics": "Transportation & Logistics",
+    "environmentalLandscaping": "Environmental & Landscaping",
+    "commercialResidential": "Commercial & Residential",
+    "specialtyServices": "Specialty Services",
+    "governmentMunicipal": "Government & Municipal"
+  },
+  "homepage": {
+    "hero": {
+      "title": "EQUIPMENT RENTALS",
+      "subtitle": "LAFAYETTE, LA",
+      "location": "Lafayette, Louisiana",
+      "description": "Professional-grade equipment rentals with same-day delivery and competitive rates",
+      "browseEquipment": "Browse Equipment",
+      "getQuote": "Get Quote",
+      "viewEquipment": "View Available Equipment",
+      "tagline": "Heavy Equipment • Same Day Delivery • Best Rates",
+      "rentOnline": "RENT ONLINE",
+      "callNow": "CALL NOW",
+      "phone": "(337) 234-5678",
+      "stats": {
+        "equipment": "Equipment Available",
+        "support": "Customer Support",
+        "experience": "Years Experience",
+        "satisfaction": "Satisfaction Rate"
+      }
+    },
+    "equipment": {
+      "badge": "EQUIPMENT",
+      "title": "Popular Equipment Rentals",
+      "subtitle": "Browse our extensive inventory of professional-grade equipment",
+      "errorMessage": "Please try again later or contact us directly.",
+      "searchPlaceholder": "Search equipment..."
+    },
+    "popularEquipment": {
+      "title": "Popular Equipment & Tool Rentals",
+      "category": "EQUIPMENT",
+      "zeroEmissions": "✓ Zero Emissions",
+      "setLocation": "Set location to see rates.",
+      "addToCart": "Add to Cart",
+      "browseAll": "Browse All Equipment at This Location"
+    },
+    "trustedSolutions": {
+      "category": "FAMILY OWNED & OPERATED • PROUDLY SERVING LAFAYETTE, LOUISIANA",
+      "title": "Lafayette's Trusted Equipment",
+      "titleAccent": "Solutions",
+      "description": "As a family-owned business deeply rooted in Lafayette, Louisiana, we understand the unique needs of our local contractors and businesses. For years, our team has built lasting relationships based on trust, reliability, and exceptional service.",
+      "commitment": "We take pride in treating your equipment as if it were our own. Our experienced technicians deliver prompt, professional service backed by our commitment to keeping your operations running smoothly. When you partner with Lafayette Equipment Rentals, you're not just another customer – you're part of our extended family.",
+      "servicesTitle": "Our Equipment Solutions Include:",
+      "services": [
+        "Equipment Repair & Preventive Maintenance",
+        "On-Site Service Programs",
+        "Managed Fleet Maintenance",
+        "ANSI, OSHA, and CSA Inspections & Certifications"
+      ],
+      "testimonial": "Lafayette Equipment Rentals delivers prompt repair service. We can routinely inspect your equipment and supply parts. Our team can fully manage your fleet so you can focus on what matters most: Getting the job done.",
+      "contactUs": "Contact Us",
+      "exploreEquipment": "Explore Equipment"
+    },
+    "howItWorks": {
+      "title": "How do I rent equipment online?",
+      "steps": [
+        "Browse our categories of equipment and enter your ZIP code to filter to the equipment rentals available near you. You'll see the daily, weekly and monthly (28 days) rates.",
+        "Choose the equipment and tools you need from Earthmoving, Aerial Work Platforms and Forklifts & Material Handling, then add them to your cart.",
+        "Go to your cart and fill out your worksite's location to see delivery and pick-up options.",
+        "Some equipment rentals such as large Trucks and Trailers may have special requirements like a CDL, class B or class C license according to your state's law. You will need to enter your driver's license information.",
+        "United Rentals offers special training for operators and provides best practices for our equipment."
+      ],
+      "cta": "Start Renting Equipment"
+    },
+    "faq": {
+      "category": "SUPPORT",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Get answers to common questions about our equipment rental services, processes, and policies.",
+      "questions": [
+        {
+          "question": "Who and what is Lafayette Equipment Rentals?",
+          "answer": "Lafayette Equipment Rentals is a premier online platform that connects contractors and businesses with equipment rental companies across Louisiana. We partner with local, regional, and national rental companies to provide you with the widest selection of construction equipment available."
+        },
+        {
+          "question": "What makes renting on Lafayette different?",
+          "answer": "Unlike traditional rental houses, Lafayette acts as your equipment broker. We shop the market for you, comparing prices and availability from multiple rental companies simultaneously. This gives you more options, better prices, and saves you time from calling around to different rental companies."
+        },
+        {
+          "question": "What equipment is available on Lafayette?",
+          "answer": "We offer a comprehensive range of construction equipment including excavators, bulldozers, skid steers, loaders, cranes, lifts, generators, compressors, and much more. Our inventory includes equipment from top manufacturers like Bobcat, John Deere, Cat, Genie, JLG, and many others."
+        },
+        {
+          "question": "Does Lafayette have any physical locations for me to visit?",
+          "answer": "Lafayette operates as an online platform, but we partner with local rental companies in your area. While we don't have physical locations, we work with established rental companies that do have local facilities for equipment pickup, delivery, and service."
+        },
+        {
+          "question": "How many hours are included on my rental?",
+          "answer": "Most equipment rentals include 8-10 hours of operation per day. Extended hours may be available for an additional fee. Be sure to check the specific terms for your rental equipment, as hours and rates can vary by equipment type and rental company."
+        },
+        {
+          "question": "How does Lafayette handle rental extensions?",
+          "answer": "Rental extensions are typically available if the equipment isn't already booked by another customer. Contact us at least 24 hours before your scheduled return date to request an extension. Additional charges will apply based on the daily rate."
+        },
+        {
+          "question": "Does Lafayette provide rental equipment insurance?",
+          "answer": "Yes, we offer comprehensive damage protection and liability insurance options. Our insurance coverage helps protect you against accidental damage, theft, and third-party liability. Coverage options and rates vary by equipment type and rental duration."
+        },
+        {
+          "question": "Do I have to pay for delivery and pick up or can I haul the equipment myself?",
+          "answer": "Delivery and pickup services are available for most equipment. Rates vary based on distance and equipment size. Some smaller equipment can be self-hauled if you have the proper vehicle and trailer. Contact us for specific delivery options and pricing for your location."
+        },
+        {
+          "question": "Does Lafayette do weekend delivery and pick up?",
+          "answer": "Weekend delivery and pickup availability varies by location and rental company. Some partners offer weekend services for an additional fee. Contact us to check weekend availability for your specific equipment and location needs."
+        }
+      ],
+      "stillHaveQuestions": "Still have questions?",
+      "contactTeam": "Our team is here to help you find the perfect equipment for your project. Contact us for personalized assistance.",
+      "contactOurTeam": "Contact Our Team",
+      "callPhone": "Call (337) 234-5678"
+    },
+    "features": {
+      "badge": "WHY CHOOSE US",
+      "title": "Why Choose Lafayette Equipment",
+      "subtitle": "Professional service, competitive rates, and reliable equipment for every project",
+      "localService": {
+        "title": "Local Service",
+        "description": "Fast, reliable service throughout Lafayette and surrounding areas with same-day delivery available."
+      },
+      "competitivePricing": {
+        "title": "Competitive Pricing",
+        "description": "Best rates in Lafayette with flexible rental terms to fit your budget and project timeline."
+      },
+      "easyBooking": {
+        "title": "Easy Booking",
+        "description": "Simple online booking process with instant availability and transparent pricing."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Round-the-clock customer support to keep your projects running smoothly."
+      },
+      "quality": {
+        "title": "Quality Equipment",
+        "description": "Well-maintained, professional-grade equipment from trusted manufacturers."
+      },
+      "tracking": {
+        "title": "Real-Time Tracking",
+        "description": "Track your rentals, deliveries, and returns with our online portal."
+      }
+    },
+    "contact": {
+      "badge": "CONTACT US",
+      "title": "Ready to Get Started?",
+      "subtitle": "Get in touch with our team for equipment rentals, quotes, and expert advice",
+      "phone": {
+        "title": "Call Us",
+        "description": "Speak directly with our equipment specialists"
+      },
+      "email": {
+        "title": "Email Us",
+        "description": "Send us your questions anytime",
+        "address": "info@lafayetteequipmentrentals.com"
+      },
+      "location": {
+        "title": "Visit Us",
+        "description": "Stop by our Lafayette location",
+        "address": "2865 Ambassador Caffery Pkwy, Suite 135, Lafayette, LA 70506"
+      },
+      "cta": "Get a Free Quote"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "GET IN TOUCH WITH",
+      "titleAccent": "OUR EXPERT TEAM",
+      "tagline": "Need Equipment? Have Questions? We're Here to Help!",
+      "callNow": "CALL NOW",
+      "sendMessage": "SEND MESSAGE",
+      "phone": "(337) 234-5678"
+    },
+    "whyChooseUs": {
+      "category": "WHY CHOOSE US",
+      "title": "Your Trusted Equipment",
+      "titleAccent": "Partner",
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Same-day delivery available throughout Lafayette and surrounding areas. We get your equipment where you need it, when you need it."
+      },
+      "safetyFirst": {
+        "title": "Safety First",
+        "description": "All equipment maintained to the highest safety standards. Regular inspections and certified operators available for training."
+      },
+      "support247": {
+        "title": "24/7 Support",
+        "description": "Round-the-clock customer support to keep your projects running smoothly. Emergency service available."
+      }
+    },
+    "contactInfo": {
+      "category": "GET IN TOUCH",
+      "title": "Contact",
+      "titleAccent": "Information",
+      "description": "Ready to get started? Reach out to our team for expert equipment advice and quotes.",
+      "phone": {
+        "title": "Phone",
+        "number": "(337) 234-5678",
+        "hours": "Mon-Fri 7AM-6PM, Sat 8AM-4PM"
+      },
+      "location": {
+        "title": "Location",
+        "address": "2865 Ambassador Caffery Pkwy, Suite 135\nLafayette, LA 70506",
+        "getDirections": "Get Directions"
+      },
+      "email": {
+        "title": "Email",
+        "address": "info@lafayetteequipmentrentals.com",
+        "responseTime": "24-hour response time"
+      },
+      "emergency": {
+        "title": "Emergency Service Available",
+        "description": "Need equipment urgently? We offer 24/7 emergency rental service for critical projects.",
+        "callForEmergency": "Call for Emergency Service"
+      }
+    },
+    "form": {
+      "title": "Get a Quick Quote",
+      "subtitle": "Fill out the form below and we'll get back to you promptly.",
+      "name": "Full Name",
+      "phone": "Phone (Optional)",
+      "email": "Email Address",
+      "message": "Tell us about your project or questions...",
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "success": {
+        "title": "Message Sent Successfully!",
+        "message": "Thank you for contacting us! We'll respond to your inquiry within 24 hours.",
+        "sendAnother": "Send Another Message"
+      }
+    },
+    "location": {
+      "category": "VISIT US",
+      "title": "Our Lafayette",
+      "titleAccent": "Location",
+      "description": "Conveniently located to serve contractors and businesses throughout Lafayette and surrounding areas.",
+      "address": "Address",
+      "businessHours": "Business Hours",
+      "hours": {
+        "weekdays": "Monday - Friday: 7:00 AM - 6:00 PM",
+        "saturday": "Saturday: 8:00 AM - 4:00 PM",
+        "sunday": "Sunday: Closed"
+      },
+      "getDirections": "Get Directions",
+      "browseEquipment": "Browse Equipment"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Browse our equipment inventory or contact us for personalized assistance with your project needs.",
+      "browseEquipment": "Browse Equipment",
+      "callButton": "Call (337) 234-5678"
+    }
+  },
+  "footer": {
+    "companyName": "Lafayette Equipment Rentals",
+    "description": "Premier equipment rental service in Lafayette, Louisiana. Professional-grade machinery for construction, landscaping, and industrial projects.",
+    "contact": {
+      "location": "Our Location",
+      "address": "2865 Ambassador Caffery Pkwy\nSte 135\nLafayette, LA 70506",
+      "callUs": "Call Us",
+      "phone": "(337) 234-5678",
+      "emailUs": "Email Us",
+      "email": "info@lafayetteequipmentrentals.com",
+      "hours": "Business Hours",
+      "schedule": "Mon-Fri: 7:00 AM - 6:00 PM\nSat: 8:00 AM - 4:00 PM\nSun: Closed"
+    },
+    "sections": {
+      "equipmentServices": "Equipment & Services",
+      "company": "Company",
+      "support": "Support",
+      "language": "Language"
+    },
+    "links": {
+      "allEquipment": "All Equipment",
+      "excavators": "Excavators",
+      "skidSteers": "Skid Steers",
+      "aerialLifts": "Aerial Lifts",
+      "generators": "Generators",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us",
+      "industries": "Industries",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "termsOfService": "Terms of Service",
+      "sitemap": "Sitemap"
+    },
+    "map": {
+      "title": "Visit Our Location",
+      "subtitle": "Conveniently located in Lafayette, Louisiana to serve all your equipment rental needs"
+    },
+    "bottom": {
+      "copyright": "© {year} Lafayette Equipment Rentals. All rights reserved.",
+      "tagline": "Professional equipment rental services in Lafayette, Louisiana",
+      "backToTop": "Top"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again",
+    "english": "English",
+    "spanish": "Español",
+    "viewDetails": "View Details",
+    "addToCart": "Add to Cart",
+    "bookNow": "Book Now",
+    "buyNow": "Buy Now",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "perDay": "/day",
+    "perWeek": "/week",
+    "perMonth": "/month",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "from": "from",
+    "or": "or",
+    "and": "and",
+    "to": "to",
+    "contactForPrice": "Contact for Price",
+    "callForPrice": "Call for Price",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "quantity": "Quantity",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "selectOptions": "Select Options",
+    "optional": "Optional",
+    "required": "Required",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "clear": "Clear",
+    "reset": "Reset",
+    "apply": "Apply",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "viewAll": "View All",
+    "back": "Back",
+    "reserved": "Reserved",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "contactUs": "Contact Us",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "getDirections": "Get Directions",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "seeDetails": "See Details",
+    "free": "FREE",
+    "tbd": "TBD",
+    "qty": "QTY"
+  },
+  "checkoutPage": {
+    "equipmentSelection": "Equipment Selection",
+    "startDateInfo": "Start date must be within 30 days of today's date.",
+    "rentalDuration": "Rental Duration",
+    "zipPlaceholder": "Enter your ZIP code (5 digits)",
+    "rentalPeriod": "Rental Period",
+    "duration": "Duration",
+    "expectedReturn": "Expected Return",
+    "deliveryLocation": "Delivery Location",
+    "freeDelivery": "Free Delivery",
+    "deliveryFeeTbd": "Delivery Fee TBD",
+    "equipmentBreakdown": "Equipment Breakdown",
+    "rateCalculation": "Rate Calculation",
+    "equipmentSubtotal": "Equipment Subtotal",
+    "totalBeforeTax": "Total (Before Tax)",
+    "reserving": "Reserving...",
+    "reserveEquipment": "Reserve Equipment",
+    "emptyDescription": "Start adding equipment to your cart to begin your rental reservation."
+  },
+  "equipment": {
+    "categories": "Categories",
+    "allCategories": "All Categories",
+    "specifications": "Specifications",
+    "features": "Features",
+    "attachments": "Attachments",
+    "relatedEquipment": "Related Equipment",
+    "similarEquipment": "Similar Equipment",
+    "make": "Make",
+    "model": "Model",
+    "year": "Year",
+    "hours": "Hours",
+    "weight": "Weight",
+    "capacity": "Capacity",
+    "dimensions": "Dimensions",
+    "power": "Power",
+    "fuelType": "Fuel Type",
+    "location": "Location",
+    "availability": "Availability",
+    "minimumRental": "Minimum Rental",
+    "deliveryAvailable": "Delivery Available",
+    "pickupAvailable": "Pickup Available",
+    "operatorAvailable": "Operator Available",
+    "insurance": "Insurance",
+    "deposit": "Deposit",
+    "rentalRates": "Rental Rates",
+    "dailyRate": "Daily Rate",
+    "weeklyRate": "Weekly Rate",
+    "monthlyRate": "Monthly Rate",
+    "selectAttachments": "Select Attachments",
+    "addedToCart": "Added to Cart",
+    "itemInCart": "Item in Cart",
+    "goToCart": "Go to Cart",
+    "continueShopping": "Continue Shopping",
+    "requestQuote": "Request Quote",
+    "checkAvailability": "Check Availability",
+    "reserveNow": "Reserve Now",
+    "rentNow": "Rent Now",
+    "getQuote": "Get Quote",
+    "purchaseOption": "Purchase Option Available",
+    "rentToBuy": "Rent to Buy",
+    "saveToWishlist": "Save to Wishlist",
+    "compareEquipment": "Compare Equipment",
+    "printDetails": "Print Details",
+    "shareEquipment": "Share Equipment",
+    "zeroEmissions": "Zero Emissions",
+    "ecoFriendly": "Eco-Friendly",
+    "featured": "Featured",
+    "popular": "Popular",
+    "new": "New",
+    "onSale": "On Sale",
+    "limitedAvailability": "Limited Availability",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "comingSoon": "Coming Soon",
+    "itemsAvailable": "items available"
+  },
+  "filters": {
+    "title": "Filters",
+    "clearAll": "Clear All",
+    "applyFilters": "Apply Filters",
+    "resetFilters": "Reset Filters",
+    "filterBy": "Filter By",
+    "sortBy": "Sort By",
+    "priceRange": "Price Range",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "category": "Category",
+    "manufacturer": "Manufacturer",
+    "equipmentType": "Equipment Type",
+    "capacity": "Capacity",
+    "yearRange": "Year Range",
+    "hoursRange": "Hours Range",
+    "minHours": "Min Hours",
+    "maxHours": "Max Hours",
+    "weightRange": "Weight Range",
+    "minWeight": "Min Weight",
+    "maxWeight": "Max Weight",
+    "availability": "Availability",
+    "availableNow": "Available Now",
+    "location": "Location",
+    "distance": "Distance",
+    "features": "Features",
+    "rentToOwn": "Rent to Own Available",
+    "buyNowAvailable": "Buy Now Available",
+    "deliveryIncluded": "Delivery Included",
+    "operatorIncluded": "Operator Included",
+    "showResults": "Show {count} Results",
+    "noResults": "No results found",
+    "tryAdjusting": "Try adjusting your filters"
+  },
+  "sorting": {
+    "relevance": "Relevance",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "newest": "Newest First",
+    "oldest": "Oldest First",
+    "nameAZ": "Name: A to Z",
+    "nameZA": "Name: Z to A",
+    "mostPopular": "Most Popular",
+    "bestRated": "Best Rated",
+    "distance": "Distance: Nearest First"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "emptyCart": "Your cart is empty",
+    "startShopping": "Start Shopping",
+    "itemsInCart": "{count} items in cart",
+    "removeItem": "Remove Item",
+    "updateQuantity": "Update Quantity",
+    "rentalPeriod": "Rental Period",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "deliveryMethod": "Delivery Method",
+    "delivery": "Delivery",
+    "pickup": "Pickup",
+    "deliveryAddress": "Delivery Address",
+    "pickupLocation": "Pickup Location",
+    "specialInstructions": "Special Instructions",
+    "promoCode": "Promo Code",
+    "applyPromo": "Apply Promo",
+    "orderSummary": "Order Summary",
+    "proceedToCheckout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "saveCart": "Save Cart",
+    "clearCart": "Clear Cart"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "billingInformation": "Billing Information",
+    "shippingInformation": "Shipping Information",
+    "paymentMethod": "Payment Method",
+    "reviewOrder": "Review Order",
+    "placeOrder": "Place Order",
+    "orderConfirmation": "Order Confirmation",
+    "thankYou": "Thank You!",
+    "orderNumber": "Order Number",
+    "estimatedDelivery": "Estimated Delivery",
+    "trackOrder": "Track Order",
+    "printReceipt": "Print Receipt",
+    "emailReceipt": "Email Receipt",
+    "zipCode": "Zip Code"
+  },
+  "noResults": {
+    "title": "Sorry we couldn't dig up any results.",
+    "titleWithEquipment": "We will find a {equipment} for you in less than 24 hours!",
+    "description": "We have access to a vast network of over 30,000 machines across the country. Let us help you find exactly what you need for your project.",
+    "fillForm": "Fill out the form below to get started.",
+    "requestEquipment": "Request Equipment",
+    "tellUsWhat": "Tell us what you need and we'll find it for you within 24 hours",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "businessName": "Business Name (optional)",
+      "equipmentType": "Equipment Type",
+      "projectDetails": "Project Details",
+      "yourFullName": "Your full name",
+      "yourEmail": "your@email.com",
+      "phoneExample": "(337) 234-5678",
+      "companyName": "Your company name",
+      "equipmentExample": "e.g., Excavator, Skid Steer, Bulldozer",
+      "tellUsAboutProject": "Tell us about your project, timeline, and any specific requirements...",
+      "findMyEquipment": "Find My Equipment",
+      "submitting": "Submitting..."
+    },
+    "success": {
+      "title": "Request Submitted Successfully!",
+      "message": "Thank you for your request. Our team will search our network of 30,000+ machines and contact you within 24 hours with available options.",
+      "submitAnother": "Submit Another Request"
+    },
+    "contactDirectly": "Or contact us directly:"
+  },
+  "aboutUs": {
+    "breadcrumb": {
+      "home": "Home",
+      "about": "About Us"
+    },
+    "hero": {
+      "title": "Locally Owned. Customer Focused.",
+      "subtitle": "Lafayette Equipment Rentals is your trusted partner for job-ready machinery across Southern Louisiana and the Acadiana region.",
+      "getInTouch": "Get In Touch",
+      "browseEquipment": "Browse Equipment"
+    },
+    "stats": {
+      "equipmentPieces": "Equipment Pieces",
+      "yearsExperience": "Years Experience",
+      "customerSupport": "Customer Support",
+      "satisfactionRate": "Satisfaction Rate"
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "Built to Serve Contractors Like You",
+      "foundedTitle": "Founded with Purpose",
+      "foundedText": "Founded by a team of industry professionals and equipment operators, Lafayette Equipment Rentals was built with one goal: make heavy equipment accessible, fast, and hassle-free for contractors across Southern Louisiana.",
+      "localTitle": "Local Expertise",
+      "localText": "We know the challenges contractors face in the Acadiana region, and we built our rental platform to help you finish jobs on time and under budget. Our extensive network and local expertise ensure you get the right equipment when you need it.",
+      "industryLeaders": "Industry Leaders",
+      "industryText": "Setting the standard in equipment rental throughout Lafayette and surrounding parishes.",
+      "communityFocused": "Community Focused",
+      "communityText": "Proud to serve Lafayette and contribute to the growth of our local economy.",
+      "familyValues": "Family Values",
+      "familyText": "We treat every customer like family, with honesty, integrity, and respect."
+    },
+    "difference": {
+      "title": "What Makes Us Different",
+      "subtitle": "We're not just another rental company. We're your partners in getting the job done right.",
+      "fastDelivery": "Fast Delivery",
+      "fastDeliveryText": "Same-day delivery available throughout Lafayette and the Acadiana region.",
+      "maintainedMachines": "Maintained Machines",
+      "maintainedText": "Reliable, job-ready equipment serviced by certified technicians.",
+      "localExperts": "Local Experts",
+      "localExpertsText": "Deep knowledge of Southern Louisiana's unique conditions and needs.",
+      "responsiveSupport": "Responsive Support",
+      "responsiveSupportText": "24/7 support to keep your projects running smoothly."
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "From short-term rentals to long-term partnerships, we've got you covered.",
+      "equipmentRental": "Equipment Rental",
+      "equipmentRentalText": "Wide selection of heavy machinery, tools, and equipment for any job size.",
+      "flexibleTerms": "Flexible Terms",
+      "flexibleTermsText": "Daily, weekly, monthly, or custom rental periods to fit your project timeline.",
+      "maintenanceSupport": "Maintenance & Support",
+      "maintenanceSupportText": "Full maintenance coverage and 24/7 support to keep your projects running."
+    },
+    "location": {
+      "title": "Visit Our Location",
+      "companyName": "Lafayette Equipment Rentals",
+      "address": "Address",
+      "phone": "Phone",
+      "businessHours": "Business Hours",
+      "weekdays": "Monday – Saturday: 7:00 AM – 6:00 PM",
+      "sunday": "Sunday: Closed",
+      "locationNote": "Located in the heart of Lafayette, we're perfectly positioned to serve contractors throughout Southern Louisiana with fast delivery and pickup services."
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Need help choosing the right equipment for your project? Our experts are here to help you find the perfect solution.",
+      "talkToSpecialist": "Talk to a Specialist",
+      "browseEquipment": "Browse Equipment"
+    }
+  },
+  "equipmentPage": {
+    "hero": {
+      "subtitle": "PROFESSIONAL EQUIPMENT RENTALS • LAFAYETTE, LOUISIANA",
+      "title": "Equipment",
+      "titleAccent": "& Tools",
+      "description": "Lafayette Equipment Rentals and its partners have more than 30,000 pieces of equipment and tools, setting the standard in our industry. We are your one-stop source for all equipment needs.",
+      "professionalGrade": "Professional Grade Equipment",
+      "fastDelivery": "Fast Delivery Service",
+      "fullyInsured": "Fully Insured & Maintained"
+    },
+    "search": {
+      "title": "Find Your Equipment",
+      "placeholder": "Search for equipment...",
+      "button": "Search Equipment"
+    },
+    "categories": {
+      "title": "Browse by Category",
+      "subtitle": "Explore our comprehensive selection of construction and industrial equipment, organized by category for easy browsing.",
+      "viewAll": "View All Categories",
+      "itemsAvailable": "{count} items available"
+    },
+    "popular": {
+      "title": "Popular",
+      "titleAccent": "Rentals",
+      "subtitle": "Most requested equipment in Lafayette area"
+    },
+    "buyNow": {
+      "title": "Buy It Now",
+      "titleAccent": "Equipment",
+      "subtitle": "Purchase options available for select equipment"
+    },
+    "cta": {
+      "category": "NEED HELP?",
+      "title": "Can't Find What You're Looking For?",
+      "description": "Our equipment specialists are here to help you find the perfect tools for your project. Contact us for personalized assistance and recommendations.",
+      "button": "Get Expert Help",
+      "phone": "Or call us at (337) 234-5678"
+    }
+  },
+  "equipmentCategories": {
+    "elevated-access-machinery": {
+      "displayName": "Elevated Access Machinery",
+      "description": "Scissor lifts, boom lifts, and aerial work platforms for safe work at height"
+    },
+    "soil-relocation-machinery": {
+      "displayName": "Soil Relocation Machinery",
+      "description": "Excavators, dozers, and loaders for efficient earthmoving and site preparation"
+    },
+    "soil-compaction-machinery": {
+      "displayName": "Soil Compaction Machinery",
+      "description": "Rollers and compactors for achieving optimal soil density and stability"
+    },
+    "commercial-trailers-trucks": {
+      "displayName": "Commercial Trailers & Trucks",
+      "description": "Dump trucks, water trucks, and trailers for material transport and logistics"
+    },
+    "masonry-cement-tools": {
+      "displayName": "Masonry & Cement Tools",
+      "description": "Concrete mixers, saws, and finishing tools for masonry and concrete work"
+    },
+    "groundskeeping-forestry-equipment": {
+      "displayName": "Groundskeeping & Forestry Equipment",
+      "description": "Mowers, chippers, and forestry equipment for landscape and vegetation management"
+    },
+    "energy-illumination-equipment": {
+      "displayName": "Energy and Illumination Equipment",
+      "description": "Generators and light towers for reliable power and jobsite illumination"
+    },
+    "industrial-material-management": {
+      "displayName": "Industrial Material Management",
+      "description": "Forklifts, telehandlers, and storage solutions for efficient material handling"
+    },
+    "tank-pump-rentals": {
+      "displayName": "Tank & Pump Rentals",
+      "description": "Water pumps, tanks, and dewatering equipment for fluid management"
+    },
+    "excavation-trenchers-borers": {
+      "displayName": "Excavation Trenchers & Borers",
+      "description": "Trenchers and boring equipment for utility installation and excavation"
+    },
+    "road-safety-traffic-control": {
+      "displayName": "Road Safety & Traffic Control",
+      "description": "Message boards, barriers, and safety equipment for work zone protection"
+    },
+    "storage-units-container-solutions": {
+      "displayName": "Storage Units & Container Solutions",
+      "description": "Storage containers and dumpsters for secure storage and waste management"
+    },
+    "screening-pulverizing-gear": {
+      "displayName": "Screening & Pulverizing Gear",
+      "description": "Screeners and crushers for material processing and aggregate production"
+    },
+    "advanced-earthmoving-machinery": {
+      "displayName": "Advanced Earthmoving Machinery",
+      "description": "Motor graders and scrapers for precision grading and large-scale earthwork"
+    },
+    "road-surface-solutions": {
+      "displayName": "Road Surface Solutions",
+      "description": "Pavers and asphalt equipment for road construction and surface preparation"
+    },
+    "land-tree-clearing-gear": {
+      "displayName": "Land and Tree Clearing Gear",
+      "description": "Mulchers and clearing equipment for land development and vegetation removal"
+    },
+    "excavators": {
+      "displayName": "Excavators",
+      "description": "Versatile digging machines for excavation, demolition, and material handling"
+    },
+    "skid-steers": {
+      "displayName": "Skid Steers",
+      "description": "Compact, maneuverable loaders for construction and landscaping tasks"
+    },
+    "bulldozers": {
+      "displayName": "Bulldozers",
+      "description": "Powerful tracked machines for pushing, grading, and site clearing"
+    },
+    "aerial-lifts": {
+      "displayName": "Aerial Lifts",
+      "description": "Elevating work platforms for safe access to heights"
+    },
+    "generators": {
+      "displayName": "Generators",
+      "description": "Portable and stationary power generation for jobsite electricity needs"
+    },
+    "compressors": {
+      "displayName": "Air Compressors",
+      "description": "Compressed air systems for pneumatic tools and equipment"
+    },
+    "forklifts": {
+      "displayName": "Forklifts",
+      "description": "Material handling equipment for lifting and moving palletized loads"
+    },
+    "concrete-equipment": {
+      "displayName": "Concrete Equipment",
+      "description": "Mixers, pumps, and finishing tools for concrete construction"
+    },
+    "pumps": {
+      "displayName": "Pumps",
+      "description": "Water and dewatering pumps for fluid transfer and site drainage"
+    },
+    "light-towers": {
+      "displayName": "Light Towers",
+      "description": "Mobile lighting solutions for nighttime work and emergency illumination"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our equipment rental services",
+    "searchPlaceholder": "Search FAQs...",
+    "topics": {
+      "aboutUs": "About Us",
+      "delivery": "Delivery, Pickup and Returns",
+      "commercialCredit": "Commercial Credit",
+      "procureToPay": "Procure-To-Pay",
+      "reservations": "Reservations and Payments",
+      "support": "Support"
+    },
+    "questions": {
+      "hours": {
+        "q": "What are your hours of operation?",
+        "a": "Our Lafayette, LA location is open Monday to Saturday, 7 AM to 6 PM. Please call ahead for holiday hours or special closures."
+      },
+      "holidays": {
+        "q": "Is Lafayette Equipment Rental Service open on holidays?",
+        "a": "We are closed on major holidays such as New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day, and Christmas Day. For Lafayette-specific holiday hours, please contact our local office."
+      },
+      "location": {
+        "q": "How can I find your Lafayette, LA location?",
+        "a": "Visit us at 2865 Ambassador Caffery Pkwy, Ste 135, Lafayette, LA 70506, or check our website for directions and contact info."
+      },
+      "reserve": {
+        "q": "How do I reserve equipment in Lafayette, LA?",
+        "a": "You can reserve equipment online, by calling our Lafayette office, or by visiting us in person."
+      },
+      "payment": {
+        "q": "What payment methods do you accept?",
+        "a": "We accept all major credit cards, checks, and cash at our Lafayette location. Commercial accounts may qualify for credit terms."
+      },
+      "deposit": {
+        "q": "Is a deposit required?",
+        "a": "A deposit may be required depending on the equipment and rental duration. Our Lafayette team will inform you at the time of reservation."
+      },
+      "delivery": {
+        "q": "Do you offer equipment delivery in Lafayette, LA?",
+        "a": "Yes, we offer delivery and pickup services throughout Lafayette and the surrounding areas. Fees vary based on distance and equipment size."
+      },
+      "pickup": {
+        "q": "Can I pick up equipment myself?",
+        "a": "Yes! Free pickup is available at our Lafayette location. Please bring a valid driver's license and an appropriate vehicle/trailer for transport."
+      },
+      "lateReturn": {
+        "q": "What is your policy on late returns?",
+        "a": "Equipment returned after the agreed-upon time may incur additional charges. Please call our Lafayette office if you anticipate a delay."
+      },
+      "breakdown": {
+        "q": "What if the equipment breaks down during my rental?",
+        "a": "Contact our Lafayette, LA support line immediately. We offer 24/7 support and will arrange for repair or replacement as quickly as possible."
+      },
+      "training": {
+        "q": "Do you provide training on equipment operation?",
+        "a": "Basic operating instructions are provided with all rentals. For more comprehensive training, ask our Lafayette staff about available operator training programs."
+      }
+    },
+    "stillHaveQuestions": "Still have questions?",
+    "contactTeam": "Our team is here to help. Contact us for more information.",
+    "contactUs": "Contact Us",
+    "viewAll": "View All FAQs"
+  }
+}

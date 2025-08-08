@@ -1,0 +1,866 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "equipment": "Alquiler de Equipos",
+    "equipmentAndTools": "Equipos y Herramientas",
+    "rentals": "Alquileres",
+    "about": "Acerca de",
+    "aboutUs": "Sobre Nosotros",
+    "contact": "Contacto",
+    "industries": "Industrias",
+    "resources": "Recursos",
+    "blog": "Blog",
+    "faq": "Preguntas Frecuentes",
+    "getQuote": "Obtener Cotización",
+    "viewAllEquipment": "Ver Todos los Equipos",
+    "viewAllIndustries": "Ver Todas las Industrias",
+    "allCategories": "Todas las Categorías",
+    "popular": "Popular",
+    "featured": "Destacado"
+  },
+  "industries": {
+    "constructionInfrastructure": "Construcción e Infraestructura",
+    "industrialManufacturing": "Industrial y Manufactura",
+    "energyUtilities": "Energía y Servicios Públicos",
+    "transportationLogistics": "Transporte y Logística",
+    "environmentalLandscaping": "Ambiental y Paisajismo",
+    "commercialResidential": "Comercial y Residencial",
+    "specialtyServices": "Servicios Especializados",
+    "governmentMunicipal": "Gobierno y Municipal"
+  },
+  "homepage": {
+    "hero": {
+      "title": "ALQUILER DE EQUIPOS",
+      "subtitle": "LAFAYETTE, LA",
+      "location": "Lafayette, Louisiana",
+      "description": "Alquiler de equipos de grado profesional con entrega el mismo día y tarifas competitivas",
+      "browseEquipment": "Ver Equipos",
+      "getQuote": "Obtener Cotización",
+      "viewEquipment": "Ver Equipos Disponibles",
+      "tagline": "Equipos Pesados • Entrega el Mismo Día • Mejores Precios",
+      "rentOnline": "ALQUILAR EN LÍNEA",
+      "callNow": "LLAMAR AHORA",
+      "phone": "(337) 234-5678",
+      "stats": {
+        "equipment": "Equipos Disponibles",
+        "support": "Soporte al Cliente",
+        "experience": "Años de Experiencia",
+        "satisfaction": "Tasa de Satisfacción"
+      }
+    },
+    "equipment": {
+      "badge": "EQUIPOS",
+      "title": "Alquileres de Equipos Populares",
+      "subtitle": "Explore nuestro extenso inventario de equipos de grado profesional",
+      "errorMessage": "Por favor, inténtelo más tarde o contáctenos directamente.",
+      "searchPlaceholder": "Buscar equipos..."
+    },
+    "popularEquipment": {
+      "title": "Alquiler Popular de Equipos y Herramientas",
+      "category": "EQUIPOS",
+      "zeroEmissions": "✓ Cero Emisiones",
+      "setLocation": "Establecer ubicación para ver tarifas.",
+      "addToCart": "Agregar al Carrito",
+      "browseAll": "Ver Todos los Equipos en Esta Ubicación"
+    },
+    "trustedSolutions": {
+      "category": "EMPRESA FAMILIAR • ORGULLOSAMENTE SIRVIENDO A LAFAYETTE, LOUISIANA",
+      "title": "Soluciones de Equipos de Confianza de",
+      "titleAccent": "Lafayette",
+      "description": "Como empresa familiar profundamente arraigada en Lafayette, Louisiana, entendemos las necesidades únicas de nuestros contratistas y empresas locales. Durante años, nuestro equipo ha construido relaciones duraderas basadas en la confianza, la confiabilidad y el servicio excepcional.",
+      "commitment": "Nos enorgullecemos de tratar su equipo como si fuera nuestro. Nuestros técnicos experimentados brindan un servicio rápido y profesional respaldado por nuestro compromiso de mantener sus operaciones funcionando sin problemas. Cuando se asocia con Lafayette Equipment Rentals, no es solo otro cliente: es parte de nuestra familia extendida.",
+      "servicesTitle": "Nuestras Soluciones de Equipos Incluyen:",
+      "services": [
+        "Reparación de Equipos y Mantenimiento Preventivo",
+        "Programas de Servicio en Sitio",
+        "Mantenimiento de Flota Administrada",
+        "Inspecciones y Certificaciones ANSI, OSHA y CSA"
+      ],
+      "testimonial": "Lafayette Equipment Rentals ofrece un servicio de reparación rápido. Podemos inspeccionar rutinariamente su equipo y suministrar piezas. Nuestro equipo puede administrar completamente su flota para que pueda concentrarse en lo que más importa: hacer el trabajo.",
+      "contactUs": "Contáctanos",
+      "exploreEquipment": "Explorar Equipos"
+    },
+    "howItWorks": {
+      "title": "¿Cómo alquilo equipos en línea?",
+      "steps": [
+        "Navegue por nuestras categorías de equipos e ingrese su código postal para filtrar los alquileres de equipos disponibles cerca de usted. Verá las tarifas diarias, semanales y mensuales (28 días).",
+        "Elija el equipo y las herramientas que necesita de Movimiento de Tierra, Plataformas de Trabajo Aéreo y Montacargas y Manejo de Materiales, luego agréguelos a su carrito.",
+        "Vaya a su carrito y complete la ubicación de su sitio de trabajo para ver las opciones de entrega y recogida.",
+        "Algunos alquileres de equipos como Camiones y Remolques grandes pueden tener requisitos especiales como una licencia CDL, clase B o clase C según la ley de su estado. Deberá ingresar la información de su licencia de conducir.",
+        "United Rentals ofrece capacitación especial para operadores y proporciona mejores prácticas para nuestros equipos."
+      ],
+      "cta": "Comenzar a Alquilar Equipos"
+    },
+    "faq": {
+      "category": "SOPORTE",
+      "title": "Preguntas Frecuentes",
+      "subtitle": "Obtenga respuestas a preguntas comunes sobre nuestros servicios de alquiler de equipos, procesos y políticas.",
+      "questions": [
+        {
+          "question": "¿Quién y qué es Lafayette Equipment Rentals?",
+          "answer": "Lafayette Equipment Rentals es una plataforma en línea de primer nivel que conecta a contratistas y empresas con compañías de alquiler de equipos en Louisiana. Nos asociamos con compañías de alquiler locales, regionales y nacionales para brindarle la selección más amplia de equipos de construcción disponibles."
+        },
+        {
+          "question": "¿Qué hace diferente alquilar en Lafayette?",
+          "answer": "A diferencia de las casas de alquiler tradicionales, Lafayette actúa como su corredor de equipos. Compramos en el mercado por usted, comparando precios y disponibilidad de múltiples compañías de alquiler simultáneamente. Esto le brinda más opciones, mejores precios y le ahorra tiempo de llamar a diferentes compañías de alquiler."
+        },
+        {
+          "question": "¿Qué equipos están disponibles en Lafayette?",
+          "answer": "Ofrecemos una gama integral de equipos de construcción que incluyen excavadoras, bulldozers, minicargadores, cargadores, grúas, elevadores, generadores, compresores y mucho más. Nuestro inventario incluye equipos de los principales fabricantes como Bobcat, John Deere, Cat, Genie, JLG y muchos otros."
+        },
+        {
+          "question": "¿Tiene Lafayette ubicaciones físicas para que pueda visitar?",
+          "answer": "Lafayette opera como una plataforma en línea, pero nos asociamos con compañías de alquiler locales en su área. Aunque no tenemos ubicaciones físicas, trabajamos con compañías de alquiler establecidas que sí tienen instalaciones locales para recogida, entrega y servicio de equipos."
+        },
+        {
+          "question": "¿Cuántas horas están incluidas en mi alquiler?",
+          "answer": "La mayoría de los alquileres de equipos incluyen 8-10 horas de operación por día. Las horas extendidas pueden estar disponibles por una tarifa adicional. Asegúrese de verificar los términos específicos para su equipo de alquiler, ya que las horas y las tarifas pueden variar según el tipo de equipo y la compañía de alquiler."
+        },
+        {
+          "question": "¿Cómo maneja Lafayette las extensiones de alquiler?",
+          "answer": "Las extensiones de alquiler generalmente están disponibles si el equipo no está ya reservado por otro cliente. Contáctenos al menos 24 horas antes de su fecha de devolución programada para solicitar una extensión. Se aplicarán cargos adicionales basados en la tarifa diaria."
+        },
+        {
+          "question": "¿Proporciona Lafayette seguro para equipos de alquiler?",
+          "answer": "Sí, ofrecemos opciones integrales de protección contra daños y seguro de responsabilidad civil. Nuestra cobertura de seguro ayuda a protegerlo contra daños accidentales, robo y responsabilidad de terceros. Las opciones de cobertura y las tarifas varían según el tipo de equipo y la duración del alquiler."
+        },
+        {
+          "question": "¿Tengo que pagar por la entrega y recogida o puedo transportar el equipo yo mismo?",
+          "answer": "Los servicios de entrega y recogida están disponibles para la mayoría de los equipos. Las tarifas varían según la distancia y el tamaño del equipo. Algunos equipos más pequeños pueden ser auto-transportados si tiene el vehículo y remolque adecuados. Contáctenos para opciones específicas de entrega y precios para su ubicación."
+        },
+        {
+          "question": "¿Hace Lafayette entrega y recogida los fines de semana?",
+          "answer": "La disponibilidad de entrega y recogida de fin de semana varía según la ubicación y la compañía de alquiler. Algunos socios ofrecen servicios de fin de semana por una tarifa adicional. Contáctenos para verificar la disponibilidad de fin de semana para sus necesidades específicas de equipo y ubicación."
+        }
+      ],
+      "stillHaveQuestions": "¿Aún tienes preguntas?",
+      "contactTeam": "Nuestro equipo está aquí para ayudarlo a encontrar el equipo perfecto para su proyecto. Contáctenos para obtener asistencia personalizada.",
+      "contactOurTeam": "Contactar a Nuestro Equipo",
+      "callPhone": "Llamar al (337) 234-5678"
+    },
+    "features": {
+      "badge": "¿POR QUÉ ELEGIRNOS?",
+      "title": "Por Qué Elegir Lafayette Equipment",
+      "subtitle": "Servicio profesional, tarifas competitivas y equipos confiables para cada proyecto",
+      "localService": {
+        "title": "Servicio Local",
+        "description": "Servicio rápido y confiable en todo Lafayette y áreas circundantes con entrega el mismo día disponible."
+      },
+      "competitivePricing": {
+        "title": "Precios Competitivos",
+        "description": "Las mejores tarifas en Lafayette con términos de alquiler flexibles para adaptarse a su presupuesto y cronograma."
+      },
+      "easyBooking": {
+        "title": "Reserva Fácil",
+        "description": "Proceso de reserva en línea simple con disponibilidad instantánea y precios transparentes."
+      },
+      "support": {
+        "title": "Soporte 24/7",
+        "description": "Soporte al cliente las 24 horas para mantener sus proyectos funcionando sin problemas."
+      },
+      "quality": {
+        "title": "Equipos de Calidad",
+        "description": "Equipos de grado profesional bien mantenidos de fabricantes confiables."
+      },
+      "tracking": {
+        "title": "Seguimiento en Tiempo Real",
+        "description": "Rastree sus alquileres, entregas y devoluciones con nuestro portal en línea."
+      }
+    },
+    "contact": {
+      "badge": "CONTÁCTENOS",
+      "title": "¿Listo para Empezar?",
+      "subtitle": "Póngase en contacto con nuestro equipo para alquileres de equipos, cotizaciones y asesoramiento experto",
+      "phone": {
+        "title": "Llámenos",
+        "description": "Hable directamente con nuestros especialistas en equipos"
+      },
+      "email": {
+        "title": "Envíenos un Email",
+        "description": "Envíenos sus preguntas en cualquier momento",
+        "address": "info@lafayetteequipmentrentals.com"
+      },
+      "location": {
+        "title": "Visítenos",
+        "description": "Pase por nuestra ubicación en Lafayette",
+        "address": "2865 Ambassador Caffery Pkwy, Suite 135, Lafayette, LA 70506"
+      },
+      "cta": "Obtener Cotización Gratis"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "PONTE EN CONTACTO CON",
+      "titleAccent": "NUESTRO EQUIPO EXPERTO",
+      "tagline": "¿Necesitas Equipo? ¿Tienes Preguntas? ¡Estamos Aquí para Ayudar!",
+      "callNow": "LLAMAR AHORA",
+      "sendMessage": "ENVIAR MENSAJE",
+      "phone": "(337) 234-5678"
+    },
+    "whyChooseUs": {
+      "category": "POR QUÉ ELEGIRNOS",
+      "title": "Tu Socio de Equipos",
+      "titleAccent": "de Confianza",
+      "fastDelivery": {
+        "title": "Entrega Rápida",
+        "description": "Entrega el mismo día disponible en Lafayette y áreas circundantes. Llevamos tu equipo donde lo necesitas, cuando lo necesitas."
+      },
+      "safetyFirst": {
+        "title": "Seguridad Primero",
+        "description": "Todo el equipo mantenido con los más altos estándares de seguridad. Inspecciones regulares y operadores certificados disponibles para capacitación."
+      },
+      "support247": {
+        "title": "Soporte 24/7",
+        "description": "Atención al cliente las 24 horas para mantener tus proyectos funcionando sin problemas. Servicio de emergencia disponible."
+      }
+    },
+    "contactInfo": {
+      "category": "CONTACTO",
+      "title": "Información de",
+      "titleAccent": "Contacto",
+      "description": "¿Listo para comenzar? Comunícate con nuestro equipo para obtener asesoramiento experto y cotizaciones.",
+      "phone": {
+        "title": "Teléfono",
+        "number": "(337) 234-5678",
+        "hours": "Lun-Vie 7AM-6PM, Sáb 8AM-4PM"
+      },
+      "location": {
+        "title": "Ubicación",
+        "address": "2865 Ambassador Caffery Pkwy, Suite 135\nLafayette, LA 70506",
+        "getDirections": "Obtener Direcciones"
+      },
+      "email": {
+        "title": "Correo Electrónico",
+        "address": "info@lafayetteequipmentrentals.com",
+        "responseTime": "Respuesta en 24 horas"
+      },
+      "emergency": {
+        "title": "Servicio de Emergencia Disponible",
+        "description": "¿Necesitas equipo urgentemente? Ofrecemos servicio de alquiler de emergencia 24/7 para proyectos críticos.",
+        "callForEmergency": "Llamar para Servicio de Emergencia"
+      }
+    },
+    "form": {
+      "title": "Obtén una Cotización Rápida",
+      "subtitle": "Completa el formulario y te responderemos pronto.",
+      "name": "Nombre Completo",
+      "phone": "Teléfono (Opcional)",
+      "email": "Correo Electrónico",
+      "message": "Cuéntanos sobre tu proyecto o preguntas...",
+      "sendButton": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": {
+        "title": "¡Mensaje Enviado Exitosamente!",
+        "message": "¡Gracias por contactarnos! Responderemos a tu consulta dentro de 24 horas.",
+        "sendAnother": "Enviar Otro Mensaje"
+      }
+    },
+    "location": {
+      "category": "VISÍTANOS",
+      "title": "Nuestra Ubicación en",
+      "titleAccent": "Lafayette",
+      "description": "Convenientemente ubicados para servir a contratistas y empresas en Lafayette y áreas circundantes.",
+      "address": "Dirección",
+      "businessHours": "Horario de Atención",
+      "hours": {
+        "weekdays": "Lunes - Viernes: 7:00 AM - 6:00 PM",
+        "saturday": "Sábado: 8:00 AM - 4:00 PM",
+        "sunday": "Domingo: Cerrado"
+      },
+      "getDirections": "Obtener Direcciones",
+      "browseEquipment": "Explorar Equipos"
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar?",
+      "description": "Explora nuestro inventario de equipos o contáctanos para asistencia personalizada con las necesidades de tu proyecto.",
+      "browseEquipment": "Explorar Equipos",
+      "callButton": "Llamar (337) 234-5678"
+    }
+  },
+  "footer": {
+    "companyName": "Lafayette Equipment Rentals",
+    "description": "Servicio premier de alquiler de equipos en Lafayette, Louisiana. Maquinaria de grado profesional para proyectos de construcción, paisajismo e industriales.",
+    "contact": {
+      "location": "Nuestra Ubicación",
+      "address": "2865 Ambassador Caffery Pkwy\nSte 135\nLafayette, LA 70506",
+      "callUs": "Llámanos",
+      "phone": "(337) 234-5678",
+      "emailUs": "Envíanos un Email",
+      "email": "info@lafayetteequipmentrentals.com",
+      "hours": "Horario Comercial",
+      "schedule": "Lun-Vie: 7:00 AM - 6:00 PM\nSáb: 8:00 AM - 4:00 PM\nDom: Cerrado"
+    },
+    "sections": {
+      "equipmentServices": "Equipos y Servicios",
+      "company": "Empresa",
+      "support": "Soporte",
+      "language": "Idioma"
+    },
+    "links": {
+      "allEquipment": "Todos los Equipos",
+      "excavators": "Excavadoras",
+      "skidSteers": "Minicargadores",
+      "aerialLifts": "Elevadores Aéreos",
+      "generators": "Generadores",
+      "aboutUs": "Acerca de Nosotros",
+      "contactUs": "Contáctanos",
+      "industries": "Industrias",
+      "blog": "Blog",
+      "faq": "Preguntas Frecuentes",
+      "termsOfService": "Términos de Servicio",
+      "sitemap": "Mapa del Sitio"
+    },
+    "map": {
+      "title": "Visita Nuestra Ubicación",
+      "subtitle": "Convenientemente ubicado en Lafayette, Louisiana para atender todas sus necesidades de alquiler de equipos"
+    },
+    "bottom": {
+      "copyright": "© {year} Lafayette Equipment Rentals. Todos los derechos reservados.",
+      "tagline": "Servicios profesionales de alquiler de equipos en Lafayette, Louisiana",
+      "backToTop": "Arriba"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Intentar de nuevo",
+    "english": "English",
+    "spanish": "Español",
+    "viewDetails": "Ver Detalles",
+    "addToCart": "Agregar al Carrito",
+    "bookNow": "Reservar Ahora",
+    "buyNow": "Comprar Ahora",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "perDay": "/día",
+    "perWeek": "/semana",
+    "perMonth": "/mes",
+    "day": "Día",
+    "week": "Semana",
+    "month": "Mes",
+    "daily": "Diario",
+    "weekly": "Semanal",
+    "monthly": "Mensual",
+    "from": "desde",
+    "or": "o",
+    "and": "y",
+    "to": "a",
+    "contactForPrice": "Contactar para Precio",
+    "callForPrice": "Llamar para Precio",
+    "available": "Disponible",
+    "unavailable": "No Disponible",
+    "quantity": "Cantidad",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Impuesto",
+    "selectOptions": "Seleccionar Opciones",
+    "optional": "Opcional",
+    "required": "Requerido",
+    "yes": "Sí",
+    "no": "No",
+    "all": "Todo",
+    "none": "Ninguno",
+    "clear": "Limpiar",
+    "reset": "Restablecer",
+    "apply": "Aplicar",
+    "showMore": "Mostrar Más",
+    "showLess": "Mostrar Menos",
+    "viewAll": "Ver Todo",
+    "back": "Atrás",
+    "reserved": "Reservado",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "finish": "Finalizar",
+    "contactUs": "Contáctanos",
+    "callUs": "Llámanos",
+    "emailUs": "Envíanos un Email",
+    "getDirections": "Obtener Direcciones",
+    "learnMore": "Aprender Más",
+    "readMore": "Leer Más",
+    "seeDetails": "Ver Detalles",
+    "free": "GRATIS",
+    "tbd": "A CONFIRMAR",
+    "qty": "CANT"
+  },
+  "checkoutPage": {
+    "equipmentSelection": "Selección de Equipos",
+    "startDateInfo": "La fecha de inicio debe estar dentro de los 30 días a partir de hoy.",
+    "rentalDuration": "Duración del Alquiler",
+    "zipPlaceholder": "Ingresa tu código postal",
+    "rentalPeriod": "Período de Alquiler",
+    "duration": "Duración",
+    "expectedReturn": "Devolución Estimada",
+    "deliveryLocation": "Ubicación de Entrega",
+    "freeDelivery": "Entrega Gratis",
+    "deliveryFeeTbd": "Costo de Entrega por Confirmar",
+    "equipmentBreakdown": "Desglose del Equipo",
+    "rateCalculation": "Cálculo de la Tarifa",
+    "equipmentSubtotal": "Subtotal de Equipos",
+    "totalBeforeTax": "Total (Antes de Impuestos)",
+    "reserving": "Reservando...",
+    "reserveEquipment": "Reservar Equipo",
+    "emptyDescription": "Comienza a agregar equipos a tu carrito para iniciar tu reserva."
+  },
+  "equipment": {
+    "hours": "hrs",
+    "categories": "Categorías",
+    "allCategories": "Todas las Categorías",
+    "specifications": "Especificaciones",
+    "features": "Características",
+    "attachments": "Accesorios",
+    "relatedEquipment": "Equipos Relacionados",
+    "similarEquipment": "Equipos Similares",
+    "make": "Marca",
+    "model": "Modelo",
+    "year": "Año",
+    "hours": "Horas",
+    "weight": "Peso",
+    "capacity": "Capacidad",
+    "dimensions": "Dimensiones",
+    "power": "Potencia",
+    "fuelType": "Tipo de Combustible",
+    "location": "Ubicación",
+    "availability": "Disponibilidad",
+    "minimumRental": "Alquiler Mínimo",
+    "deliveryAvailable": "Entrega Disponible",
+    "pickupAvailable": "Recogida Disponible",
+    "operatorAvailable": "Operador Disponible",
+    "insurance": "Seguro",
+    "deposit": "Depósito",
+    "rentalRates": "Tarifas de Alquiler",
+    "dailyRate": "Tarifa Diaria",
+    "weeklyRate": "Tarifa Semanal",
+    "monthlyRate": "Tarifa Mensual",
+    "selectAttachments": "Seleccionar Accesorios",
+    "addedToCart": "Agregado al Carrito",
+    "itemInCart": "Artículo en el Carrito",
+    "goToCart": "Ir al Carrito",
+    "continueShopping": "Continuar Comprando",
+    "requestQuote": "Solicitar Cotización",
+    "checkAvailability": "Verificar Disponibilidad",
+    "reserveNow": "Reservar Ahora",
+    "rentNow": "Alquilar Ahora",
+    "getQuote": "Obtener Cotización",
+    "purchaseOption": "Opción de Compra Disponible",
+    "rentToBuy": "Alquilar para Comprar",
+    "saveToWishlist": "Guardar en Lista de Deseos",
+    "compareEquipment": "Comparar Equipos",
+    "printDetails": "Imprimir Detalles",
+    "shareEquipment": "Compartir Equipo",
+    "zeroEmissions": "Cero Emisiones",
+    "ecoFriendly": "Ecológico",
+    "featured": "Destacado",
+    "popular": "Popular",
+    "new": "Nuevo",
+    "onSale": "En Oferta",
+    "limitedAvailability": "Disponibilidad Limitada",
+    "inStock": "En Stock",
+    "outOfStock": "Agotado",
+    "comingSoon": "Próximamente",
+    "itemsAvailable": "artículos disponibles"
+  },
+  "filters": {
+    "title": "Filtros",
+    "clearAll": "Limpiar Todo",
+    "applyFilters": "Aplicar Filtros",
+    "resetFilters": "Restablecer Filtros",
+    "filterBy": "Filtrar Por",
+    "sortBy": "Ordenar Por",
+    "priceRange": "Rango de Precio",
+    "minPrice": "Precio Mínimo",
+    "maxPrice": "Precio Máximo",
+    "category": "Categoría",
+    "manufacturer": "Fabricante",
+    "equipmentType": "Tipo de Equipo",
+    "capacity": "Capacidad",
+    "yearRange": "Rango de Año",
+    "hoursRange": "Rango de Horas",
+    "minHours": "Horas Mínimas",
+    "maxHours": "Horas Máximas",
+    "weightRange": "Rango de Peso",
+    "minWeight": "Peso Mínimo",
+    "maxWeight": "Peso Máximo",
+    "availability": "Disponibilidad",
+    "availableNow": "Disponible Ahora",
+    "location": "Ubicación",
+    "distance": "Distancia",
+    "features": "Características",
+    "rentToOwn": "Alquiler con Opción a Compra",
+    "buyNowAvailable": "Compra Disponible",
+    "deliveryIncluded": "Entrega Incluida",
+    "operatorIncluded": "Operador Incluido",
+    "showResults": "Mostrar {count} Resultados",
+    "noResults": "No se encontraron resultados",
+    "tryAdjusting": "Intenta ajustar tus filtros"
+  },
+  "sorting": {
+    "relevance": "Relevancia",
+    "priceLowToHigh": "Precio: Menor a Mayor",
+    "priceHighToLow": "Precio: Mayor a Menor",
+    "newest": "Más Nuevo Primero",
+    "oldest": "Más Antiguo Primero",
+    "nameAZ": "Nombre: A a Z",
+    "nameZA": "Nombre: Z a A",
+    "mostPopular": "Más Popular",
+    "bestRated": "Mejor Calificado",
+    "distance": "Distancia: Más Cercano Primero"
+  },
+  "cart": {
+    "title": "Carrito de Compras",
+    "emptyCart": "Tu carrito está vacío",
+    "startShopping": "Comenzar a Comprar",
+    "itemsInCart": "{count} artículos en el carrito",
+    "removeItem": "Eliminar Artículo",
+    "updateQuantity": "Actualizar Cantidad",
+    "rentalPeriod": "Período de Alquiler",
+    "startDate": "Fecha de Inicio",
+    "endDate": "Fecha de Fin",
+    "deliveryMethod": "Método de Entrega",
+    "delivery": "Entrega",
+    "pickup": "Recogida",
+    "deliveryAddress": "Dirección de Entrega",
+    "pickupLocation": "Ubicación de Recogida",
+    "specialInstructions": "Instrucciones Especiales",
+    "promoCode": "Código Promocional",
+    "applyPromo": "Aplicar Promoción",
+    "orderSummary": "Resumen del Pedido",
+    "proceedToCheckout": "Proceder al Pago",
+    "continueShopping": "Continuar Comprando",
+    "saveCart": "Guardar Carrito",
+    "clearCart": "Vaciar Carrito"
+  },
+  "checkout": {
+    "title": "Pago",
+    "billingInformation": "Información de Facturación",
+    "shippingInformation": "Información de Envío",
+    "paymentMethod": "Método de Pago",
+    "reviewOrder": "Revisar Pedido",
+    "placeOrder": "Realizar Pedido",
+    "orderConfirmation": "Confirmación del Pedido",
+    "thankYou": "¡Gracias!",
+    "orderNumber": "Número de Pedido",
+    "estimatedDelivery": "Entrega Estimada",
+    "trackOrder": "Rastrear Pedido",
+    "printReceipt": "Imprimir Recibo",
+    "emailReceipt": "Enviar Recibo por Email",
+    "zipCode": "Código Postal"
+  },
+  "checkoutPage": {
+    "emptyDescription": "Comienza a agregar equipos a tu carrito para iniciar tu reserva."
+  },
+  "noResults": {
+    "title": "Lo sentimos, no pudimos encontrar ningún resultado.",
+    "titleWithEquipment": "¡Encontraremos un {equipment} para ti en menos de 24 horas!",
+    "description": "Tenemos acceso a una vasta red de más de 30,000 máquinas en todo el país. Permítenos ayudarte a encontrar exactamente lo que necesitas para tu proyecto.",
+    "fillForm": "Completa el formulario a continuación para comenzar.",
+    "requestEquipment": "Solicitar Equipo",
+    "tellUsWhat": "Dinos lo que necesitas y lo encontraremos para ti en 24 horas",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "businessName": "Nombre del Negocio (opcional)",
+      "equipmentType": "Tipo de Equipo",
+      "projectDetails": "Detalles del Proyecto",
+      "yourFullName": "Tu nombre completo",
+      "yourEmail": "tu@correo.com",
+      "phoneExample": "(337) 234-5678",
+      "companyName": "Nombre de tu empresa",
+      "equipmentExample": "ej., Excavadora, Minicargador, Bulldozer",
+      "tellUsAboutProject": "Cuéntanos sobre tu proyecto, cronograma y cualquier requisito específico...",
+      "findMyEquipment": "Encontrar Mi Equipo",
+      "submitting": "Enviando..."
+    },
+    "success": {
+      "title": "¡Solicitud Enviada Exitosamente!",
+      "message": "Gracias por tu solicitud. Nuestro equipo buscará en nuestra red de más de 30,000 máquinas y te contactará dentro de 24 horas con las opciones disponibles.",
+      "submitAnother": "Enviar Otra Solicitud"
+    },
+    "contactDirectly": "O contáctanos directamente:"
+  },
+  "aboutUs": {
+    "breadcrumb": {
+      "home": "Inicio",
+      "about": "Sobre Nosotros"
+    },
+    "hero": {
+      "title": "Propiedad Local. Enfocados en el Cliente.",
+      "subtitle": "Lafayette Equipment Rentals es tu socio de confianza para maquinaria lista para trabajar en todo el sur de Louisiana y la región de Acadiana.",
+      "getInTouch": "Ponte en Contacto",
+      "browseEquipment": "Explorar Equipos"
+    },
+    "stats": {
+      "equipmentPieces": "Piezas de Equipo",
+      "yearsExperience": "Años de Experiencia",
+      "customerSupport": "Atención al Cliente",
+      "satisfactionRate": "Tasa de Satisfacción"
+    },
+    "story": {
+      "title": "Nuestra Historia",
+      "subtitle": "Construidos para Servir a Contratistas Como Tú",
+      "foundedTitle": "Fundados con Propósito",
+      "foundedText": "Fundada por un equipo de profesionales de la industria y operadores de equipos, Lafayette Equipment Rentals fue construida con un objetivo: hacer que el equipo pesado sea accesible, rápido y sin complicaciones para los contratistas en todo el sur de Louisiana.",
+      "localTitle": "Experiencia Local",
+      "localText": "Conocemos los desafíos que enfrentan los contratistas en la región de Acadiana, y construimos nuestra plataforma de alquiler para ayudarte a terminar los trabajos a tiempo y dentro del presupuesto. Nuestra extensa red y experiencia local aseguran que obtengas el equipo correcto cuando lo necesitas.",
+      "industryLeaders": "Líderes de la Industria",
+      "industryText": "Estableciendo el estándar en alquiler de equipos en Lafayette y parroquias circundantes.",
+      "communityFocused": "Enfocados en la Comunidad",
+      "communityText": "Orgullosos de servir a Lafayette y contribuir al crecimiento de nuestra economía local.",
+      "familyValues": "Valores Familiares",
+      "familyText": "Tratamos a cada cliente como familia, con honestidad, integridad y respeto."
+    },
+    "difference": {
+      "title": "Lo Que Nos Hace Diferentes",
+      "subtitle": "No somos solo otra compañía de alquiler. Somos tus socios para hacer el trabajo correctamente.",
+      "fastDelivery": "Entrega Rápida",
+      "fastDeliveryText": "Entrega el mismo día disponible en todo Lafayette y la región de Acadiana.",
+      "maintainedMachines": "Máquinas Mantenidas",
+      "maintainedText": "Equipos confiables y listos para trabajar, mantenidos por técnicos certificados.",
+      "localExperts": "Expertos Locales",
+      "localExpertsText": "Conocimiento profundo de las condiciones y necesidades únicas del sur de Louisiana.",
+      "responsiveSupport": "Soporte Receptivo",
+      "responsiveSupportText": "Soporte 24/7 para mantener tus proyectos funcionando sin problemas."
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "subtitle": "Desde alquileres a corto plazo hasta asociaciones a largo plazo, te tenemos cubierto.",
+      "equipmentRental": "Alquiler de Equipos",
+      "equipmentRentalText": "Amplia selección de maquinaria pesada, herramientas y equipos para cualquier tamaño de trabajo.",
+      "flexibleTerms": "Términos Flexibles",
+      "flexibleTermsText": "Períodos de alquiler diarios, semanales, mensuales o personalizados para adaptarse a tu cronograma de proyecto.",
+      "maintenanceSupport": "Mantenimiento y Soporte",
+      "maintenanceSupportText": "Cobertura completa de mantenimiento y soporte 24/7 para mantener tus proyectos en marcha."
+    },
+    "location": {
+      "title": "Visita Nuestra Ubicación",
+      "companyName": "Lafayette Equipment Rentals",
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "businessHours": "Horario Comercial",
+      "weekdays": "Lunes – Sábado: 7:00 AM – 6:00 PM",
+      "sunday": "Domingo: Cerrado",
+      "locationNote": "Ubicados en el corazón de Lafayette, estamos perfectamente posicionados para servir a los contratistas en todo el sur de Louisiana con servicios rápidos de entrega y recogida."
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar?",
+      "subtitle": "¿Necesitas ayuda para elegir el equipo adecuado para tu proyecto? Nuestros expertos están aquí para ayudarte a encontrar la solución perfecta.",
+      "talkToSpecialist": "Hablar con un Especialista",
+      "browseEquipment": "Explorar Equipos"
+    }
+  },
+  "equipmentPage": {
+    "hero": {
+      "subtitle": "ALQUILER PROFESIONAL DE EQUIPOS • LAFAYETTE, LOUISIANA",
+      "title": "Equipos",
+      "titleAccent": "y Herramientas",
+      "description": "Lafayette Equipment Rentals y sus socios tienen más de 30,000 piezas de equipos y herramientas, estableciendo el estándar en nuestra industria. Somos su fuente única para todas las necesidades de equipos.",
+      "professionalGrade": "Equipos de Grado Profesional",
+      "fastDelivery": "Servicio de Entrega Rápida",
+      "fullyInsured": "Totalmente Asegurado y Mantenido"
+    },
+    "search": {
+      "title": "Encuentra Tu Equipo",
+      "placeholder": "Buscar equipos...",
+      "button": "Buscar Equipos"
+    },
+    "categories": {
+      "title": "Explorar por Categoría",
+      "subtitle": "Explore nuestra selección completa de equipos de construcción e industriales, organizados por categoría para facilitar la navegación.",
+      "viewAll": "Ver Todas las Categorías",
+      "itemsAvailable": "{count} artículos disponibles"
+    },
+    "popular": {
+      "title": "Alquileres",
+      "titleAccent": "Populares",
+      "subtitle": "Equipos más solicitados en el área de Lafayette"
+    },
+    "buyNow": {
+      "title": "Comprar Ahora",
+      "titleAccent": "Equipos",
+      "subtitle": "Opciones de compra disponibles para equipos seleccionados"
+    },
+    "cta": {
+      "category": "¿NECESITA AYUDA?",
+      "title": "¿No Encuentra Lo Que Busca?",
+      "description": "Nuestros especialistas en equipos están aquí para ayudarlo a encontrar las herramientas perfectas para su proyecto. Contáctenos para asistencia personalizada y recomendaciones.",
+      "button": "Obtener Ayuda de Expertos",
+      "phone": "O llámenos al (337) 234-5678"
+    }
+  },
+  "equipmentCategories": {
+    "elevated-access-machinery": {
+      "displayName": "Maquinaria de Acceso Elevado",
+      "description": "Plataformas de tijera, plataformas articuladas y plataformas aéreas para trabajo seguro en altura"
+    },
+    "soil-relocation-machinery": {
+      "displayName": "Maquinaria de Movimiento de Tierra",
+      "description": "Excavadoras, bulldozers y cargadores para movimiento de tierra eficiente y preparación del sitio"
+    },
+    "soil-compaction-machinery": {
+      "displayName": "Maquinaria de Compactación de Suelo",
+      "description": "Rodillos y compactadores para lograr densidad y estabilidad óptima del suelo"
+    },
+    "commercial-trailers-trucks": {
+      "displayName": "Remolques y Camiones Comerciales",
+      "description": "Camiones de volteo, camiones cisterna y remolques para transporte de materiales y logística"
+    },
+    "masonry-cement-tools": {
+      "displayName": "Herramientas de Albañilería y Cemento",
+      "description": "Mezcladoras de concreto, sierras y herramientas de acabado para trabajos de albañilería y concreto"
+    },
+    "groundskeeping-forestry-equipment": {
+      "displayName": "Equipos de Jardinería y Forestales",
+      "description": "Cortadoras de césped, trituradoras y equipos forestales para manejo de paisajes y vegetación"
+    },
+    "energy-illumination-equipment": {
+      "displayName": "Equipos de Energía e Iluminación",
+      "description": "Generadores y torres de iluminación para energía confiable e iluminación del sitio de trabajo"
+    },
+    "industrial-material-management": {
+      "displayName": "Gestión de Materiales Industriales",
+      "description": "Montacargas, manipuladores telescópicos y soluciones de almacenamiento para manejo eficiente de materiales"
+    },
+    "tank-pump-rentals": {
+      "displayName": "Alquiler de Tanques y Bombas",
+      "description": "Bombas de agua, tanques y equipos de desagüe para gestión de fluidos"
+    },
+    "excavation-trenchers-borers": {
+      "displayName": "Zanjadoras y Perforadoras de Excavación",
+      "description": "Zanjadoras y equipos de perforación para instalación de servicios públicos y excavación"
+    },
+    "road-safety-traffic-control": {
+      "displayName": "Seguridad Vial y Control de Tráfico",
+      "description": "Tableros de mensajes, barreras y equipos de seguridad para protección de zonas de trabajo"
+    },
+    "storage-units-container-solutions": {
+      "displayName": "Unidades de Almacenamiento y Contenedores",
+      "description": "Contenedores de almacenamiento y contenedores de basura para almacenamiento seguro y gestión de residuos"
+    },
+    "screening-pulverizing-gear": {
+      "displayName": "Equipos de Cribado y Pulverización",
+      "description": "Cribadoras y trituradoras para procesamiento de materiales y producción de agregados"
+    },
+    "advanced-earthmoving-machinery": {
+      "displayName": "Maquinaria Avanzada de Movimiento de Tierra",
+      "description": "Motoniveladoras y mototraíllas para nivelación de precisión y movimiento de tierra a gran escala"
+    },
+    "road-surface-solutions": {
+      "displayName": "Soluciones para Superficies Viales",
+      "description": "Pavimentadoras y equipos de asfalto para construcción de carreteras y preparación de superficies"
+    },
+    "land-tree-clearing-gear": {
+      "displayName": "Equipos de Despeje de Terrenos y Árboles",
+      "description": "Trituradoras y equipos de despeje para desarrollo de terrenos y eliminación de vegetación"
+    },
+    "excavators": {
+      "displayName": "Excavadoras",
+      "description": "Máquinas de excavación versátiles para excavación, demolición y manejo de materiales"
+    },
+    "skid-steers": {
+      "displayName": "Minicargadores",
+      "description": "Cargadores compactos y maniobrables para tareas de construcción y paisajismo"
+    },
+    "bulldozers": {
+      "displayName": "Bulldozers",
+      "description": "Máquinas de orugas potentes para empuje, nivelación y despeje de sitios"
+    },
+    "aerial-lifts": {
+      "displayName": "Plataformas Aéreas",
+      "description": "Plataformas de trabajo elevadoras para acceso seguro a alturas"
+    },
+    "generators": {
+      "displayName": "Generadores",
+      "description": "Generación de energía portátil y estacionaria para necesidades eléctricas del sitio de trabajo"
+    },
+    "compressors": {
+      "displayName": "Compresores de Aire",
+      "description": "Sistemas de aire comprimido para herramientas y equipos neumáticos"
+    },
+    "forklifts": {
+      "displayName": "Montacargas",
+      "description": "Equipos de manejo de materiales para levantar y mover cargas paletizadas"
+    },
+    "concrete-equipment": {
+      "displayName": "Equipos de Concreto",
+      "description": "Mezcladoras, bombas y herramientas de acabado para construcción con concreto"
+    },
+    "pumps": {
+      "displayName": "Bombas",
+      "description": "Bombas de agua y desagüe para transferencia de fluidos y drenaje del sitio"
+    },
+    "light-towers": {
+      "displayName": "Torres de Iluminación",
+      "description": "Soluciones de iluminación móvil para trabajo nocturno e iluminación de emergencia"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Encuentra respuestas a preguntas comunes sobre nuestros servicios de alquiler de equipos",
+    "searchPlaceholder": "Buscar preguntas frecuentes...",
+    "topics": {
+      "aboutUs": "Sobre Nosotros",
+      "delivery": "Entrega, Recogida y Devoluciones",
+      "commercialCredit": "Crédito Comercial",
+      "procureToPay": "Procurar para Pagar",
+      "reservations": "Reservas y Pagos",
+      "support": "Soporte"
+    },
+    "questions": {
+      "hours": {
+        "q": "¿Cuáles son sus horarios de operación?",
+        "a": "Nuestra ubicación en Lafayette, LA está abierta de lunes a sábado, de 7 AM a 6 PM. Por favor llame con anticipación para conocer el horario de días festivos o cierres especiales."
+      },
+      "holidays": {
+        "q": "¿Lafayette Equipment Rental Service abre en días festivos?",
+        "a": "Estamos cerrados en los principales días festivos como Año Nuevo, Día de los Caídos, Día de la Independencia, Día del Trabajo, Día de Acción de Gracias y Navidad. Para horarios específicos de Lafayette en días festivos, por favor contacte nuestra oficina local."
+      },
+      "location": {
+        "q": "¿Cómo puedo encontrar su ubicación en Lafayette, LA?",
+        "a": "Visítanos en 2865 Ambassador Caffery Pkwy, Ste 135, Lafayette, LA 70506, o consulta nuestro sitio web para obtener direcciones e información de contacto."
+      },
+      "reserve": {
+        "q": "¿Cómo reservo equipos en Lafayette, LA?",
+        "a": "Puedes reservar equipos en línea, llamando a nuestra oficina de Lafayette, o visitándonos en persona."
+      },
+      "payment": {
+        "q": "¿Qué métodos de pago aceptan?",
+        "a": "Aceptamos todas las principales tarjetas de crédito, cheques y efectivo en nuestra ubicación de Lafayette. Las cuentas comerciales pueden calificar para términos de crédito."
+      },
+      "deposit": {
+        "q": "¿Se requiere un depósito?",
+        "a": "Se puede requerir un depósito dependiendo del equipo y la duración del alquiler. Nuestro equipo de Lafayette te informará en el momento de la reserva."
+      },
+      "delivery": {
+        "q": "¿Ofrecen entrega de equipos en Lafayette, LA?",
+        "a": "Sí, ofrecemos servicios de entrega y recogida en todo Lafayette y las áreas circundantes. Las tarifas varían según la distancia y el tamaño del equipo."
+      },
+      "pickup": {
+        "q": "¿Puedo recoger el equipo yo mismo?",
+        "a": "¡Sí! La recogida gratuita está disponible en nuestra ubicación de Lafayette. Por favor traiga una licencia de conducir válida y un vehículo/remolque apropiado para el transporte."
+      },
+      "lateReturn": {
+        "q": "¿Cuál es su política sobre devoluciones tardías?",
+        "a": "Los equipos devueltos después del tiempo acordado pueden incurrir en cargos adicionales. Por favor llame a nuestra oficina de Lafayette si anticipa un retraso."
+      },
+      "breakdown": {
+        "q": "¿Qué pasa si el equipo se descompone durante mi alquiler?",
+        "a": "Contacte nuestra línea de soporte de Lafayette, LA inmediatamente. Ofrecemos soporte 24/7 y organizaremos la reparación o el reemplazo lo más rápido posible."
+      },
+      "training": {
+        "q": "¿Proporcionan capacitación sobre la operación del equipo?",
+        "a": "Se proporcionan instrucciones básicas de operación con todos los alquileres. Para capacitación más completa, pregunte a nuestro personal de Lafayette sobre los programas de capacitación para operadores disponibles."
+      }
+    },
+    "stillHaveQuestions": "¿Aún tienes preguntas?",
+    "contactTeam": "Nuestro equipo está aquí para ayudar. Contáctanos para más información.",
+    "contactUs": "Contáctanos",
+    "viewAll": "Ver Todas las Preguntas Frecuentes"
+  }
+}

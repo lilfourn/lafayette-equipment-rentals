@@ -1,0 +1,186 @@
+{
+  "city": "Lafayette, Louisiana",
+  "date_updated": "2025-08-08",
+  "industries": [
+    {
+      "name": "Energy (Oil & Gas Services)",
+      "common_construction_equipment": [
+        "Land drilling rig",
+        "Crawler crane",
+        "Pipeline trencher",
+        "Hydraulic excavator",
+        "Skid steer loader",
+        "Telehandler",
+        "Rough-terrain forklift"
+      ]
+    },
+    {
+      "name": "Aviation & Aerospace Maintenance/Repair",
+      "common_construction_equipment": [
+        "Asphalt paver",
+        "Motor grader",
+        "Vibratory roller",
+        "Tower crane",
+        "Telescopic boom lift",
+        "Mobile lighting tower",
+        "Fuel tanker truck"
+      ]
+    },
+    {
+      "name": "Construction (Commercial & Residential)",
+      "common_construction_equipment": [
+        "Backhoe loader",
+        "Excavator",
+        "Skid steer loader",
+        "Bulldozer",
+        "Motor grader",
+        "Concrete mixer truck",
+        "Dump truck"
+      ]
+    },
+    {
+      "name": "Manufacturing & Industrial Plants",
+      "common_construction_equipment": [
+        "Forklift",
+        "Overhead gantry crane",
+        "Hydraulic excavator",
+        "Bulldozer",
+        "Wheel loader",
+        "Telehandler",
+        "Concrete pump truck"
+      ]
+    },
+    {
+      "name": "Medical & Healthcare Facilities",
+      "common_construction_equipment": [
+        "Tower crane",
+        "Concrete pump truck",
+        "Excavator",
+        "Scissor lift",
+        "Telehandler",
+        "HVAC lifting crane",
+        "Wheel loader"
+      ]
+    },
+    {
+      "name": "Technology & Data Centers",
+      "common_construction_equipment": [
+        "Hydraulic excavator",
+        "Bulldozer",
+        "Compact track loader",
+        "Crawler crane",
+        "Skid steer loader",
+        "Diesel generator",
+        "Scissor lift"
+      ]
+    },
+    {
+      "name": "Transportation & Distribution Logistics",
+      "common_construction_equipment": [
+        "Motor grader",
+        "Asphalt paver",
+        "Road roller",
+        "Excavator",
+        "Articulated dump truck",
+        "Forklift",
+        "Container reach stacker"
+      ]
+    },
+    {
+      "name": "Retail Trade (Shopping Centers)",
+      "common_construction_equipment": [
+        "Tower crane",
+        "Concrete mixer truck",
+        "Skid steer loader",
+        "Scissor lift",
+        "Mini excavator",
+        "Boom lift",
+        "Telehandler"
+      ]
+    },
+    {
+      "name": "Hospitality & Tourism (Hotels/Entertainment Venues)",
+      "common_construction_equipment": [
+        "Mini excavator",
+        "Skid steer loader",
+        "Boom lift",
+        "Scissor lift",
+        "Telehandler",
+        "Concrete mixer truck",
+        "Compact track loader"
+      ]
+    },
+    {
+      "name": "Agriculture & Aquaculture",
+      "common_construction_equipment": [
+        "Agricultural tractor",
+        "Compact excavator",
+        "Wheel loader",
+        "Skid steer loader",
+        "Irrigation pump unit",
+        "Telehandler",
+        "Utility UTV"
+      ]
+    },
+    {
+      "name": "Education (University & K-12 Facilities)",
+      "common_construction_equipment": [
+        "Tower crane",
+        "Hydraulic excavator",
+        "Concrete pump truck",
+        "Scissor lift",
+        "Telehandler",
+        "Bulldozer",
+        "Forklift"
+      ]
+    },
+    {
+      "name": "Finance & Insurance (Office Buildings)",
+      "common_construction_equipment": [
+        "Tower crane",
+        "Skid steer loader",
+        "Scissor lift",
+        "Telehandler",
+        "Mini excavator",
+        "Concrete mixer truck",
+        "Crawler crane"
+      ]
+    },
+    {
+      "name": "Real Estate Development (Housing)",
+      "common_construction_equipment": [
+        "Mini excavator",
+        "Backhoe loader",
+        "Skid steer loader",
+        "Track loader",
+        "Concrete mixer truck",
+        "Telehandler",
+        "Boom lift"
+      ]
+    },
+    {
+      "name": "Government & Public Infrastructure",
+      "common_construction_equipment": [
+        "Motor grader",
+        "Bulldozer",
+        "Hydraulic excavator",
+        "Vibratory compactor",
+        "Asphalt paver",
+        "Pile driver",
+        "All-terrain crane"
+      ]
+    },
+    {
+      "name": "Food & Beverage Processing",
+      "common_construction_equipment": [
+        "Forklift",
+        "Telehandler",
+        "Scissor lift",
+        "Hydraulic excavator",
+        "Concrete pump truck",
+        "Overhead bridge crane",
+        "Skid steer loader"
+      ]
+    }
+  ]
+}

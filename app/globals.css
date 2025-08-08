@@ -1,0 +1,830 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* Root Variables for Mobile */
+:root {
+  --mobile-nav-height: 64px;
+  --mobile-spacing: 1rem;
+  --tablet-spacing: 1.5rem;
+  --desktop-spacing: 2rem;
+  --min-tap-target: 48px;
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --safe-area-inset-left: env(safe-area-inset-left);
+  --safe-area-inset-right: env(safe-area-inset-right);
+}
+
+/* Base Body Styles with Mobile Optimizations */
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Better mobile scroll behavior */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent iOS bounce on the HTML element */
+html {
+  overscroll-behavior: none;
+}
+
+/* Main scrollable container */
+#__next,
+.main-container {
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Mobile Touch Optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Allow text selection where needed */
+p, span, h1, h2, h3, h4, h5, h6, div[contenteditable], input, textarea {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Optimize buttons and links for touch */
+button, a, [role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* Ensure minimum tap targets - excluding navigation breadcrumbs */
+button, input, select, textarea, [role="button"], [onclick],
+a:not(nav a) {
+  min-height: var(--min-tap-target);
+  min-width: var(--min-tap-target);
+}
+
+/* Breadcrumb navigation styles */
+nav.breadcrumb, 
+nav[aria-label="breadcrumb"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav.breadcrumb a,
+nav[aria-label="breadcrumb"] a {
+  min-height: auto;
+  min-width: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav.breadcrumb svg,
+nav[aria-label="breadcrumb"] svg {
+  flex-shrink: 0;
+}
+
+/* Mobile-first typography scale */
+html {
+  font-size: 16px; /* Base for mobile */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Mobile-specific utilities */
+  .safe-top {
+    padding-top: var(--safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+  
+  .safe-left {
+    padding-left: var(--safe-area-inset-left);
+  }
+  
+  .safe-right {
+    padding-right: var(--safe-area-inset-right);
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    position: relative;
+    min-height: var(--min-tap-target);
+    min-width: var(--min-tap-target);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile-optimized scrolling */
+  .scroll-touch {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .scroll-x-touch {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .scroll-x-touch::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Prevent text selection on interactive elements */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* GPU acceleration for smooth animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Mobile-first responsive spacing */
+  .mobile-padding {
+    padding: var(--mobile-spacing);
+  }
+
+  @media (min-width: 768px) {
+    .mobile-padding {
+      padding: var(--tablet-spacing);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-padding {
+      padding: var(--desktop-spacing);
+    }
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Shimmer animation for loading states */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+    background-size: 200% 100%;
+  }
+
+  /* Equipment Rental Gradient Utilities */
+  .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-dark)) 100%
+    );
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--secondary)) 0%,
+      hsl(var(--secondary-dark)) 100%
+    );
+  }
+
+  .gradient-accent {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent)) 0%,
+      hsl(var(--accent-dark)) 100%
+    );
+  }
+
+  /* Special gradient for CTAs */
+  .gradient-red-yellow {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  /* Glass Morphism Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Modern Shadow System */
+  .shadow-soft {
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
+      0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 20px 40px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-intense {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Custom Placeholder Styles */
+::placeholder {
+  color: #4b5563 !important; /* Gray-600 - Darker grey */
+  opacity: 1 !important; /* Firefox */
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Safari/Opera */
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+/* Override any Tailwind placeholder classes */
+.placeholder\:text-muted-foreground::placeholder {
+  color: #4b5563 !important;
+}
+
+@layer base {
+  :root {
+    /* Lafayette Equipment Rentals Color Palette */
+    --background: 255 255 255;
+    /* Pure white background */
+    --foreground: 23 23 23;
+    /* Very dark grey for text */
+
+    /* Primary - Bold Red */
+    --primary: 220 38 38;
+    /* Red-600 - Equipment rental red */
+    --primary-dark: 185 28 28;
+    /* Red-700 */
+    --primary-foreground: 255 255 255;
+    /* White text on red */
+
+    /* Secondary - Dark Grey */
+    --secondary: 64 64 64;
+    /* Neutral-700 - Professional dark grey */
+    --secondary-dark: 38 38 38;
+    /* Neutral-800 */
+    --secondary-foreground: 255 255 255;
+    /* White text on dark grey */
+
+    /* Accent - Vibrant Yellow */
+    --accent: 250 204 21;
+    /* Yellow-400 - Construction yellow */
+    --accent-dark: 234 179 8;
+    /* Yellow-500 */
+    --accent-foreground: 23 23 23;
+    /* Dark text on yellow */
+
+    /* Neutral Colors */
+    --muted: 245 245 245;
+    /* Neutral-100 - Light grey background */
+    --muted-foreground: 64 64 64;
+    /* Dark grey text on light background */
+
+    /* Card and Surface Colors */
+    --card: 255 255 255;
+    /* Pure white */
+    --card-foreground: 23 23 23;
+    /* Very dark grey */
+
+    --popover: 255 255 255;
+    --popover-foreground: 23 23 23;
+
+    /* Interactive Elements */
+    --border: 212 212 212;
+    /* Neutral-300 */
+    --input: 245 245 245;
+    /* Neutral-100 */
+    --ring: 220 38 38;
+    /* Red-600 - Focus ring */
+
+    /* Status Colors */
+    --destructive: 239 68 68;
+    /* Red-500 */
+    --destructive-foreground: 254 242 242;
+    /* Red-50 */
+
+    --success: 34 197 94;
+    /* Green-500 */
+    --success-foreground: 240 253 244;
+    /* Green-50 */
+
+    --warning: 250 204 21;
+    /* Yellow-400 - Same as accent */
+    --warning-foreground: 23 23 23;
+    /* Dark text */
+
+    /* Chart Colors - Equipment Theme */
+    --chart-1: 220 38 38;
+    /* Red-600 */
+    --chart-2: 250 204 21;
+    /* Yellow-400 */
+    --chart-3: 64 64 64;
+    /* Neutral-700 */
+    --chart-4: 115 115 115;
+    /* Neutral-500 */
+    --chart-5: 163 163 163;
+    /* Neutral-400 */
+
+    /* Spacing */
+    --radius: 0.5rem;
+    /* Slightly reduced for industrial look */
+
+    /* Sidebar (if used) */
+    --sidebar-background: 245 245 245;
+    /* Neutral-100 */
+    --sidebar-foreground: 23 23 23;
+    /* Very dark grey */
+    --sidebar-primary: 220 38 38;
+    /* Red-600 */
+    --sidebar-primary-foreground: 255 255 255;
+    /* White */
+    --sidebar-accent: 250 204 21;
+    /* Yellow-400 */
+    --sidebar-accent-foreground: 23 23 23;
+    /* Dark text */
+    --sidebar-border: 212 212 212;
+    /* Neutral-300 */
+    --sidebar-ring: 220 38 38;
+    /* Red-600 */
+  }
+
+  .dark {
+    /* Dark Mode Palette - Lafayette Equipment Theme */
+    --background: 23 23 23;
+    /* Very dark grey background */
+    --foreground: 245 245 245;
+    /* Light grey text */
+
+    --primary: 248 113 113;
+    /* Red-400 - Lighter red for dark mode */
+    --primary-dark: 239 68 68;
+    /* Red-500 */
+    --primary-foreground: 23 23 23;
+    /* Dark text on red */
+
+    --secondary: 115 115 115;
+    /* Neutral-500 - Medium grey */
+    --secondary-dark: 82 82 82;
+    /* Neutral-600 */
+    --secondary-foreground: 245 245 245;
+    /* Light text */
+
+    --accent: 253 224 71;
+    /* Yellow-300 - Brighter yellow for dark mode */
+    --accent-dark: 250 204 21;
+    /* Yellow-400 */
+    --accent-foreground: 23 23 23;
+    /* Dark text on yellow */
+
+    --muted: 38 38 38;
+    /* Neutral-800 - Darker muted */
+    --muted-foreground: 163 163 163;
+    /* Neutral-400 */
+
+    --card: 38 38 38;
+    /* Neutral-800 - Dark card */
+    --card-foreground: 245 245 245;
+    /* Light text */
+
+    --popover: 38 38 38;
+    --popover-foreground: 245 245 245;
+
+    --border: 64 64 64;
+    /* Neutral-700 */
+    --input: 38 38 38;
+    /* Neutral-800 */
+    --ring: 248 113 113;
+    /* Red-400 */
+
+    --destructive: 248 113 113;
+    /* Red-400 */
+    --destructive-foreground: 127 29 29;
+    /* Red-900 */
+
+    --sidebar-background: 38 38 38;
+    --sidebar-foreground: 245 245 245;
+    --sidebar-primary: 248 113 113;
+    --sidebar-primary-foreground: 23 23 23;
+    --sidebar-accent: 250 204 21;
+    --sidebar-accent-foreground: 23 23 23;
+    --sidebar-border: 64 64 64;
+    --sidebar-ring: 248 113 113;
+  }
+}
+
+/* Custom Scrollbar - Turquoise Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 8px;
+  border: 2px solid #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f3f4f6;
+}
+
+/* Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 #f3f4f6;
+}
+
+/* Smooth Transitions */
+* {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+/* Animation for success toast */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Modern Focus Styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Theme-based utility classes */
+  .text-theme-primary {
+    color: hsl(var(--primary));
+  }
+
+  .text-theme-secondary {
+    color: hsl(var(--secondary));
+  }
+
+  .text-theme-accent {
+    color: hsl(var(--accent));
+  }
+
+  .bg-theme-primary {
+    background-color: hsl(var(--primary));
+  }
+
+  .bg-theme-secondary {
+    background-color: hsl(var(--secondary));
+  }
+
+  .bg-theme-accent {
+    background-color: hsl(var(--accent));
+  }
+
+  .border-theme-primary {
+    border-color: hsl(var(--primary));
+  }
+
+  .border-theme-secondary {
+    border-color: hsl(var(--secondary));
+  }
+
+  .border-theme-accent {
+    border-color: hsl(var(--accent));
+  }
+
+  /* Badge variants using theme colors */
+  .badge-theme-primary {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  .badge-theme-secondary {
+    background-color: hsl(var(--secondary) / 0.1);
+    color: hsl(var(--secondary-foreground));
+    border-color: hsl(var(--secondary) / 0.3);
+  }
+
+  .badge-theme-accent {
+    background-color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent-foreground));
+    border-color: hsl(var(--accent) / 0.3);
+  }
+
+  /* Hover states */
+  .hover\:text-theme-primary:hover {
+    color: hsl(var(--primary));
+  }
+
+  .hover\:bg-theme-primary:hover {
+    background-color: hsl(var(--primary));
+  }
+
+  .group:hover .group-hover\:text-theme-primary {
+    color: hsl(var(--primary));
+  }
+
+  /* Dark theme utilities */
+  .dark-theme-bg {
+    background-color: hsl(210 22% 22%);
+  }
+
+  .dark-theme-card {
+    background-color: hsl(210 22% 25%);
+  }
+
+  .dark-theme-text {
+    color: hsl(0 0% 98%);
+  }
+
+  .dark-theme-text-muted {
+    color: hsl(0 0% 75%);
+  }
+
+  .dark-theme-border {
+    border-color: hsl(210 22% 30%);
+  }
+}
+
+/* Prevent horizontal scrolling on mobile */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure containers don't overflow */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Prevent grid items from overflowing */
+  .grid {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure buttons and form elements don't overflow */
+  button,
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  /* Prevent text from causing horizontal overflow */
+  .text-balance {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Mobile scrollbar styles for hamburger menu dropdowns */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #14b8a6 #f3f4f6;
+  }
+
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+  }
+
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #14b8a6;
+    border-radius: 4px;
+  }
+
+  .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background-color: #0d9488;
+  }
+}
+
+/* Swiper navigation arrow overrides for machine cards */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: hsl(var(--primary)) !important;
+  background: hsl(var(--background));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Optimize animations for mobile */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Mobile image optimizations */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 400px;
+  }
+  
+  /* Optimize large text blocks */
+  p, div {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Mobile Landscape Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mobile-landscape-compact {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .mobile-landscape-hidden {
+    display: none !important;
+  }
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Notch Support */
+  .ios-notch-padding {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  /* Fix iOS input zoom */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Android Specific Fixes */
+@media (pointer: coarse) {
+  /* Larger touch targets for Android */
+  .android-touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Responsive Text Clamping */
+.text-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
