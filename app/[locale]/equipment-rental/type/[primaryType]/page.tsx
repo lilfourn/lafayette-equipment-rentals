@@ -8,12 +8,12 @@ import {
   isWithinLafayetteRadius,
 } from "@/lib/location-config";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // Lazy load MachineGrid
-const MachineGrid = dynamic(() => import("@/components/machine-grid"), {
+const MachineGrid = dynamicImport(() => import("@/components/machine-grid"), {
   loading: () => <MachineGridSkeleton showFilters={true} />,
   ssr: true,
 });

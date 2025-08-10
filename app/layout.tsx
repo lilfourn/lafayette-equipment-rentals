@@ -6,6 +6,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://lafayeteequipmentrental.com";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -15,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lafayetteequipmentrentals.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default:
       "Lafayette Equipment Rentals - Heavy Construction Equipment Rental Louisiana",
@@ -87,7 +89,7 @@ export const metadata: Metadata = {
   classification: "Equipment Rental, Construction Services, Heavy Machinery",
   category: "Equipment Rental Services",
   openGraph: {
-    url: "https://www.lafayetteequipmentrentals.com",
+    url: siteUrl,
     siteName: "Lafayette Equipment Rentals",
     title:
       "Lafayette Equipment Rentals - Professional Heavy Equipment Rental Louisiana",
@@ -112,10 +114,10 @@ export const metadata: Metadata = {
     images: ["/open-graph.png"],
   },
   alternates: {
-    canonical: "https://www.lafayetteequipmentrentals.com",
+    canonical: siteUrl,
     languages: {
-      "en-US": "https://www.lafayetteequipmentrentals.com",
-      "es-US": "https://www.lafayetteequipmentrentals.com/es",
+      "en-US": siteUrl,
+      "es-US": `${siteUrl}/es`,
     },
   },
   verification: {

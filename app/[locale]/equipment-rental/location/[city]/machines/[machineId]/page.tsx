@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Machine } from "@/components/machine-card";
 import PageSkeleton from "@/components/skeletons/page-skeleton";
 import { Badge } from "@/components/ui/badge";
@@ -29,14 +31,14 @@ import {
   X,
 } from "lucide-react";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // Lazy load heavy components
-const MachineImageGallery = dynamic(
+const MachineImageGallery = dynamicImport(
   () => import("@/components/machine-image-gallery"),
   {
     loading: () => (
@@ -46,7 +48,7 @@ const MachineImageGallery = dynamic(
   }
 );
 
-const MachineDetailBooking = dynamic(
+const MachineDetailBooking = dynamicImport(
   () => import("@/components/machine-detail-booking"),
   { ssr: true }
 );

@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Machine } from "@/components/machine-card";
 import MachineContactForm from "@/components/machine-contact-form";
 import { Button } from "@/components/ui/button";
