@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Machine } from "@/components/machine-card";
 import MachineGridSkeleton from "@/components/skeletons/machine-grid-skeleton";
 import {
