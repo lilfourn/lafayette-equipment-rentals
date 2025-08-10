@@ -26,12 +26,13 @@ const nextConfig = {
     formats: ['image/webp'],
   },
   // Enable experimental features for better caching
-  experimental: {
-    staleTimes: {
-      dynamic: 30,
-      static: 180,
-    },
-  },
+  // Temporarily disabled to improve dev server startup time
+  // experimental: {
+  //   staleTimes: {
+  //     dynamic: 30,
+  //     static: 180,
+  //   },
+  // },
   // Cache configuration
   async headers() {
     const isDev = process.env.NODE_ENV === "development";

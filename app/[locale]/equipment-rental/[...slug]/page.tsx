@@ -373,7 +373,7 @@ export default async function EquipmentCatchAllPage({
             </p>
             <p className="text-sm text-gray-700 mt-2">
               📍 2865 Ambassador Caffery Pkwy, Ste 135, Lafayette, LA 70506 | 📞
-              Call for availability: (337) 234-5678
+              Call for availability: (337) 545-2935
             </p>
           </div>
         </div>

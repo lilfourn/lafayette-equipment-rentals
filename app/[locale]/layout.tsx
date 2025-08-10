@@ -22,12 +22,8 @@ export default async function LocaleLayout({
   // Await params before destructuring
   const { locale } = await params;
 
-  // Debug logging for locale
-  console.log("[i18n] Layout: Received locale param:", locale);
-
   // Validate locale
   if (!locales.includes(locale as any)) {
-    console.log("[i18n] Layout: Invalid locale, returning 404");
     notFound();
   }
 
@@ -36,17 +32,6 @@ export default async function LocaleLayout({
     getServerData(),
     getMessages(),
   ]);
-
-  // Debug logging for messages
-  console.log("[i18n] Layout: Messages loaded:", !!messages);
-  console.log(
-    "[i18n] Layout: Sample message keys:",
-    Object.keys(messages || {}).slice(0, 5)
-  );
-  console.log(
-    "[i18n] Layout: HomePage title translation:",
-    messages?.homepage?.hero?.title
-  );
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

@@ -74,7 +74,7 @@ export default function MachineDetailBooking({ machine, daily, weekly, monthly }
 
     const handleContactUs = () => {
         if (isMobile) {
-            window.location.href = 'tel:+17707625498'
+            window.location.href = 'tel:+13375452935'
         } else {
             router.push('/contact')
         }
@@ -213,7 +213,7 @@ export default function MachineDetailBooking({ machine, daily, weekly, monthly }
 
                         <div className="text-center text-sm text-gray-600">
                             Want to book by phone? Please call us at{" "}
-                            <span className="text-blue-600 font-semibold">(770) 762-5498</span>.
+                            <span className="text-blue-600 font-semibold">(337) 545-2935</span>.
                         </div>
                     </div>
                 )}

@@ -288,7 +288,7 @@ export default function FAQPage() {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
               <a
-                href="tel:+13372341234"
+                href="tel:+13375452935"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold rounded-lg border border-white/20 transition-colors"
               >
                 <Clock className="mr-2 h-5 w-5" />

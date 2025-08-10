@@ -40,7 +40,7 @@
       "tagline": "Equipos Pesados • Entrega el Mismo Día • Mejores Precios",
       "rentOnline": "ALQUILAR EN LÍNEA",
       "callNow": "LLAMAR AHORA",
-      "phone": "(337) 234-5678",
+      "phone": "(337) 545-2935",
       "stats": {
         "equipment": "Equipos Disponibles",
         "support": "Soporte al Cliente",
@@ -136,7 +136,7 @@
       "stillHaveQuestions": "¿Aún tienes preguntas?",
       "contactTeam": "Nuestro equipo está aquí para ayudarlo a encontrar el equipo perfecto para su proyecto. Contáctenos para obtener asistencia personalizada.",
       "contactOurTeam": "Contactar a Nuestro Equipo",
-      "callPhone": "Llamar al (337) 234-5678"
+      "callPhone": "Llamar al (337) 545-2935"
     },
     "features": {
       "badge": "¿POR QUÉ ELEGIRNOS?",
@@ -221,7 +221,7 @@
       "description": "¿Listo para comenzar? Comunícate con nuestro equipo para obtener asesoramiento experto y cotizaciones.",
       "phone": {
         "title": "Teléfono",
-        "number": "(337) 234-5678",
+        "number": "(337) 545-2935",
         "hours": "Lun-Vie 7AM-6PM, Sáb 8AM-4PM"
       },
       "location": {
@@ -274,7 +274,7 @@
       "title": "¿Listo para Comenzar?",
       "description": "Explora nuestro inventario de equipos o contáctanos para asistencia personalizada con las necesidades de tu proyecto.",
       "browseEquipment": "Explorar Equipos",
-      "callButton": "Llamar (337) 234-5678"
+      "callButton": "Llamar (337) 545-2935"
     }
   },
   "footer": {
@@ -284,7 +284,7 @@
       "location": "Nuestra Ubicación",
       "address": "2865 Ambassador Caffery Pkwy\nSte 135\nLafayette, LA 70506",
       "callUs": "Llámanos",
-      "phone": "(337) 234-5678",
+      "phone": "(337) 545-2935",
       "emailUs": "Envíanos un Email",
       "email": "info@lafayetteequipmentrentals.com",
       "hours": "Horario Comercial",
@@ -552,9 +552,6 @@
     "emailReceipt": "Enviar Recibo por Email",
     "zipCode": "Código Postal"
   },
-  "checkoutPage": {
-    "emptyDescription": "Comienza a agregar equipos a tu carrito para iniciar tu reserva."
-  },
   "noResults": {
     "title": "Lo sentimos, no pudimos encontrar ningún resultado.",
     "titleWithEquipment": "¡Encontraremos un {equipment} para ti en menos de 24 horas!",
@@ -571,7 +568,7 @@
       "projectDetails": "Detalles del Proyecto",
       "yourFullName": "Tu nombre completo",
       "yourEmail": "tu@correo.com",
-      "phoneExample": "(337) 234-5678",
+      "phoneExample": "(337) 545-2935",
       "companyName": "Nombre de tu empresa",
       "equipmentExample": "ej., Excavadora, Minicargador, Bulldozer",
       "tellUsAboutProject": "Cuéntanos sobre tu proyecto, cronograma y cualquier requisito específico...",
@@ -626,7 +623,13 @@
       "localExperts": "Expertos Locales",
       "localExpertsText": "Conocimiento profundo de las condiciones y necesidades únicas del sur de Louisiana.",
       "responsiveSupport": "Soporte Receptivo",
-      "responsiveSupportText": "Soporte 24/7 para mantener tus proyectos funcionando sin problemas."
+      "responsiveSupportText": "Soporte 24/7 para mantener tus proyectos funcionando sin problemas.",
+      "stats": {
+        "serviceRadius": "Radio de Servicio en Millas",
+        "supportAvailable": "Soporte Disponible",
+        "projectsCompleted": "Proyectos Completados",
+        "yearsInBusiness": "Años en el Negocio"
+      }
     },
     "services": {
       "title": "Nuestros Servicios",
@@ -647,6 +650,10 @@
       "weekdays": "Lunes – Sábado: 7:00 AM – 6:00 PM",
       "sunday": "Domingo: Cerrado",
       "locationNote": "Ubicados en el corazón de Lafayette, estamos perfectamente posicionados para servir a los contratistas en todo el sur de Louisiana con servicios rápidos de entrega y recogida."
+    },
+    "industries": {
+      "servingAllAcadiana": "SIRVIENDO A TODA ACADIANA",
+      "citiesList": "Lafayette • Broussard • Youngsville • Scott • Carencro • Breaux Bridge • St. Martinville • New Iberia • Abbeville • Crowley • Rayne • Y Más"
     },
     "cta": {
       "title": "¿Listo para Comenzar?",
@@ -691,7 +698,7 @@
       "title": "¿No Encuentra Lo Que Busca?",
       "description": "Nuestros especialistas en equipos están aquí para ayudarlo a encontrar las herramientas perfectas para su proyecto. Contáctenos para asistencia personalizada y recomendaciones.",
       "button": "Obtener Ayuda de Expertos",
-      "phone": "O llámenos al (337) 234-5678"
+      "phone": "O llámenos al (337) 545-2935"
     }
   },
   "equipmentCategories": {

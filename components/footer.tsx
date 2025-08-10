@@ -101,7 +101,7 @@ export default function Footer() {
               {/* Mobile CTA Buttons */}
               <div className="flex flex-col gap-3 pt-4 md:hidden">
                 <a 
-                  href="tel:+13372345678" 
+                  href="tel:+13375452935" 
                   className="flex items-center justify-center gap-3 bg-turquoise-500 hover:bg-turquoise-600 active:bg-turquoise-700 text-white px-6 py-4 rounded-lg font-semibold transition-colors min-h-[56px]"
                 >
                   <Phone className="h-5 w-5" />
@@ -289,7 +289,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href="tel:+13372345678" 
+              <a href="tel:+13375452935" 
                  className="flex items-center gap-3 text-sm hover:text-turquoise-400 transition-colors">
                 <Phone className="h-5 w-5 text-turquoise-500 flex-shrink-0" />
                 <div>

@@ -67,20 +67,29 @@ export async function getBuyItNowEverywheresMachines(): Promise<SearchResults> {
 export function processGlobalBuyItNowMachines(machines: Machine[]): Machine[] {
   return machines
     .filter(machine => !isMachineInLafayetteRadius(machine)) // Only process machines outside radius
-    .map(machine => ({
-      ...machine,
-      buyItNowOnly: true,
-      location: {
-        ...machine.location,
-        city: LAFAYETTE_LOCATION.city,
-        state: LAFAYETTE_LOCATION.state,
-        address: {
-          ...machine.location?.address,
+    .map((machine, index) => {
+      // Log first 3 machines to verify they're from outside the radius
+      if (index < 3) {
+        const coords = getMachineCoordinates(machine);
+        const originalLocation = `${machine.location?.city || 'Unknown'}, ${machine.location?.state || 'Unknown'}`;
+        console.log(`[Buy-Now Machine ${index + 1}] Original location: ${originalLocation}, Coords: ${coords ? `${coords.lat}, ${coords.lon}` : 'N/A'}`);
+      }
+      
+      return {
+        ...machine,
+        buyItNowOnly: true,
+        location: {
+          ...machine.location,
           city: LAFAYETTE_LOCATION.city,
-          stateProvince: LAFAYETTE_LOCATION.state,
+          state: LAFAYETTE_LOCATION.state,
+          address: {
+            ...machine.location?.address,
+            city: LAFAYETTE_LOCATION.city,
+            stateProvince: LAFAYETTE_LOCATION.state,
+          }
         }
       }
-    }))
+    })
 }
 
 /**

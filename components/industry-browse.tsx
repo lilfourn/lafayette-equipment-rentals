@@ -3,10 +3,11 @@
 import type { Machine } from "@/components/machine-card";
 import { getCategoryImage } from "@/lib/category-images";
 import { mapLabelsToInternal } from "@/lib/industry-config";
+import { IndustryBrowseSkeleton } from "@/components/skeletons/industry-card-skeleton";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export interface IndustryBrowseItem {
   industry: { name: string; slug: string };
@@ -16,14 +17,37 @@ export interface IndustryBrowseItem {
 
 interface IndustryBrowseProps {
   items: IndustryBrowseItem[];
+  isLoading?: boolean;
 }
 
-export default function IndustryBrowse({ items }: IndustryBrowseProps) {
+export default function IndustryBrowse({ items, isLoading: initialLoading = false }: IndustryBrowseProps) {
   const router = useRouter();
   const [navigatingSlug, setNavigatingSlug] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(initialLoading);
+  
+  // Handle loading state
+  useEffect(() => {
+    if (!items || items.length === 0) {
+      setIsLoading(true);
+      // Simulate loading for better UX if no items
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+      return () => clearTimeout(timer);
+    } else {
+      setIsLoading(false);
+    }
+  }, [items]);
+  
   const sortedItems = [...items].sort(
     (a, b) => b.availableCount - a.availableCount
   );
+  
+  // Show skeleton while loading
+  if (isLoading) {
+    return <IndustryBrowseSkeleton />;
+  }
+  
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {sortedItems.map((it) => {

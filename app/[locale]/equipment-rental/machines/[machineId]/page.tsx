@@ -775,6 +775,15 @@ export default async function MachineDetailsPage({
                   weekly={weekly}
                   monthly={monthly}
                 />
+                <div className="pt-2">
+                  <Link
+                    href={`/equipment-rental/machines/${machine.id}/contact`}
+                  >
+                    <Button variant="outline" className="w-full">
+                      Send Message
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           </div>

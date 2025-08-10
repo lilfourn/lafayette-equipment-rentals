@@ -1,6 +1,6 @@
 "use client";
 
-import EquipmentSearch from "@/components/equipment-search";
+import EquipmentSearchDialog from "@/components/equipment-search-dialog";
 // Removed the All Categories section per request
 import IndustryBrowse, {
   type IndustryBrowseItem,
@@ -53,6 +53,7 @@ export default function EquipmentPageContent({
 }: EquipmentPageContentProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const t = useTranslations();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const [popularRentals, setPopularRentals] = useState<SearchResults>({
     machines: [],
@@ -235,50 +236,26 @@ export default function EquipmentPageContent({
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="#search-section">
-                <Button className="bg-turquoise-600 hover:bg-turquoise-700 text-white px-10 py-4 text-lg font-semibold transition-all duration-200 cursor-pointer">
-                  {t("equipmentPage.search.button")}
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-              <a href="tel:+13372345678">
+              <Button
+                onClick={() => setSearchOpen(true)}
+                className="bg-turquoise-600 hover:bg-turquoise-700 text-white px-10 py-4 text-lg font-semibold transition-all duration-200 cursor-pointer"
+              >
+                {t("equipmentPage.search.button")}
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+              <a href="tel:+13375452935">
                 <Button
                   variant="outline"
                   className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-10 py-4 text-lg font-semibold cursor-pointer"
                 >
-                  {t("homepage.hero.callNow")} (337) 234-5678
+                  {t("homepage.hero.callNow")} (337) 545-2935
                 </Button>
               </a>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Search Section - Enhanced */}
-      <section id="search-section" className="relative py-20 bg-gray-900">
-        <Image
-          src="/lafayette_trust_img.png"
-          alt="Lafayette Construction Site - Professional Equipment in Action"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-900/90" />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t("equipmentPage.search.title")}
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              {t("equipmentPage.search.placeholder")}
-            </p>
-            <EquipmentSearch
-              categories={categories}
-              onSearchChange={handleSearchChange}
-            />
-          </div>
-        </div>
-      </section>
+      <EquipmentSearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Decorative Divider */}
       <div className="py-8 bg-gradient-to-r from-gray-100 via-turquoise-50 to-gray-100">

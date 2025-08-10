@@ -142,7 +142,7 @@ export default function LafayetteEquipmentHomepage({
                 </Button>
               </Link>
 
-              <a href="tel:+13372345678" className="w-full sm:w-auto">
+              <a href="tel:+13375452935" className="w-full sm:w-auto">
                 <Button className="w-full bg-transparent border-2 sm:border-4 border-white text-white hover:bg-white hover:text-black px-6 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl font-black uppercase tracking-wide shadow-2xl transition-all duration-200 transform hover:scale-105 cursor-pointer tap-target">
                   <Phone className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                   {t("homepage.hero.callNow")}

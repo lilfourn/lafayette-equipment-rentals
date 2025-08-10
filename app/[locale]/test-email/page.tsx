@@ -20,7 +20,7 @@ export default function TestEmailPage() {
         type,
         customerName: "Test User",
         customerEmail: "test@example.com",
-        customerPhone: "(770) 762-5498",
+        customerPhone: "(337) 545-2935",
         businessName: "Test Business",
         message: "This is a test email from the test page",
         equipment: "Test Equipment",

@@ -24,109 +24,39 @@ async function getAllBuyItNowMachines(): Promise<SearchResults> {
     console.error("RUBBL_API_KEY is not set.");
     return { machines: [], error: "Service not configured" };
   }
-  const apiUrl =
-    "https://kimber-rubbl-search.search.windows.net/indexes/machines/docs/search?api-version=2020-06-30";
-
-  // Lafayette, LA coordinates
-  const lafayetteLat = LAFAYETTE_LOCATION.latitude;
-  const lafayetteLon = LAFAYETTE_LOCATION.longitude;
-  const radiusInKm = LAFAYETTE_LOCATION.serviceRadiusMiles * 1.60934;
-
-  // First, get local buy-it-now machines
-  const localFilterClauses = [
-    `(geo.distance(location/point, geography'POINT(${lafayetteLon} ${lafayetteLat})') le ${radiusInKm})`,
-    "(status eq 'Available' or status eq 'Onboarding')",
-    "(buyItNowEnabled eq true)",
-    "(buyItNowPrice gt 0)",
-    "(requiresAdminApproval eq false)",
-    "(approvalStatus eq 'Approved' or approvalStatus eq null)",
-  ];
-
-  const localRequestBody = {
-    count: true,
-    filter: localFilterClauses.join(" and "),
-    search: "",
-    searchMode: "all",
-    top: 100, // Get more machines for the dedicated page
-    orderby: "buyItNowPrice asc",
-    facets: [],
-  };
 
   try {
-    let localMachines: Machine[] = [];
-    let globalMachines: Machine[] = [];
+    // Only fetch global buy-it-now machines (outside 50-mile radius)
+    const {
+      getBuyItNowEverywheresMachines,
+      processGlobalBuyItNowMachines,
+      filterOutRadiusMachines,
+    } = await import("@/lib/global-machines");
 
-    // Fetch local buy-it-now machines
-    const localResponse = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "api-key": apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(localRequestBody),
-      next: {
-        revalidate: 900, // Revalidate every 15 minutes
-        tags: ["machines", "buy-now"],
-      },
-    });
+    const { machines: allGlobalMachines, error: globalError } =
+      await getBuyItNowEverywheresMachines();
 
-    if (localResponse.ok) {
-      const localData = await localResponse.json();
-      localMachines = localData.value || [];
+    if (globalError || !allGlobalMachines || allGlobalMachines.length === 0) {
+      return { 
+        machines: [], 
+        error: globalError || "No buy-it-now machines available outside service area." 
+      };
     }
 
-    // Fetch global buy-it-now machines
-    try {
-      const {
-        getBuyItNowEverywheresMachines,
-        processGlobalBuyItNowMachines,
-        filterOutRadiusMachines,
-      } = await import("@/lib/global-machines");
+    // Filter out machines that are within the 50-mile radius
+    const filteredGlobalMachines = filterOutRadiusMachines(
+      allGlobalMachines,
+      50
+    );
 
-      const { machines: allGlobalMachines, error: globalError } =
-        await getBuyItNowEverywheresMachines();
+    console.log(`[Buy-Now] Total global machines: ${allGlobalMachines.length}`);
+    console.log(`[Buy-Now] Machines outside 50-mile radius: ${filteredGlobalMachines.length}`);
 
-      if (!globalError && allGlobalMachines.length > 0) {
-        // Filter out machines that are already in our local results
-        const filteredGlobalMachines = filterOutRadiusMachines(
-          allGlobalMachines,
-          50
-        );
-        // Process them to mark as buy-it-now-only and set location to Lafayette
-        globalMachines = processGlobalBuyItNowMachines(filteredGlobalMachines);
-      }
-    } catch (globalError) {
-      console.error("Error fetching global buy-it-now machines:", globalError);
-    }
-
-    // Combine local and global machines
-    const allMachines = [...localMachines, ...globalMachines];
-
-    // Extract unique categories and price ranges for filters
-    const categories = new Set<string>();
-    const priceRanges = {
-      under5k: 0,
-      "5kTo10k": 0,
-      "10kTo25k": 0,
-      "25kTo50k": 0,
-      over50k: 0,
-    };
-
-    allMachines.forEach((machine) => {
-      if (machine.primaryType) {
-        categories.add(machine.primaryType);
-      }
-
-      const price = machine.buyItNowPrice || 0;
-      if (price < 5000) priceRanges.under5k++;
-      else if (price < 10000) priceRanges["5kTo10k"]++;
-      else if (price < 25000) priceRanges["10kTo25k"]++;
-      else if (price < 50000) priceRanges["25kTo50k"]++;
-      else priceRanges.over50k++;
-    });
+    // Process them to mark as buy-it-now-only and set location to Lafayette
+    const processedMachines = processGlobalBuyItNowMachines(filteredGlobalMachines);
 
     return {
-      machines: allMachines,
+      machines: processedMachines,
       error: null,
     };
   } catch (error) {

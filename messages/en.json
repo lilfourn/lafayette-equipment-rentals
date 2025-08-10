@@ -40,7 +40,7 @@
       "tagline": "Heavy Equipment • Same Day Delivery • Best Rates",
       "rentOnline": "RENT ONLINE",
       "callNow": "CALL NOW",
-      "phone": "(337) 234-5678",
+      "phone": "(337) 545-2935",
       "stats": {
         "equipment": "Equipment Available",
         "support": "Customer Support",
@@ -136,7 +136,7 @@
       "stillHaveQuestions": "Still have questions?",
       "contactTeam": "Our team is here to help you find the perfect equipment for your project. Contact us for personalized assistance.",
       "contactOurTeam": "Contact Our Team",
-      "callPhone": "Call (337) 234-5678"
+      "callPhone": "Call (337) 545-2935"
     },
     "features": {
       "badge": "WHY CHOOSE US",
@@ -221,7 +221,7 @@
       "description": "Ready to get started? Reach out to our team for expert equipment advice and quotes.",
       "phone": {
         "title": "Phone",
-        "number": "(337) 234-5678",
+        "number": "(337) 545-2935",
         "hours": "Mon-Fri 7AM-6PM, Sat 8AM-4PM"
       },
       "location": {
@@ -274,7 +274,7 @@
       "title": "Ready to Get Started?",
       "description": "Browse our equipment inventory or contact us for personalized assistance with your project needs.",
       "browseEquipment": "Browse Equipment",
-      "callButton": "Call (337) 234-5678"
+      "callButton": "Call (337) 545-2935"
     }
   },
   "footer": {
@@ -284,7 +284,7 @@
       "location": "Our Location",
       "address": "2865 Ambassador Caffery Pkwy\nSte 135\nLafayette, LA 70506",
       "callUs": "Call Us",
-      "phone": "(337) 234-5678",
+      "phone": "(337) 545-2935",
       "emailUs": "Email Us",
       "email": "info@lafayetteequipmentrentals.com",
       "hours": "Business Hours",
@@ -567,7 +567,7 @@
       "projectDetails": "Project Details",
       "yourFullName": "Your full name",
       "yourEmail": "your@email.com",
-      "phoneExample": "(337) 234-5678",
+      "phoneExample": "(337) 545-2935",
       "companyName": "Your company name",
       "equipmentExample": "e.g., Excavator, Skid Steer, Bulldozer",
       "tellUsAboutProject": "Tell us about your project, timeline, and any specific requirements...",
@@ -622,7 +622,13 @@
       "localExperts": "Local Experts",
       "localExpertsText": "Deep knowledge of Southern Louisiana's unique conditions and needs.",
       "responsiveSupport": "Responsive Support",
-      "responsiveSupportText": "24/7 support to keep your projects running smoothly."
+      "responsiveSupportText": "24/7 support to keep your projects running smoothly.",
+      "stats": {
+        "serviceRadius": "Mile Service Radius",
+        "supportAvailable": "Support Available",
+        "projectsCompleted": "Projects Completed",
+        "yearsInBusiness": "Years in Business"
+      }
     },
     "services": {
       "title": "Our Services",
@@ -643,6 +649,10 @@
       "weekdays": "Monday – Saturday: 7:00 AM – 6:00 PM",
       "sunday": "Sunday: Closed",
       "locationNote": "Located in the heart of Lafayette, we're perfectly positioned to serve contractors throughout Southern Louisiana with fast delivery and pickup services."
+    },
+    "industries": {
+      "servingAllAcadiana": "SERVING ALL OF ACADIANA",
+      "citiesList": "Lafayette • Broussard • Youngsville • Scott • Carencro • Breaux Bridge • St. Martinville • New Iberia • Abbeville • Crowley • Rayne • And Beyond"
     },
     "cta": {
       "title": "Ready to Get Started?",
@@ -687,7 +697,7 @@
       "title": "Can't Find What You're Looking For?",
       "description": "Our equipment specialists are here to help you find the perfect tools for your project. Contact us for personalized assistance and recommendations.",
       "button": "Get Expert Help",
-      "phone": "Or call us at (337) 234-5678"
+      "phone": "Or call us at (337) 545-2935"
     }
   },
   "equipmentCategories": {

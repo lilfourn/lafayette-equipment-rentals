@@ -549,12 +549,15 @@ export default async function CityMachinePage({
                   questions about this {processedMachine.primaryType}.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a href="tel:+13372345678" className="flex-1">
+                  <a href="tel:+13375452935" className="flex-1">
                     <Button className="w-full bg-turquoise-600 hover:bg-turquoise-700">
-                      Call (337) 234-5678
+                      Call (337) 545-2935
                     </Button>
                   </a>
-                  <Link href="/contact" className="flex-1">
+                  <Link
+                    href={`/equipment-rental/machines/${processedMachine.id}/contact`}
+                    className="flex-1"
+                  >
                     <Button variant="outline" className="w-full">
                       Send Message
                     </Button>

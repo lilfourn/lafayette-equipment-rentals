@@ -16,7 +16,7 @@ export const LAFAYETTE_LOCATION = {
   
   // Business details
   businessName: 'Lafayette Equipment Rentals',
-  phone: '(337) 234-5678',
+  phone: '(337) 545-2935',
   
   // Service radius in miles
   serviceRadiusMiles: 50,

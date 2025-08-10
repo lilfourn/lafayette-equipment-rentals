@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 interface EmailRequestBody {
-  type: "booking" | "buy-now" | "contact" | "no-results";
+  type: "booking" | "buy-now" | "contact" | "no-results" | "machine-contact";
   customerEmail: string;
   customerName: string;
   customerPhone?: string;
@@ -95,10 +95,10 @@ const createTransporter = () => {
         rejectUnauthorized: false,
         ciphers: "SSLv3",
       },
-      // Optimized connection settings for speed
-      connectionTimeout: 3000, // Reduced from 10000
-      greetingTimeout: 3000, // Reduced from 10000
-      socketTimeout: 3000, // Reduced from 10000
+      // Connection settings with reasonable timeouts
+      connectionTimeout: 10000, // 10 seconds for connection
+      greetingTimeout: 10000, // 10 seconds for greeting
+      socketTimeout: 10000, // 10 seconds for socket
       // Connection pooling for better performance
       pool: true,
       maxConnections: 3,
@@ -174,8 +174,15 @@ const generateBusinessEmail = (data: EmailRequestBody) => {
     `
         : "";
 
+    // Generate subject line based on cart items or single machine
+    const equipmentDescription = data.cartItems && data.cartItems.length > 0
+      ? data.cartItems.length === 1 
+        ? data.cartItems[0].machineName
+        : `${data.cartItems.length} Machines`
+      : data.machineName || 'Equipment';
+
     return {
-      subject: `Equipment Rental Request - ${data.machineName} - ${data.customerName}`,
+      subject: `Equipment Rental Request - ${equipmentDescription} - ${data.customerName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
@@ -212,17 +219,38 @@ const generateBusinessEmail = (data: EmailRequestBody) => {
               <!-- Equipment Information -->
               <div style="padding: 15px; background-color: #fef7ff; border-radius: 8px; border-left: 4px solid #a855f7;">
                 <h3 style="margin: 0 0 10px 0; color: #7c2d12; font-size: 16px;">Equipment Information</h3>
-                <p style="margin: 5px 0;"><strong>Equipment:</strong> ${
-                  data.machineName
-                } (${data.machineYear})</p>
-                <p style="margin: 5px 0;"><strong>Type:</strong> ${
-                  data.machineType
-                }</p>
-                <p style="margin: 5px 0; font-family: 'Courier New', monospace; background: #f3f4f6; padding: 4px 8px; border-radius: 4px; display: inline-block;"><strong>Machine ID:</strong> ${
-                  data.machineId
-                }</p>
                 ${
-                  rubblUrl
+                  data.cartItems && data.cartItems.length > 0
+                    ? data.cartItems.map((item, index) => `
+                        <div style="margin: ${index > 0 ? '15px' : '0'} 0; padding: ${index > 0 ? '15px' : '0'} 0; ${index > 0 ? 'border-top: 1px solid #e5e7eb;' : ''}">
+                          <p style="margin: 5px 0;"><strong>Equipment ${data.cartItems.length > 1 ? `#${index + 1}` : ''}:</strong> ${
+                            item.machineName
+                          } (${item.year || data.machineYear || 'Year N/A'})</p>
+                          <p style="margin: 5px 0;"><strong>Type:</strong> ${
+                            item.primaryType || data.machineType || 'N/A'
+                          }</p>
+                          <p style="margin: 5px 0;"><strong>Quantity:</strong> ${
+                            item.quantity || 1
+                          }</p>
+                          <p style="margin: 5px 0; font-family: 'Courier New', monospace; background: #f3f4f6; padding: 4px 8px; border-radius: 4px; display: inline-block;"><strong>Machine ID:</strong> ${
+                            item.machineId
+                          }</p>
+                        </div>
+                      `).join('')
+                    : `
+                        <p style="margin: 5px 0;"><strong>Equipment:</strong> ${
+                          data.machineName
+                        } (${data.machineYear})</p>
+                        <p style="margin: 5px 0;"><strong>Type:</strong> ${
+                          data.machineType
+                        }</p>
+                        <p style="margin: 5px 0; font-family: 'Courier New', monospace; background: #f3f4f6; padding: 4px 8px; border-radius: 4px; display: inline-block;"><strong>Machine ID:</strong> ${
+                          data.machineId
+                        }</p>
+                    `
+                }
+                ${
+                  rubblUrl && (!data.cartItems || data.cartItems.length === 0)
                     ? `<p style="margin: 10px 0;"><a href="${rubblUrl}" style="color: #a855f7; text-decoration: none;">🔗 View on Rubbl ↗</a></p>`
                     : ""
                 }
@@ -244,9 +272,16 @@ const generateBusinessEmail = (data: EmailRequestBody) => {
                   data.rpoInterested ? "YES" : "NO"
                 }</p>
                 ${
-                  data.totalCost
+                  data.freePickup !== undefined
+                    ? `<p style="margin: 5px 0;"><strong>Delivery:</strong> ${
+                        data.freePickup ? "Self Pickup (Free)" : "Delivery (TBD)"
+                      }</p>`
+                    : ""
+                }
+                ${
+                  data.subtotal || data.totalCost
                     ? `<p style="margin: 5px 0;"><strong>Estimated Total:</strong> ${formatCostDisplay(
-                        data.totalCost,
+                        data.subtotal || data.totalCost,
                         data.duration || 0
                       )}</p>`
                     : ""
@@ -416,6 +451,81 @@ const generateBusinessEmail = (data: EmailRequestBody) => {
     };
   }
 
+  if (data.type === "machine-contact") {
+    return {
+      subject: `Machine Inquiry - ${data.machineName || "Equipment"} - ${
+        data.customerName
+      }`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+            <h2 style="margin: 0; font-size: 24px;">New Machine Contact Message</h2>
+            <p style="margin: 5px 0 0 0; opacity: 0.9;">Customer has a question about a specific machine</p>
+          </div>
+          <div style="padding: 20px; background: white; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="display: grid; gap: 20px;">
+              <div style="padding: 15px; background-color: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">
+                <h3 style="margin: 0 0 10px 0; color: #059669; font-size: 16px;">Contact Information</h3>
+                <p style="margin: 5px 0;"><strong>Name:</strong> ${
+                  data.customerName
+                }</p>
+                <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:${
+                  data.customerEmail
+                }" style="color: #059669;">${data.customerEmail}</a></p>
+                ${
+                  data.customerPhone
+                    ? `<p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:${data.customerPhone}" style="color: #059669;">${data.customerPhone}</a></p>`
+                    : ""
+                }
+                ${
+                  data.businessName
+                    ? `<p style=\"margin: 5px 0;\"><strong>Business:</strong> ${data.businessName}</p>`
+                    : ""
+                }
+              </div>
+              <div style="padding: 15px; background-color: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                <h3 style="margin: 0 0 10px 0; color: #1e40af; font-size: 16px;">Machine Information</h3>
+                ${
+                  data.machineName
+                    ? `<p style=\"margin: 5px 0;\"><strong>Equipment:</strong> ${
+                        data.machineName
+                      }${data.machineYear ? ` (${data.machineYear})` : ""}</p>`
+                    : ""
+                }
+                ${
+                  data.machineType
+                    ? `<p style=\"margin: 5px 0;\"><strong>Type:</strong> ${data.machineType}</p>`
+                    : ""
+                }
+                <p style="margin: 5px 0; font-family: 'Courier New', monospace; background: #f3f4f6; padding: 4px 8px; border-radius: 4px; display: inline-block;"><strong>Machine ID:</strong> ${
+                  data.machineId || "N/A"
+                }</p>
+                ${
+                  rubblUrl
+                    ? `<p style=\"margin: 10px 0;\"><a href="${rubblUrl}" style="color: #3b82f6; text-decoration: none;">🔗 View on Rubbl ↗</a></p>`
+                    : ""
+                }
+              </div>
+              ${
+                data.message
+                  ? `
+                <div style=\"padding: 15px; background-color: #fffbeb; border-radius: 8px; border-left: 4px solid #f59e0b;\">
+                  <h3 style=\"margin: 0 0 10px 0; color: #92400e; font-size: 16px;\">Customer Message</h3>
+                  <p style=\"margin: 0; white-space: pre-wrap;\">${data.message}</p>
+                </div>
+              `
+                  : ""
+              }
+            </div>
+          </div>
+          <div style="padding: 15px; background: #f9fafb; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px; text-align: center;">
+            <p style="margin: 0; color: #6b7280; font-size: 14px;">Message submitted at ${new Date().toLocaleString()}</p>
+          </div>
+        </div>
+      `,
+    };
+  }
+
   // Contact form
   return {
     subject: `Contact Form Submission - ${
@@ -515,8 +625,15 @@ const generateCustomerConfirmationEmail = (data: EmailRequestBody) => {
     `
         : "";
 
+    // Generate subject line based on cart items or single machine
+    const equipmentDescription = data.cartItems && data.cartItems.length > 0
+      ? data.cartItems.length === 1 
+        ? data.cartItems[0].machineName
+        : `${data.cartItems.length} Machines`
+      : data.machineName || 'Equipment';
+
     return {
-      subject: `Booking Confirmation - ${data.machineName} - Lafayette Equipment Rentals`,
+      subject: `Booking Confirmation - ${equipmentDescription} - Lafayette Equipment Rentals`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
@@ -528,15 +645,33 @@ const generateCustomerConfirmationEmail = (data: EmailRequestBody) => {
             <p style="margin: 0 0 20px 0; font-size: 16px;">Hi ${
               data.customerName
             },</p>
-            <p style="margin: 0 0 20px 0;">Thank you for your equipment rental request! We've received your booking for the <strong>${
-              data.machineName
-            }</strong> and will contact you shortly to confirm availability and arrange delivery.</p>
+            <p style="margin: 0 0 20px 0;">Thank you for your equipment rental request! We've received your booking ${
+              data.cartItems && data.cartItems.length > 0 
+                ? `for ${data.cartItems.length} machine${data.cartItems.length > 1 ? 's' : ''}`
+                : `for the <strong>${data.machineName}</strong>`
+            } and will contact you shortly to confirm availability and arrange delivery.</p>
             
             <div style="background-color: #f0f9ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
               <h3 style="margin: 0 0 10px 0; color: #1e40af;">Booking Details</h3>
-              <p style="margin: 5px 0;"><strong>Equipment:</strong> ${
-                data.machineName
-              } (${data.machineYear})</p>
+              ${
+                data.cartItems && data.cartItems.length > 0
+                  ? `
+                      <div style="margin: 10px 0;">
+                        <strong>Equipment (${data.cartItems.length} item${data.cartItems.length > 1 ? 's' : ''}):</strong>
+                        ${data.cartItems.map((item, index) => `
+                          <div style="margin: 8px 0; padding: 8px; background: white; border-radius: 4px;">
+                            <strong>${index + 1}.</strong> ${item.machineName} (${item.year || 'Year N/A'})
+                            <br><span style="font-size: 14px; color: #6b7280;">
+                              Type: ${item.primaryType || 'N/A'} | Qty: ${item.quantity || 1} | ID: ${item.machineId}
+                            </span>
+                          </div>
+                        `).join('')}
+                      </div>
+                    `
+                  : `<p style="margin: 5px 0;"><strong>Equipment:</strong> ${
+                      data.machineName
+                    } (${data.machineYear})</p>`
+              }
               <p style="margin: 5px 0;"><strong>Start Date:</strong> ${
                 data.startDate
               }</p>
@@ -546,13 +681,20 @@ const generateCustomerConfirmationEmail = (data: EmailRequestBody) => {
               <p style="margin: 5px 0;"><strong>Delivery Location:</strong> ${
                 data.zipCode
               }</p>
+              ${
+                data.freePickup !== undefined
+                  ? `<p style="margin: 5px 0;"><strong>Delivery Method:</strong> ${
+                      data.freePickup ? "Self Pickup (Free)" : "Delivery (TBD)"
+                    }</p>`
+                  : ""
+              }
               <p style="margin: 5px 0;"><strong>Rent-to-Own Interest:</strong> ${
                 data.rpoInterested ? "Yes" : "No"
               }</p>
               ${
-                data.totalCost
+                data.subtotal || data.totalCost
                   ? `<p style="margin: 5px 0;"><strong>Estimated Total:</strong> ${formatCostDisplay(
-                      data.totalCost,
+                      data.subtotal || data.totalCost,
                       data.duration || 0
                     )}</p>`
                   : ""
@@ -690,6 +832,51 @@ const generateCustomerConfirmationEmail = (data: EmailRequestBody) => {
             <p style="margin: 0; color: #6b7280; font-size: 14px;">
               Lafayette Equipment Rentals | ${new Date().toLocaleString()}
             </p>
+          </div>
+        </div>
+      `,
+    };
+  }
+
+  if (data.type === "machine-contact") {
+    return {
+      subject: `We received your message - ${
+        data.machineName || "Machine Inquiry"
+      }`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+            <h2 style="margin: 0; font-size: 24px;">Message Received</h2>
+            <p style="margin: 5px 0 0 0; opacity: 0.9;">Thanks for contacting us about a specific machine.</p>
+          </div>
+          <div style="padding: 20px; background: white; border: 1px solid #e5e7eb; border-top: none;">
+            <p style="margin: 0 0 12px 0;">Hi ${data.customerName},</p>
+            <p style="margin: 0 0 12px 0;">We've received your message regarding:</p>
+            <ul style="margin: 0 0 12px 20px;">
+              ${
+                data.machineName
+                  ? `<li><strong>Equipment:</strong> ${data.machineName}${
+                      data.machineYear ? ` (${data.machineYear})` : ""
+                    }</li>`
+                  : ""
+              }
+              ${
+                data.machineType
+                  ? `<li><strong>Type:</strong> ${data.machineType}</li>`
+                  : ""
+              }
+              ${
+                data.machineId
+                  ? `<li><strong>Machine ID:</strong> <code>${data.machineId}</code></li>`
+                  : ""
+              }
+            </ul>
+            <p style="margin: 0;">Our team will reach out shortly. For urgent questions, call us at ${
+              process.env.BUSINESS_PHONE || "(337) 545-2935"
+            }.</p>
+          </div>
+          <div style="padding: 15px; background: #f9fafb; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px; text-align: center;">
+            <p style="margin: 0; color: #6b7280; font-size: 14px;">Lafayette Equipment Rentals | ${new Date().toLocaleString()}</p>
           </div>
         </div>
       `,
@@ -836,6 +1023,14 @@ export async function POST(request: NextRequest) {
     console.log(
       `Sending ${data.type} email for ${data.customerName} (${data.customerEmail})`
     );
+    console.log("SMTP Configuration:", {
+      host: process.env.EMAIL_HOST || "mail.improvmx.com",
+      port: process.env.EMAIL_PORT || "587",
+      user: process.env.EMAIL_USER
+        ? process.env.EMAIL_USER.substring(0, 5) + "***"
+        : "not set",
+      secure: process.env.EMAIL_SECURE === "true",
+    });
 
     const transporter = createTransporter();
 
@@ -906,10 +1101,21 @@ export async function POST(request: NextRequest) {
 
       console.log("Both emails sent successfully in parallel");
     } catch (emailError) {
-      console.error("SMTP Error:", emailError);
+      console.error("SMTP Error Details:", {
+        error:
+          emailError instanceof Error ? emailError.message : "Unknown error",
+        code: (emailError as any)?.code,
+        command: (emailError as any)?.command,
+        response: (emailError as any)?.response,
+        responseCode: (emailError as any)?.responseCode,
+        timestamp: new Date().toISOString(),
+      });
 
       // In development mode, log the error but don't fail the request
-      if (process.env.NODE_ENV === "development") {
+      if (
+        process.env.NODE_ENV === "development" &&
+        process.env.SKIP_EMAIL_IN_DEV !== "false"
+      ) {
         console.log("=== EMAIL SIMULATION (SMTP Error in Development) ===");
         console.log("Type:", data.type);
         console.log(

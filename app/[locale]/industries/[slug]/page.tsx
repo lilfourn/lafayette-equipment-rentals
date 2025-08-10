@@ -261,7 +261,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 className="bg-white text-turquoise-700 hover:bg-gray-100 text-lg px-8 py-6 cursor-pointer"
                 asChild
               >
-                <Link href="tel:+17707625498">Call Now: (770) 762-5498</Link>
+                <Link href="tel:+13375452935">Call Now: (337) 545-2935</Link>
               </Button>
             </div>
           </div>

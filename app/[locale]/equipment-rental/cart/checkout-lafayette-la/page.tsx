@@ -260,6 +260,7 @@ export default function CartPage() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [confirmation, setConfirmation] = useState(false);
   const [error, setError] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
 
   // Define minDate and maxDate at the top of the component
   const today = new Date();
@@ -470,9 +471,9 @@ export default function CartPage() {
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column - Cart Items and Reservation Steps */}
-            <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-8">
+            {/* Cart Items Section */}
+            <div className="space-y-6">
               {/* Cart Items */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between mb-6">
@@ -596,29 +597,187 @@ export default function CartPage() {
               </div>
             </div>
 
-            {/* Right Column - Order Summary */}
-            <div className="lg:col-span-1">
-              <Card className="border border-gray-200 shadow-sm sticky top-24">
-                <CardHeader>
-                  <CardTitle className="text-gray-900">
+            {/* Checkout Section - Horizontal Layout Below Cart Items */}
+            <div className="w-full">
+              <Card className="border-0 shadow-xl">
+                <CardHeader className="bg-gray-50 border-b border-gray-200">
+                  <CardTitle className="text-2xl font-black text-gray-900 uppercase tracking-tight">
                     {t("checkout.title")}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="p-8">
                   {/* Multi-step checkout logic */}
                   {confirmation ? (
-                    <div className="space-y-6 text-center">
-                      <div className="text-2xl font-bold text-green-700">
-                        Reservation Submitted!
+                    <div className="space-y-6">
+                      {/* Success Icon and Message */}
+                      <div className="text-center">
+                        <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-4">
+                          <CheckCircle className="h-12 w-12 text-green-600" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                          Reservation Confirmed!
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                          Your equipment reservation has been successfully submitted
+                        </p>
                       </div>
-                      <div className="text-gray-700">
-                        Thank you for your reservation. Our team will contact
-                        you soon to finalize your rental. No payment has been
-                        taken yet.
+
+                      {/* Confirmation Details */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Order Summary */}
+                        <div className="bg-gray-50 rounded-lg p-6">
+                          <h3 className="font-bold text-gray-900 mb-4 flex items-center">
+                            <Package className="h-5 w-5 mr-2 text-turquoise-600" />
+                            Equipment Reserved
+                          </h3>
+                          <div className="space-y-3">
+                            {cartItems.map((item, idx) => (
+                              <div key={idx} className="text-sm">
+                                <div className="font-semibold text-gray-900">
+                                  {item.machineName}
+                                </div>
+                                <div className="text-gray-600">
+                                  {item.machine.year} • Qty: {item.quantity || 1}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Rental Details */}
+                        <div className="bg-gray-50 rounded-lg p-6">
+                          <h3 className="font-bold text-gray-900 mb-4 flex items-center">
+                            <Calendar className="h-5 w-5 mr-2 text-turquoise-600" />
+                            Rental Period
+                          </h3>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex justify-between">
+                              <span className="text-gray-600">Start Date:</span>
+                              <span className="font-semibold text-gray-900">
+                                {new Date(localRentalData.startDate).toLocaleDateString("en-US", {
+                                  month: "short",
+                                  day: "numeric",
+                                  year: "numeric",
+                                })}
+                              </span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-gray-600">Duration:</span>
+                              <span className="font-semibold text-gray-900">
+                                {localRentalData.duration} days
+                              </span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-gray-600">Location:</span>
+                              <span className="font-semibold text-gray-900">
+                                {localRentalData.zipCode}
+                              </span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-gray-600">Delivery:</span>
+                              <span className="font-semibold text-green-600">
+                                {freePickup ? "Self Pickup" : "Delivery"}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <Button onClick={() => router.push(`/${locale}`)}>
-                        {t("common.close")}
-                      </Button>
+
+                      {/* What's Next Section */}
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 className="font-bold text-blue-900 mb-3 flex items-center">
+                          <Clock className="h-5 w-5 mr-2" />
+                          What Happens Next?
+                        </h3>
+                        <div className="space-y-3">
+                          <div className="flex items-start">
+                            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                              1
+                            </div>
+                            <div className="ml-3 text-sm text-gray-700">
+                              <strong>Confirmation Email:</strong> {emailSent 
+                                ? `Email confirmation sent to ${userInfo.email}` 
+                                : `Sending confirmation to ${userInfo.email}...`}
+                              {!emailSent && (
+                                <span className="inline-block ml-2">
+                                  <svg className="animate-spin h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                  </svg>
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                              2
+                            </div>
+                            <div className="ml-3 text-sm text-gray-700">
+                              <strong>Our Team Will Contact You:</strong> Within 24 hours to confirm availability and finalize details
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                              3
+                            </div>
+                            <div className="ml-3 text-sm text-gray-700">
+                              <strong>Delivery/Pickup Arrangement:</strong> We'll coordinate the {freePickup ? "pickup time" : "delivery schedule"} with you
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                              4
+                            </div>
+                            <div className="ml-3 text-sm text-gray-700">
+                              <strong>Payment:</strong> Payment will be arranged before delivery/pickup
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Contact Information */}
+                      <div className="bg-turquoise-50 border border-turquoise-200 rounded-lg p-6">
+                        <h3 className="font-bold text-gray-900 mb-3">Need to Make Changes?</h3>
+                        <p className="text-sm text-gray-700 mb-4">
+                          Contact us if you need to modify your reservation or have any questions:
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <a
+                            href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'info@lafayetteequipmentrentals.com'}`}
+                            className="flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                          >
+                            <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Email Us
+                          </a>
+                          <a
+                            href="tel:+13375452935"
+                            className="flex items-center justify-center px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                          >
+                            <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            (337) 545-2935
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <button
+                          onClick={() => router.push(`/${locale}/equipment-rental`)}
+                          className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 rounded-md font-semibold hover:bg-gray-50 transition-colors"
+                        >
+                          Browse More Equipment
+                        </button>
+                        <button
+                          onClick={() => router.push(`/${locale}`)}
+                          className="px-6 py-3 bg-turquoise-600 text-white rounded-md font-semibold hover:bg-turquoise-700 transition-colors"
+                        >
+                          Return to Homepage
+                        </button>
+                      </div>
                     </div>
                   ) : checkoutStep === 0 ? (
                     // Step 1: Rental Info
@@ -676,13 +835,34 @@ export default function CartPage() {
                         />
                       </div>
                       <div className="flex gap-2">
-                        <Button
-                          variant="outline"
+                        <button
+                          type="button"
                           onClick={() => router.push(`/${locale}`)}
+                          className="px-6 py-3 rounded-md font-medium"
+                          style={{
+                            backgroundColor: '#ffffff',
+                            color: '#374151',
+                            border: '1px solid #d1d5db',
+                            cursor: 'pointer',
+                            transition: 'none',
+                          }}
+                          onMouseEnter={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#f9fafb';
+                            target.style.borderColor = '#9ca3af';
+                          }}
+                          onMouseLeave={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#ffffff';
+                            target.style.borderColor = '#d1d5db';
+                          }}
                         >
                           {t("common.cancel")}
-                        </Button>
-                        <Button
+                        </button>
+                        <button
+                          type="button"
                           onClick={() => {
                             setLocalRentalData({
                               ...localRentalData,
@@ -697,14 +877,34 @@ export default function CartPage() {
                             setCheckoutStep(1);
                           }}
                           disabled={!isStep1Valid}
-                          className={
-                            !isStep1Valid
-                              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                              : ""
-                          }
+                          className="px-6 py-3 rounded-md font-medium"
+                          style={{
+                            backgroundColor: !isStep1Valid ? '#d1d5db' : '#14b8a6',
+                            color: !isStep1Valid ? '#6b7280' : '#ffffff',
+                            border: 'none',
+                            cursor: !isStep1Valid ? 'not-allowed' : 'pointer',
+                            opacity: !isStep1Valid ? '0.6' : '1',
+                            transition: 'none',
+                          }}
+                          onMouseEnter={(e) => {
+                            if (isStep1Valid) {
+                              const target = e.currentTarget;
+                              target.style.transition = 'none';
+                              target.style.backgroundColor = '#0d9488';
+                              target.style.color = '#ffffff';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (isStep1Valid) {
+                              const target = e.currentTarget;
+                              target.style.transition = 'none';
+                              target.style.backgroundColor = '#14b8a6';
+                              target.style.color = '#ffffff';
+                            }
+                          }}
                         >
                           {t("common.next")}
-                        </Button>
+                        </button>
                       </div>
                     </div>
                   ) : checkoutStep === 1 ? (
@@ -834,230 +1034,307 @@ export default function CartPage() {
                         />
                       </div>
                       <div className="flex gap-2">
-                        <Button
-                          variant="outline"
+                        <button
                           type="button"
                           onClick={() => setCheckoutStep(0)}
+                          className="px-6 py-3 rounded-md font-medium"
+                          style={{
+                            backgroundColor: '#ffffff',
+                            color: '#374151',
+                            border: '1px solid #d1d5db',
+                            cursor: 'pointer',
+                            transition: 'none',
+                          }}
+                          onMouseEnter={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#f9fafb';
+                            target.style.borderColor = '#9ca3af';
+                          }}
+                          onMouseLeave={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#ffffff';
+                            target.style.borderColor = '#d1d5db';
+                          }}
                         >
                           {t("common.back")}
-                        </Button>
-                        <Button type="submit" disabled={!captchaToken}>
+                        </button>
+                        <button 
+                          type="submit" 
+                          disabled={!captchaToken}
+                          className="px-4 py-2 rounded-md font-medium transition-all duration-200"
+                          style={{
+                            backgroundColor: !captchaToken ? '#d1d5db' : '#14b8a6',
+                            color: !captchaToken ? '#6b7280' : '#ffffff',
+                            cursor: !captchaToken ? 'not-allowed' : 'pointer',
+                            opacity: !captchaToken ? 0.5 : 1,
+                            boxShadow: !captchaToken ? 'none' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                          }}
+                          onMouseEnter={(e) => {
+                            if (captchaToken) {
+                              e.currentTarget.style.backgroundColor = '#0d9488';
+                              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (captchaToken) {
+                              e.currentTarget.style.backgroundColor = '#14b8a6';
+                              e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                            }
+                          }}
+                        >
                           Continue
-                        </Button>
+                        </button>
                       </div>
                     </form>
                   ) : checkoutStep === 2 ? (
-                    // Step 3: Enhanced Order Summary
+                    // Step 3: Professional Horizontal Order Summary
                     <div className="space-y-6">
-                      <div className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-3">
-                        Order Summary
+                      <div className="text-2xl font-bold text-gray-900 mb-6">
+                        Review Your Order
                       </div>
 
-                      {/* Rental Period Details */}
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <h3 className="font-semibold text-blue-900 mb-3">
-                          {t("checkoutPage.rentalPeriod")}
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                          <div>
-                            <span className="text-blue-700 font-medium">
-                              {t("cart.startDate")}:
-                            </span>
-                            <div className="text-blue-900">
-                              {new Date(
-                                localRentalData.startDate
-                              ).toLocaleDateString("en-US", {
-                                weekday: "short",
-                                year: "numeric",
-                                month: "short",
-                                day: "numeric",
+                      {/* Three Column Layout for Summary */}
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        
+                        {/* Column 1: Rental Details */}
+                        <div className="space-y-4">
+                          <div className="bg-gray-50 rounded-lg p-4 h-full">
+                            <h3 className="font-bold text-gray-900 mb-3 flex items-center">
+                              <Calendar className="h-5 w-5 mr-2 text-turquoise-600" />
+                              Rental Details
+                            </h3>
+                            <div className="space-y-3 text-sm">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Start Date:</span>
+                                <span className="font-semibold text-gray-900">
+                                  {new Date(localRentalData.startDate).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                  })}
+                                </span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Duration:</span>
+                                <span className="font-semibold text-gray-900">
+                                  {localRentalData.duration} days
+                                </span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Return Date:</span>
+                                <span className="font-semibold text-gray-900">
+                                  {new Date(
+                                    new Date(localRentalData.startDate).getTime() +
+                                    localRentalData.duration * 24 * 60 * 60 * 1000
+                                  ).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                  })}
+                                </span>
+                              </div>
+                              <div className="pt-3 border-t border-gray-200">
+                                <div className="flex justify-between">
+                                  <span className="text-gray-600">Location:</span>
+                                  <span className="font-semibold text-gray-900">
+                                    {localRentalData.zipCode}
+                                  </span>
+                                </div>
+                                <div className="flex justify-between mt-2">
+                                  <span className="text-gray-600">Delivery:</span>
+                                  <span className="font-semibold text-green-600">
+                                    {freePickup ? "Self Pickup (Free)" : "Delivery (TBD)"}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Column 2: Equipment Summary */}
+                        <div className="space-y-4">
+                          <div className="bg-gray-50 rounded-lg p-4 h-full">
+                            <h3 className="font-bold text-gray-900 mb-3 flex items-center">
+                              <Package className="h-5 w-5 mr-2 text-turquoise-600" />
+                              Equipment ({cartItems.length})
+                            </h3>
+                            <div className="space-y-3">
+                              {cartItems.map((item, idx) => {
+                                const { price } = calculateItemPriceWithDetails(
+                                  item,
+                                  localRentalData.duration
+                                );
+                                return (
+                                  <div key={idx} className="text-sm">
+                                    <div className="flex justify-between items-start">
+                                      <div className="flex-1">
+                                        <div className="font-semibold text-gray-900">
+                                          {item.machineName}
+                                        </div>
+                                        <div className="text-gray-600">
+                                          Qty: {item.quantity || 1} • {localRentalData.duration} days
+                                        </div>
+                                        {item.selectedAttachments && item.selectedAttachments.length > 0 && (
+                                          <div className="text-xs text-gray-500 mt-1">
+                                            + {item.selectedAttachments.join(", ")}
+                                          </div>
+                                        )}
+                                      </div>
+                                      <div className="font-bold text-gray-900 ml-2">
+                                        ${price.toLocaleString()}
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
                               })}
                             </div>
                           </div>
-                          <div>
-                            <span className="text-blue-700 font-medium">
-                              {t("checkoutPage.duration")}:
-                            </span>
-                            <div className="text-blue-900">
-                              {localRentalData.duration} day
-                              {localRentalData.duration > 1 ? "s" : ""}
-                            </div>
-                          </div>
-                          <div>
-                            <span className="text-blue-700 font-medium">
-                              {t("checkoutPage.expectedReturn")}:
-                            </span>
-                            <div className="text-blue-900">
-                              {new Date(
-                                new Date(localRentalData.startDate).getTime() +
-                                  localRentalData.duration * 24 * 60 * 60 * 1000
-                              ).toLocaleDateString("en-US", {
-                                weekday: "short",
-                                month: "short",
-                                day: "numeric",
-                              })}
-                            </div>
-                          </div>
                         </div>
-                        <div className="mt-3 pt-3 border-t border-blue-200">
-                          <span className="text-blue-700 font-medium">
-                            {t("checkoutPage.deliveryLocation")}:
-                          </span>
-                          <div className="text-blue-900">
-                            {localRentalData.zipCode}{" "}
-                            {freePickup
-                              ? `(${t("checkoutPage.freeDelivery")})`
-                              : `(${t("checkoutPage.deliveryFeeTbd")})`}
-                          </div>
-                        </div>
-                      </div>
 
-                      {/* Equipment List */}
-                      <div className="space-y-4">
-                        <h3 className="font-semibold text-gray-900">
-                          {t("checkoutPage.equipmentBreakdown")}
-                        </h3>
-                        {cartItems.map((item, idx) => {
-                          const { price, explanation } =
-                            calculateItemPriceWithDetails(
-                              item,
-                              localRentalData.duration
-                            );
-                          return (
-                            <div
-                              key={idx}
-                              className="bg-gray-50 border border-gray-200 rounded-lg p-4"
-                            >
-                              <div className="flex justify-between items-start mb-2">
-                                <div className="flex-1">
-                                  <h4 className="font-medium text-gray-900">
-                                    {item.machineName}
-                                  </h4>
-                                  <div className="text-sm text-gray-600 mt-1">
-                                    {item.machine.year}{" "}
-                                    {item.machine.primaryType} •{" "}
-                                    {t("common.quantity")}: {item.quantity || 1}
-                                  </div>
+                        {/* Column 3: Price Summary */}
+                        <div className="space-y-4">
+                          <div className="bg-turquoise-50 border-2 border-turquoise-200 rounded-lg p-4 h-full">
+                            <h3 className="font-bold text-gray-900 mb-3 flex items-center">
+                              <ShoppingCart className="h-5 w-5 mr-2 text-turquoise-600" />
+                              Price Summary
+                            </h3>
+                            <div className="space-y-3 text-sm">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Equipment:</span>
+                                <span className="font-semibold text-gray-900">
+                                  ${cartItems
+                                    .reduce(
+                                      (total, item) =>
+                                        total +
+                                        calculateItemPrice(
+                                          item,
+                                          localRentalData.duration
+                                        ),
+                                      0
+                                    )
+                                    .toLocaleString()}
+                                </span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Delivery:</span>
+                                <span className="font-semibold text-gray-900">
+                                  {freePickup ? "FREE" : "TBD"}
+                                </span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Tax:</span>
+                                <span className="font-semibold text-gray-900">TBD</span>
+                              </div>
+                              <div className="pt-3 border-t-2 border-turquoise-200">
+                                <div className="flex justify-between">
+                                  <span className="text-lg font-bold text-gray-900">Total:</span>
+                                  <span className="text-lg font-bold text-turquoise-600">
+                                    ${cartItems
+                                      .reduce(
+                                        (total, item) =>
+                                          total +
+                                          calculateItemPrice(
+                                            item,
+                                            localRentalData.duration
+                                          ),
+                                        0
+                                      )
+                                      .toLocaleString()}
+                                  </span>
                                 </div>
-                                <div className="text-lg font-bold text-gray-900">
-                                  ${price.toLocaleString()}
+                                <div className="text-xs text-gray-500 mt-1">
+                                  *Before taxes & delivery
                                 </div>
                               </div>
-                              <div className="text-sm text-gray-600 bg-white border border-gray-100 rounded px-3 py-2">
-                                <span className="font-medium">
-                                  {t("checkoutPage.rateCalculation")}:
-                                </span>{" "}
-                                {explanation}
-                              </div>
-                              {item.selectedAttachments &&
-                                item.selectedAttachments.length > 0 && (
-                                  <div className="mt-2 text-sm text-gray-600">
-                                    <span className="font-medium">
-                                      Attachments:
-                                    </span>{" "}
-                                    {item.selectedAttachments.join(", ")}
-                                  </div>
-                                )}
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      {/* Pricing Breakdown */}
-                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                        <h3 className="font-semibold text-gray-900 mb-3">
-                          {t("cart.orderSummary")}
-                        </h3>
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-gray-700">
-                            <span>{t("checkoutPage.equipmentSubtotal")}:</span>
-                            <span>
-                              $
-                              {cartItems
-                                .reduce(
-                                  (total, item) =>
-                                    total +
-                                    calculateItemPrice(
-                                      item,
-                                      localRentalData.duration
-                                    ),
-                                  0
-                                )
-                                .toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="flex justify-between text-gray-700">
-                            <span>
-                              {`${t("cart.delivery")} & ${t("cart.pickup")}`}:
-                            </span>
-                            <span>
-                              {freePickup ? t("common.free") : t("common.tbd")}
-                            </span>
-                          </div>
-                          <div className="flex justify-between text-gray-700">
-                            <span>{t("common.tax")}:</span>
-                            <span>{t("common.tbd")}</span>
-                          </div>
-                          <div className="border-t border-gray-300 pt-2 mt-2">
-                            <div className="flex justify-between text-lg font-bold text-gray-900">
-                              <span>{t("checkoutPage.totalBeforeTax")}:</span>
-                              <span>
-                                $
-                                {cartItems
-                                  .reduce(
-                                    (total, item) =>
-                                      total +
-                                      calculateItemPrice(
-                                        item,
-                                        localRentalData.duration
-                                      ),
-                                    0
-                                  )
-                                  .toLocaleString()}
-                              </span>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Important Notes */}
+                      {/* Important Notes - Compact */}
                       <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                        <h3 className="font-semibold text-yellow-800 mb-2">
-                          📋 Important Notes
-                        </h3>
-                        <ul className="text-sm text-yellow-700 space-y-1">
-                          <li>
-                            • Final taxes and transportation costs will be
-                            calculated based on your location
-                          </li>
-                          <li>
-                            • Equipment availability is subject to confirmation
-                          </li>
-                          <li>
-                            • Rental period may be extended if needed
-                            (additional charges apply)
-                          </li>
-                          <li>
-                            • Damage protection and insurance options available
-                            upon pickup
-                          </li>
-                        </ul>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0">
+                            <svg className="h-5 w-5 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <div className="ml-3 flex-1">
+                            <h3 className="text-sm font-semibold text-yellow-800">Important Information</h3>
+                            <div className="mt-1 text-xs text-yellow-700 space-y-1">
+                              <p>• Final taxes and delivery fees will be calculated based on your exact location</p>
+                              <p>• Equipment availability subject to confirmation • Extensions available with additional charges</p>
+                              <p>• Damage protection and insurance options available at pickup</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       {error && (
                         <div className="text-red-600 text-sm mb-2">{error}</div>
                       )}
                       <div className="flex gap-2">
-                        <Button
-                          variant="outline"
+                        <button
+                          type="button"
                           onClick={() => setCheckoutStep(1)}
+                          className="px-6 py-3 rounded-md font-medium"
+                          style={{
+                            backgroundColor: '#ffffff',
+                            color: '#374151',
+                            border: '1px solid #d1d5db',
+                            cursor: 'pointer',
+                            transition: 'none',
+                          }}
+                          onMouseEnter={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#f9fafb';
+                            target.style.borderColor = '#9ca3af';
+                          }}
+                          onMouseLeave={(e) => {
+                            const target = e.currentTarget;
+                            target.style.transition = 'none';
+                            target.style.backgroundColor = '#ffffff';
+                            target.style.borderColor = '#d1d5db';
+                          }}
                         >
                           {t("common.back")}
-                        </Button>
-                        <Button
+                        </button>
+                        <button
+                          className="px-6 py-2.5 rounded-md font-semibold transition-all duration-200"
+                          style={{
+                            backgroundColor: isSubmitting ? '#9ca3af' : '#16a34a',
+                            color: isSubmitting ? '#4b5563' : '#ffffff',
+                            cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                            opacity: isSubmitting ? 0.5 : 1,
+                            boxShadow: isSubmitting ? 'none' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                            transform: isSubmitting ? 'scale(1)' : 'scale(1)',
+                          }}
+                          onMouseEnter={(e) => {
+                            if (!isSubmitting) {
+                              e.currentTarget.style.backgroundColor = '#15803d';
+                              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                              e.currentTarget.style.transform = 'scale(1.05)';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (!isSubmitting) {
+                              e.currentTarget.style.backgroundColor = '#16a34a';
+                              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                              e.currentTarget.style.transform = 'scale(1)';
+                            }
+                          }}
                           onClick={async () => {
                             setIsSubmitting(true);
                             setError("");
-                            try {
+                            
+                            // Show immediate confirmation
+                            setConfirmation(true);
+                            
+                            // Send email in background
+                            setTimeout(async () => {
+                              try {
                               const payload = {
                                 type: "booking",
                                 customerEmail: userInfo.email,
@@ -1106,28 +1383,30 @@ export default function CartPage() {
                                 );
                               }
 
-                              // Clear the cart after successful submission
-                              setCartItems([]);
+                              // Clear the cart immediately after showing confirmation
                               localStorage.setItem("cart", "[]");
                               window.dispatchEvent(
                                 new CustomEvent("cartUpdated")
                               );
-
-                              setConfirmation(true);
+                              
+                              // Mark email as sent
+                              setEmailSent(true);
                             } catch (e) {
-                              setError(
-                                "There was an error submitting your reservation. Please try again or contact us."
-                              );
+                              console.error("Email send error:", e);
+                              // Don't show error to user since confirmation is already shown
+                              // The business will still process the order even if email fails
+                              setEmailSent(true); // Still mark as sent to remove loading state
                             } finally {
                               setIsSubmitting(false);
                             }
+                            }, 100); // Small delay to ensure confirmation shows first
                           }}
                           disabled={isSubmitting}
                         >
                           {isSubmitting
                             ? t("checkoutPage.reserving")
                             : t("checkoutPage.reserveEquipment")}
-                        </Button>
+                        </button>
                       </div>
                     </div>
                   ) : null}

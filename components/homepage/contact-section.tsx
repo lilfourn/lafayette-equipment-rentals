@@ -1,8 +1,9 @@
 "use client";
 
+import BusinessHoursBanner from "@/components/business-hours-banner";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
 import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { memo } from "react";
 
@@ -10,7 +11,9 @@ interface ContactSectionProps {
   locale: string;
 }
 
-export const ContactSection = memo(function ContactSection({ locale }: ContactSectionProps) {
+export const ContactSection = memo(function ContactSection({
+  locale,
+}: ContactSectionProps) {
   const t = useTranslations();
 
   const scrollToTop = () => {
@@ -29,7 +32,8 @@ export const ContactSection = memo(function ContactSection({ locale }: ContactSe
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get in touch with our team for equipment rentals, quotes, and expert advice
+            Get in touch with our team for equipment rentals, quotes, and expert
+            advice
           </p>
         </div>
 
@@ -40,18 +44,16 @@ export const ContactSection = memo(function ContactSection({ locale }: ContactSe
             <div className="bg-turquoise-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-turquoise-200 transition-colors">
               <Phone className="h-10 w-10 text-turquoise-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Call Us
-            </h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
             <p className="text-gray-600 mb-4">
               Speak directly with our equipment specialists
             </p>
             <a
-              href="tel:+13372345678"
+              href="tel:+13375452935"
               className="inline-flex items-center justify-center text-turquoise-600 hover:text-turquoise-700 font-bold text-lg transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              (337) 234-5678
+              (337) 545-2935
             </a>
           </div>
 
@@ -60,12 +62,8 @@ export const ContactSection = memo(function ContactSection({ locale }: ContactSe
             <div className="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-200 transition-colors">
               <Mail className="h-10 w-10 text-yellow-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Email Us
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Send us your questions anytime
-            </p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
+            <p className="text-gray-600 mb-4">Send us your questions anytime</p>
             <a
               href="mailto:info@lafayetteequipmentrentals.com"
               className="inline-flex items-center justify-center text-turquoise-600 hover:text-turquoise-700 font-bold transition-colors"
@@ -80,12 +78,8 @@ export const ContactSection = memo(function ContactSection({ locale }: ContactSe
             <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors">
               <MapPin className="h-10 w-10 text-red-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
-              Visit Us
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Stop by our Lafayette location
-            </p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Visit Us</h3>
+            <p className="text-gray-600 mb-4">Stop by our Lafayette location</p>
             <address className="text-turquoise-600 hover:text-turquoise-700 font-bold not-italic transition-colors">
               <MapPin className="h-5 w-5 inline mr-2" />
               Lafayette, LA 70506
@@ -106,20 +100,7 @@ export const ContactSection = memo(function ContactSection({ locale }: ContactSe
         </div>
 
         {/* Business Hours */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center justify-center bg-white rounded-lg px-6 py-3 shadow-md">
-            <div className="flex items-center space-x-6 text-sm">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                <span className="text-gray-600 font-medium">Open Now</span>
-              </div>
-              <div className="text-gray-400">|</div>
-              <div className="text-gray-700 font-semibold">
-                Mon-Fri: 7AM-5PM • Sat: 8AM-12PM
-              </div>
-            </div>
-          </div>
-        </div>
+        <BusinessHoursBanner />
       </div>
 
       {/* Scroll to top button */}

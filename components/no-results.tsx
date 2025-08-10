@@ -487,7 +487,7 @@ export default function NoResults({ equipmentType }: NoResultsProps) {
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <a
-                href="tel:+17707625498"
+                href="tel:+13375452935"
                 className="group flex items-center gap-4 bg-white rounded-xl p-4 px-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-orange-500 transition-all"
               >
                 <div className="bg-gradient-to-br from-orange-500 to-red-500 p-3 rounded-lg text-white">
@@ -496,7 +496,7 @@ export default function NoResults({ equipmentType }: NoResultsProps) {
                 <div className="text-left">
                   <p className="text-xs text-gray-500 mb-1">Call us at</p>
                   <p className="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
-                    (770) 762-5498
+                    (337) 545-2935
                   </p>
                 </div>
               </a>

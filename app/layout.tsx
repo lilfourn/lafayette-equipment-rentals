@@ -95,8 +95,10 @@ export const metadata: Metadata = {
       "Family-owned equipment rental company serving Lafayette, Louisiana since 2009. Professional-grade construction equipment with same-day delivery. Excavators, bulldozers, generators & more.",
     images: [
       {
-        url: "/open-graph.png",
+        url: "/opengraph.png",
         alt: "Lafayette Equipment Rentals - Professional Heavy Construction Equipment Rental Services in Lafayette, Louisiana",
+        width: 1200,
+        height: 630,
       },
     ],
   },
@@ -107,7 +109,7 @@ export const metadata: Metadata = {
     title: "Lafayette Equipment Rentals - Heavy Equipment Rental Louisiana",
     description:
       "Professional equipment rentals in Lafayette, LA. Family-owned with same-day delivery. Serving Acadiana region with quality construction equipment.",
-    images: ["/open-graph.png"],
+    images: ["/opengraph.png"],
   },
   alternates: {
     canonical: "https://www.lafayetteequipmentrentals.com",
@@ -145,6 +147,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning className="scroll-smooth">
       <body
+        suppressHydrationWarning
         className={`${inter.className} ${inter.variable} antialiased min-h-screen bg-background text-foreground`}
         style={getCSSVariables(getTheme())}
       >

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   title:
     "Contact Lafayette Equipment Rentals - Equipment Rental Services Lafayette Louisiana",
   description:
-    "Contact Lafayette Equipment Rentals for professional equipment rental services in Lafayette, Louisiana. Call (337) 234-5678 or visit our facility at 2865 Ambassador Caffery Pkwy. Same-day delivery available throughout the Acadiana region.",
+    "Contact Lafayette Equipment Rentals for professional equipment rental services in Lafayette, Louisiana. Call (337) 545-2935 or visit our facility at 2865 Ambassador Caffery Pkwy. Same-day delivery available throughout the Acadiana region.",
   keywords: [
     "contact Lafayette Equipment Rentals",
     "equipment rental Lafayette Louisiana phone",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title:
       "Contact Lafayette Equipment Rentals - Professional Equipment Rental Services",
     description:
-      "Contact us for professional equipment rental services in Lafayette, Louisiana. Call (337) 234-5678 or visit our facility. Same-day delivery available throughout Acadiana.",
+      "Contact us for professional equipment rental services in Lafayette, Louisiana. Call (337) 545-2935 or visit our facility. Same-day delivery available throughout Acadiana.",
     type: "website",
     url: "https://www.lafayetteequipmentrentals.com/contact",
     images: [
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Lafayette Equipment Rentals - Equipment Rental Services",
     description:
-      "Professional equipment rental services in Lafayette, LA. Call (337) 234-5678 for same-day delivery.",
+      "Professional equipment rental services in Lafayette, LA. Call (337) 545-2935 for same-day delivery.",
     images: ["/hero-image.jpg"],
   },
   alternates: {
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     "geo.placename": "Lafayette",
     "geo.position": "30.2241;-92.0198",
     ICBM: "30.2241, -92.0198",
-    "contact:phone_number": "+1-337-234-5678",
+    "contact:phone_number": "+1-337-545-2935",
     "contact:email": "info@lafayetteequipmentrentals.com",
     "contact:address":
       "2865 Ambassador Caffery Pkwy, Ste 135, Lafayette, LA 70506",
@@ -142,7 +142,7 @@ export default async function ContactUsPage() {
 
               {/* Two Main CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a href="tel:+13372345678">
+                <a href="tel:+13375452935">
                   <Button className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black px-10 py-6 text-xl font-black uppercase tracking-wide shadow-2xl transition-all duration-200 transform hover:scale-105 cursor-pointer">
                     <Phone className="mr-3 h-6 w-6" />
                     CALL NOW
@@ -274,10 +274,10 @@ export default async function ContactUsPage() {
                         Phone
                       </h3>
                       <a
-                        href="tel:+13372345678"
+                        href="tel:+13375452935"
                         className="text-xl font-semibold text-turquoise-600 hover:text-turquoise-700 transition-colors cursor-pointer"
                       >
-                        (337) 234-5678
+                        (337) 545-2935
                       </a>
                       <p className="text-gray-600 text-sm mt-1">
                         Mon-Fri 7AM-6PM, Sat 8AM-4PM
@@ -337,7 +337,7 @@ export default async function ContactUsPage() {
                     <p className="text-gray-700 text-sm">
                       Need equipment urgently? We offer 24/7 emergency rental service for critical projects.
                     </p>
-                    <a href="tel:+13372345678" className="inline-flex items-center text-turquoise-600 hover:text-turquoise-700 font-semibold mt-3 cursor-pointer">
+                    <a href="tel:+13375452935" className="inline-flex items-center text-turquoise-600 hover:text-turquoise-700 font-semibold mt-3 cursor-pointer">
                       <Phone className="h-4 w-4 mr-2" />
                       Call for Emergency Service
                     </a>
@@ -482,7 +482,7 @@ export default async function ContactUsPage() {
                   className="border-2 border-white text-white hover:bg-white hover:text-turquoise-700 font-bold px-10 py-3 text-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (337) 234-5678
+                  Call (337) 545-2935
                 </Button>
               </a>
             </div>

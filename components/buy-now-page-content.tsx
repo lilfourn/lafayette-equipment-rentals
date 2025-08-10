@@ -439,13 +439,13 @@ export default function BuyNowPageContent({
                 Contact Us
               </Button>
             </Link>
-            <a href="tel:+13372345678">
+            <a href="tel:+13375452935">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 font-medium px-8"
               >
-                Call (337) 234-5678
+                Call (337) 545-2935
               </Button>
             </a>
           </div>

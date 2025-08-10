@@ -390,7 +390,7 @@ export function LocalBusinessSchema() {
     description:
       "Professional equipment rental company serving Lafayette, Louisiana and the Acadiana region. Family-owned business providing construction equipment, generators, and heavy machinery rental since 2009.",
     url: "https://www.lafayetteequipmentrentals.com",
-    telephone: "+1-337-234-5678",
+    telephone: "+1-337-545-2935",
     email: "info@lafayetteequipmentrentals.com",
     address: {
       streetAddress: "2865 Ambassador Caffery Pkwy, Ste 135",
@@ -433,7 +433,7 @@ export function OrganizationSchema() {
     name: "Lafayette Equipment Rentals",
     description: "Professional equipment rental services",
     url: "https://www.lafayetteequipmentrentals.com",
-    telephone: "+1-337-234-5678",
+    telephone: "+1-337-545-2935",
     email: "info@lafayetteequipmentrentals.com",
     address: {
       streetAddress: "2865 Ambassador Caffery Pkwy, Ste 135",
@@ -466,7 +466,7 @@ export function EquipmentRentalSchema() {
     availableAtOrFrom: {
       name: "Lafayette Equipment Rentals",
       address: "2865 Ambassador Caffery Pkwy, Ste 135, Lafayette, LA 70506",
-      telephone: "+1-337-234-5678",
+      telephone: "+1-337-545-2935",
     },
     offers: {
       price: "Variable",

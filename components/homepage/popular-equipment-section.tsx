@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Skeleton } from "@/components/ui/skeleton";
+import { EquipmentCardSkeleton } from "@/components/skeletons/equipment-card-skeleton";
 import { getCachedValue, setCachedValue } from "@/lib/browser-cache";
 import { ChevronRight, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -28,13 +28,18 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
   const router = useRouter();
   const [showAddedPopup, setShowAddedPopup] = useState(false);
   const [addedItemName, setAddedItemName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(!machines);
   const [clientMachines, setClientMachines] = useState<Machine[] | undefined>(
     machines
   );
 
   // Hydrate from local cache if server didn't provide machines
   useEffect(() => {
+    // Set loading to true if no machines initially
+    if (!machines) {
+      setIsLoading(true);
+    }
+    
     if (machines && machines.length > 0) {
       // Keep a short cache so subsequent navigations feel instant
       setCachedValue<Machine[]>(
@@ -43,11 +48,20 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
         30 * 60 * 1000
       );
       setClientMachines(machines);
+      setIsLoading(false);
       return;
     }
+    
+    // Check cache if no machines provided
     const cached = getCachedValue<Machine[]>("popular_rentals_home_v1");
     if (cached && cached.length > 0) {
       setClientMachines(cached);
+      setIsLoading(false);
+    } else if (!machines) {
+      // If no machines and no cache, simulate loading for better UX
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
     }
   }, [machines]);
 
@@ -200,9 +214,9 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
 
           {/* Equipment Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {isLoading && (!popularEquipment || popularEquipment.length === 0)
+            {isLoading
               ? Array.from({ length: 4 }).map((_, i) => (
-                  <Skeleton key={i} className="h-80 rounded-lg" />
+                  <EquipmentCardSkeleton key={i} />
                 ))
               : popularEquipment.slice(0, 4).map((machine) => {
                   // Get the first image URL

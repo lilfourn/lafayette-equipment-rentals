@@ -403,12 +403,12 @@ export default function Header({ serverData }: HeaderProps) {
 
                     {/* Contact Information */}
                     <div className="text-center">
-                      <a href="tel:+13372345678" className="block group">
+                      <a href="tel:+13375452935" className="block group">
                         <p className="text-white text-sm font-medium mb-1 opacity-90">
                           Call Now for Instant Quote
                         </p>
                         <p className="text-white font-black text-2xl group-hover:text-gray-200 transition-colors duration-200">
-                          (337) 234-5678
+                          (337) 545-2935
                         </p>
                       </a>
                       <div className="mt-3 pt-3 border-t border-gray-700">
