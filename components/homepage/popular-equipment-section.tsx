@@ -1,6 +1,7 @@
 "use client";
 
 import type { Machine } from "@/components/machine-card";
+import { EquipmentCardSkeleton } from "@/components/skeletons/equipment-card-skeleton";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -8,7 +9,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { EquipmentCardSkeleton } from "@/components/skeletons/equipment-card-skeleton";
 import { getCachedValue, setCachedValue } from "@/lib/browser-cache";
 import { ChevronRight, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -39,7 +39,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
     if (!machines) {
       setIsLoading(true);
     }
-    
+
     if (machines && machines.length > 0) {
       // Keep a short cache so subsequent navigations feel instant
       setCachedValue<Machine[]>(
@@ -51,7 +51,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
       setIsLoading(false);
       return;
     }
-    
+
     // Check cache if no machines provided
     const cached = getCachedValue<Machine[]>("popular_rentals_home_v1");
     if (cached && cached.length > 0) {
@@ -338,7 +338,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                         {(daily || weekly || monthly) && (
                           <div className="bg-gradient-to-r from-green-50 to-turquoise-50 border border-green-200 rounded-lg p-3 mb-4">
                             <div className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2 text-center">
-                              Rental Rates
+                              {t("equipment.rentalRates")}
                             </div>
                             <div className="grid grid-cols-3 gap-2 text-center">
                               {daily ? (
@@ -347,7 +347,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     ${daily.toFixed(0)}
                                   </div>
                                   <div className="text-xs text-gray-600">
-                                    per day
+                                    {t("common.perDay")}
                                   </div>
                                 </div>
                               ) : (
@@ -356,7 +356,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     --
                                   </div>
                                   <div className="text-xs text-gray-400">
-                                    per day
+                                    {t("common.perDay")}
                                   </div>
                                 </div>
                               )}
@@ -366,7 +366,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     ${weekly.toFixed(0)}
                                   </div>
                                   <div className="text-xs text-gray-600">
-                                    per week
+                                    {t("common.perWeek")}
                                   </div>
                                 </div>
                               ) : (
@@ -375,7 +375,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     --
                                   </div>
                                   <div className="text-xs text-gray-400">
-                                    per week
+                                    {t("common.perWeek")}
                                   </div>
                                 </div>
                               )}
@@ -385,7 +385,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     ${monthly.toFixed(0)}
                                   </div>
                                   <div className="text-xs text-gray-600">
-                                    per month
+                                    {t("common.perMonth")}
                                   </div>
                                 </div>
                               ) : (
@@ -394,7 +394,7 @@ export const PopularEquipmentSection = memo(function PopularEquipmentSection({
                                     --
                                   </div>
                                   <div className="text-xs text-gray-400">
-                                    per month
+                                    {t("common.perMonth")}
                                   </div>
                                 </div>
                               )}
