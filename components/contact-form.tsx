@@ -1,5 +1,6 @@
 "use client";
 
+import { HCaptchaComponent } from "@/components/hcaptcha-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,9 +17,8 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { HCaptchaComponent } from "@/components/hcaptcha-provider";
+import { useState } from "react";
 
 export default function ContactForm() {
   const t = useTranslations();
@@ -73,12 +73,12 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!captchaToken) {
       alert("Please complete the captcha verification");
       return;
     }
-    
+
     setIsSubmitting(true);
 
     try {
@@ -155,28 +155,26 @@ export default function ContactForm() {
               <CheckCircle className="w-10 h-10 text-turquoise-600" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
-              Message Sent Successfully!
+              {t("contactPage.form.success.title")}
             </h3>
             <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              Thank you for contacting us! We'll respond to your inquiry within 24 hours.
+              {t("contactPage.form.success.message")}
             </p>
             <Button
               onClick={resetForm}
               variant="outline"
               className="border-2 border-turquoise-600 text-turquoise-600 hover:bg-turquoise-600 hover:text-white px-6 py-3 font-semibold transition-all duration-200 transform hover:scale-105 cursor-pointer"
             >
-              Send Another Message
+              {t("contactPage.form.success.sendAnother")}
             </Button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {t("contactPage.form.title")}
-            </h3>
-            <p className="text-gray-600">
-              {t("contactPage.form.subtitle")}
-            </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {t("contactPage.form.title")}
+              </h3>
+              <p className="text-gray-600">{t("contactPage.form.subtitle")}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
@@ -188,8 +186,8 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
-                placeholder={t("contactPage.form.name")}
+                  className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
+                  placeholder={t("contactPage.form.name")}
                 />
               </div>
 
@@ -201,8 +199,8 @@ export default function ContactForm() {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
-                placeholder={t("contactPage.form.phone")}
+                  className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
+                  placeholder={t("contactPage.form.phone")}
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-xs mt-1.5">{errors.phone}</p>

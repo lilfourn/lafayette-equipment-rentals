@@ -10,9 +10,9 @@ import {
   validatePhone,
 } from "@/lib/validation";
 import { CheckCircle, Mail, MessageSquare, Phone, User } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
 
 export interface MachineContactFormProps {
   machineId: string;
@@ -292,7 +292,9 @@ export default function MachineContactForm(props: MachineContactFormProps) {
               className="w-full h-14 bg-turquoise-600 hover:bg-turquoise-700 text-white font-bold text-lg"
               disabled={isSubmitting || !isFormValid()}
             >
-              {isSubmitting ? t("common.buttons.sending") : t("common.buttons.sendMessage")}
+              {isSubmitting
+                ? t("common.buttons.sending")
+                : t("common.buttons.sendMessage")}
             </Button>
           </form>
         )}
