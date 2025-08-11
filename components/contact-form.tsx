@@ -171,12 +171,12 @@ export default function ContactForm() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Get a Quick Quote
-              </h3>
-              <p className="text-gray-600">
-                Fill out the form below and we'll get back to you promptly.
-              </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {t("contactPage.form.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("contactPage.form.subtitle")}
+            </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
@@ -188,8 +188,8 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
-                  placeholder="Full Name"
+                className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
+                placeholder={t("contactPage.form.name")}
                 />
               </div>
 
@@ -201,8 +201,8 @@ export default function ContactForm() {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
-                  placeholder="Phone (Optional)"
+                className="h-14 pl-12 pr-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
+                placeholder={t("contactPage.form.phone")}
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-xs mt-1.5">{errors.phone}</p>
@@ -237,7 +237,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 className="resize-none pl-12 pr-4 py-4 border-gray-300 focus:border-turquoise-500 focus:ring-turquoise-500"
-                placeholder="Tell us about your project or questions..."
+                placeholder={t("contactPage.form.message")}
               />
             </div>
 
@@ -258,11 +258,11 @@ export default function ContactForm() {
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    Sending...
+                    {t("common.buttons.sending")}
                   </div>
                 ) : (
                   <div className="flex items-center justify-center">
-                    Send Message
+                    {t("contactPage.form.sendButton")}
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </div>
                 )}

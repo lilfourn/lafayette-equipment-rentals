@@ -261,7 +261,7 @@ export default function MachineContactForm(props: MachineContactFormProps) {
                 value={formData.businessName}
                 onChange={handleChange}
                 className="h-12"
-                placeholder="Business (Optional)"
+                placeholder={t("noResults.form.businessName")}
               />
             </div>
 
@@ -275,7 +275,7 @@ export default function MachineContactForm(props: MachineContactFormProps) {
                 onChange={handleChange}
                 required
                 className="resize-none pl-12 pr-4 py-4"
-                placeholder="Your question about this machine..."
+                placeholder={t("noResults.form.tellUsAboutProject")}
               />
             </div>
 

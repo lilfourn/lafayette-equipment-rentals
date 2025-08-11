@@ -78,7 +78,11 @@
       ],
       "testimonial": "Lafayette Equipment Rentals delivers prompt repair service. We can routinely inspect your equipment and supply parts. Our team can fully manage your fleet so you can focus on what matters most: Getting the job done.",
       "contactUs": "Contact Us",
-      "exploreEquipment": "Explore Equipment"
+      "exploreEquipment": "Explore Equipment",
+      "ownerQuote": {
+        "text": "When you call us, you're not getting a call center. You're talking to someone who went to the same Friday night football games, knows where to get the best boudin, and understands exactly what you need to get the job done.",
+        "author": "Mike Thibodaux, Owner"
+      }
     },
     "howItWorks": {
       "title": "How do I rent equipment online?",
@@ -387,7 +391,17 @@
     "seeDetails": "See Details",
     "free": "FREE",
     "tbd": "TBD",
-    "qty": "QTY"
+    "qty": "QTY",
+    "buttons": {
+      "sending": "Sending...",
+      "sendMessage": "Send Message",
+      "addToCart": "Add to Cart"
+    },
+    "status": {
+      "openNow": "Open Now",
+      "closed": "Closed",
+      "machineReserved": "Machine already reserved"
+    }
   },
   "checkoutPage": {
     "equipmentSelection": "Equipment Selection",
@@ -868,25 +882,5 @@
     "contactTeam": "Our team is here to help. Contact us for more information.",
     "contactUs": "Contact Us",
     "viewAll": "View All FAQs"
-  },
-  "common": {
-    "buttons": {
-      "sending": "Sending...",
-      "sendMessage": "Send Message",
-      "addToCart": "Add to Cart"
-    },
-    "status": {
-      "openNow": "Open Now",
-      "closed": "Closed",
-      "machineReserved": "Machine already reserved"
-    }
-  },
-  "homepage": {
-    "trustedSolutions": {
-      "ownerQuote": {
-        "text": "When you call us, you're not getting a call center. You're talking to someone who went to the same Friday night football games, knows where to get the best boudin, and understands exactly what you need to get the job done.",
-        "author": "Mike Thibodaux, Owner"
-      }
-    }
   }
 }
