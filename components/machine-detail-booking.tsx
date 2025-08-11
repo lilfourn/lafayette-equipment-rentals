@@ -9,6 +9,7 @@ import BookingModal from "@/components/booking-modal"
 import BuyItNowModal from "@/components/buy-it-now-modal"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useRouter } from "next/navigation"
+import { useTranslations } from "next-intl"
 
 interface MachineDetailBookingProps {
     machine: Machine
@@ -19,6 +20,7 @@ interface MachineDetailBookingProps {
 
 export default function MachineDetailBooking({ machine, daily, weekly, monthly }: MachineDetailBookingProps) {
     const router = useRouter();
+    const t = useTranslations();
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
     const [isBuyItNowModalOpen, setIsBuyItNowModalOpen] = useState(false)
     const [showBuyItNowSuccess, setShowBuyItNowSuccess] = useState(false)
@@ -208,7 +210,7 @@ export default function MachineDetailBooking({ machine, daily, weekly, monthly }
                             disabled={isReserved}
                         >
                             <ShoppingCart className="mr-2 h-5 w-5" />
-                            {isReserved ? "Machine already reserved" : "Add to Cart"}
+                            {isReserved ? t("common.status.machineReserved") : t("common.buttons.addToCart")}
                         </Button>
 
                         <div className="text-center text-sm text-gray-600">

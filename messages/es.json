@@ -869,5 +869,25 @@
     "contactTeam": "Nuestro equipo está aquí para ayudar. Contáctanos para más información.",
     "contactUs": "Contáctanos",
     "viewAll": "Ver Todas las Preguntas Frecuentes"
+  },
+  "common": {
+    "buttons": {
+      "sending": "Enviando...",
+      "sendMessage": "Enviar Mensaje",
+      "addToCart": "Agregar al Carrito"
+    },
+    "status": {
+      "openNow": "Abierto Ahora",
+      "closed": "Cerrado",
+      "machineReserved": "Máquina ya reservada"
+    }
+  },
+  "homepage": {
+    "trustedSolutions": {
+      "ownerQuote": {
+        "text": "Cuando nos llamas, no estás hablando con un centro de llamadas. Estás hablando con alguien que fue a los mismos juegos de fútbol del viernes por la noche, sabe dónde conseguir el mejor boudin, y entiende exactamente lo que necesitas para hacer el trabajo.",
+        "author": "Mike Thibodaux, Propietario"
+      }
+    }
   }
 }

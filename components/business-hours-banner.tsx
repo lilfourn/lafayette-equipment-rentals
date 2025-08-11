@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 // Lafayette, LA (Central Time, handles DST)
 const TIME_ZONE = "America/Chicago";
@@ -97,9 +98,10 @@ function useOpenStatus(): { isOpen: boolean; nextChangeInMs: number } {
 }
 
 export default function BusinessHoursBanner() {
+  const t = useTranslations();
   const { isOpen } = useOpenStatus();
   const dotClass = isOpen ? "bg-green-500" : "bg-red-500";
-  const statusLabel = isOpen ? "Open Now" : "Closed";
+  const statusLabel = isOpen ? t("common.status.openNow") : t("common.status.closed");
 
   return (
     <div className="mt-12 text-center">

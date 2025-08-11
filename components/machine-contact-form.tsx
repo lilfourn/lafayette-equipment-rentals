@@ -12,6 +12,7 @@ import {
 import { CheckCircle, Mail, MessageSquare, Phone, User } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export interface MachineContactFormProps {
   machineId: string;
@@ -33,6 +34,8 @@ export default function MachineContactForm(props: MachineContactFormProps) {
     machineType,
     imageUrl,
   } = props;
+
+  const t = useTranslations();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -289,7 +292,7 @@ export default function MachineContactForm(props: MachineContactFormProps) {
               className="w-full h-14 bg-turquoise-600 hover:bg-turquoise-700 text-white font-bold text-lg"
               disabled={isSubmitting || !isFormValid()}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? t("common.buttons.sending") : t("common.buttons.sendMessage")}
             </Button>
           </form>
         )}

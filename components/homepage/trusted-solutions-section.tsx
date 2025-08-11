@@ -76,12 +76,10 @@ export const TrustedSolutionsSection = memo(function TrustedSolutionsSection() {
               {/* Personal Quote */}
               <div className="bg-gradient-to-r from-gray-50 to-turquoise-50 border-l-4 border-turquoise-500 p-6 rounded-r-lg mb-8">
                 <p className="text-gray-700 italic mb-3">
-                  "When you call us, you're not getting a call center. You're talking to someone who went to 
-                  the same Friday night football games, knows where to get the best boudin, and understands 
-                  exactly what you need to get the job done."
+                  {t("homepage.trustedSolutions.ownerQuote.text")}
                 </p>
                 <p className="text-sm font-semibold text-gray-900">
-                  — Mike Thibodaux, Owner
+                  — {t("homepage.trustedSolutions.ownerQuote.author")}
                 </p>
               </div>
 

@@ -129,15 +129,15 @@ export default async function ContactUsPage() {
             <div className="max-w-4xl mx-auto text-center">
               {/* Main Headline - Big and Bold */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
-                GET IN TOUCH WITH
+                {t("contactPage.hero.title")}
                 <span className="block text-yellow-400">
-                  OUR EXPERT TEAM
+                  {t("contactPage.hero.titleAccent")}
                 </span>
               </h1>
 
               {/* Simple Tagline */}
               <p className="text-xl md:text-2xl text-white font-semibold mb-12">
-                Need Equipment? Have Questions? We're Here to Help!
+                {t("contactPage.hero.tagline")}
               </p>
 
               {/* Two Main CTA Buttons */}
@@ -145,14 +145,14 @@ export default async function ContactUsPage() {
                 <a href="tel:+13375452935">
                   <Button className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black px-10 py-6 text-xl font-black uppercase tracking-wide shadow-2xl transition-all duration-200 transform hover:scale-105 cursor-pointer">
                     <Phone className="mr-3 h-6 w-6" />
-                    CALL NOW
+                    {t("contactPage.hero.callNow")}
                   </Button>
                 </a>
 
                 <a href="#contact-form">
                   <Button className="w-full sm:w-auto bg-transparent border-4 border-white text-white hover:bg-white hover:text-black px-10 py-6 text-xl font-black uppercase tracking-wide shadow-2xl transition-all duration-200 transform hover:scale-105 cursor-pointer">
                     <Mail className="mr-3 h-6 w-6" />
-                    SEND MESSAGE
+                    {t("contactPage.hero.sendMessage")}
                   </Button>
                 </a>
               </div>
@@ -172,12 +172,12 @@ export default async function ContactUsPage() {
           <div className="container mx-auto px-4">
             <div className="mb-8">
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
-                WHY CHOOSE US
+                {t("contactPage.whyChooseUs.category")}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Your Trusted Equipment{" "}
+                {t("contactPage.whyChooseUs.title")}{" "}
                 <span className="relative">
-                  Partner
+                  {t("contactPage.whyChooseUs.titleAccent")}
                   <span className="absolute bottom-0 left-0 w-full h-1 bg-turquoise-500"></span>
                 </span>
               </h2>
@@ -190,11 +190,11 @@ export default async function ContactUsPage() {
                     <Truck className="h-8 w-8 text-turquoise-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Fast Delivery
+                    {t("contactPage.whyChooseUs.fastDelivery.title")}
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Same-day delivery available throughout Lafayette and surrounding areas. We get your equipment where you need it, when you need it.
+                  {t("contactPage.whyChooseUs.fastDelivery.description")}
                 </p>
               </div>
 
@@ -204,11 +204,11 @@ export default async function ContactUsPage() {
                     <Shield className="h-8 w-8 text-yellow-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Safety First
+                    {t("contactPage.whyChooseUs.safetyFirst.title")}
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  All equipment maintained to the highest safety standards. Regular inspections and certified operators available for training.
+                  {t("contactPage.whyChooseUs.safetyFirst.description")}
                 </p>
               </div>
 
@@ -218,11 +218,11 @@ export default async function ContactUsPage() {
                     <Headphones className="h-8 w-8 text-turquoise-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    24/7 Support
+                    {t("contactPage.whyChooseUs.support247.title")}
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Round-the-clock customer support to keep your projects running smoothly. Emergency service available.
+                  {t("contactPage.whyChooseUs.support247.description")}
                 </p>
               </div>
             </div>
@@ -250,17 +250,17 @@ export default async function ContactUsPage() {
               <div>
                 <div className="mb-8">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
-                    GET IN TOUCH
+                    {t("contactPage.contactInfo.category")}
                   </p>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                    Contact{" "}
+                    {t("contactPage.contactInfo.title")}{" "}
                     <span className="relative">
-                      Information
+                      {t("contactPage.contactInfo.titleAccent")}
                       <span className="absolute bottom-0 left-0 w-full h-1 bg-turquoise-500"></span>
                     </span>
                   </h2>
                   <p className="text-lg text-gray-600 mt-4">
-                    Ready to get started? Reach out to our team for expert equipment advice and quotes.
+                    {t("contactPage.contactInfo.description")}
                   </p>
                 </div>
 
@@ -271,16 +271,16 @@ export default async function ContactUsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1">
-                        Phone
+                        {t("contactPage.contactInfo.phone.title")}
                       </h3>
                       <a
                         href="tel:+13375452935"
                         className="text-xl font-semibold text-turquoise-600 hover:text-turquoise-700 transition-colors cursor-pointer"
                       >
-                        (337) 545-2935
+                        {t("contactPage.contactInfo.phone.number")}
                       </a>
                       <p className="text-gray-600 text-sm mt-1">
-                        Mon-Fri 7AM-6PM, Sat 8AM-4PM
+                        {t("contactPage.contactInfo.phone.hours")}
                       </p>
                     </div>
                   </div>
@@ -291,7 +291,7 @@ export default async function ContactUsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1">
-                        Location
+                        {t("contactPage.contactInfo.location.title")}
                       </h3>
                       <p className="text-gray-700">
                         2865 Ambassador Caffery Pkwy, Suite 135
@@ -304,7 +304,7 @@ export default async function ContactUsPage() {
                         rel="noopener noreferrer"
                         className="text-turquoise-600 hover:text-turquoise-700 text-sm font-semibold mt-2 inline-flex items-center cursor-pointer"
                       >
-                        Get Directions
+                        {t("contactPage.contactInfo.location.getDirections")}
                         <ChevronRight className="h-4 w-4 ml-1" />
                       </a>
                     </div>
@@ -316,30 +316,30 @@ export default async function ContactUsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1">
-                        Email
+                        {t("contactPage.contactInfo.email.title")}
                       </h3>
                       <a
                         href="mailto:info@lafayetteequipmentrentals.com"
                         className="text-turquoise-600 hover:text-turquoise-700 transition-colors font-medium break-words cursor-pointer"
                       >
-                        info@lafayetteequipmentrentals.com
+                        {t("contactPage.contactInfo.email.address")}
                       </a>
                       <p className="text-gray-600 text-sm mt-1">
-                        24-hour response time
+                        {t("contactPage.contactInfo.email.responseTime")}
                       </p>
                     </div>
                   </div>
 
                   <div className="bg-gradient-to-r from-turquoise-50 to-turquoise-100 p-6 rounded-lg border-l-4 border-turquoise-500 mt-8">
                     <h3 className="font-bold text-gray-900 mb-2">
-                      Emergency Service Available
+                      {t("contactPage.contactInfo.emergency.title")}
                     </h3>
                     <p className="text-gray-700 text-sm">
-                      Need equipment urgently? We offer 24/7 emergency rental service for critical projects.
+                      {t("contactPage.contactInfo.emergency.description")}
                     </p>
                     <a href="tel:+13375452935" className="inline-flex items-center text-turquoise-600 hover:text-turquoise-700 font-semibold mt-3 cursor-pointer">
                       <Phone className="h-4 w-4 mr-2" />
-                      Call for Emergency Service
+                      {t("contactPage.contactInfo.emergency.callForEmergency")}
                     </a>
                   </div>
                 </div>
@@ -371,17 +371,17 @@ export default async function ContactUsPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
-                VISIT US
+                {t("contactPage.location.category")}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Lafayette{" "}
+                {t("contactPage.location.title")}{" "}
                 <span className="relative">
-                  Location
+                  {t("contactPage.location.titleAccent")}
                   <span className="absolute bottom-0 left-0 w-full h-1 bg-turquoise-500"></span>
                 </span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Conveniently located to serve contractors and businesses throughout Lafayette and surrounding areas.
+                {t("contactPage.location.description")}
               </p>
             </div>
 
@@ -395,7 +395,7 @@ export default async function ContactUsPage() {
                   <div className="space-y-4">
                     <div>
                       <p className="font-semibold text-gray-900 mb-1">
-                        Address
+                        {t("contactPage.location.address")}
                       </p>
                       <p className="text-gray-700">
                         2865 Ambassador Caffery Pkwy, Suite 135
@@ -405,12 +405,12 @@ export default async function ContactUsPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 mb-1">
-                        Business Hours
+                        {t("contactPage.location.businessHours")}
                       </p>
                       <p className="text-gray-700">
-                        Monday - Friday: 7:00 AM - 6:00 PM<br />
-                        Saturday: 8:00 AM - 4:00 PM<br />
-                        Sunday: Closed
+                        {t("contactPage.location.hours.weekdays")}<br />
+                        {t("contactPage.location.hours.saturday")}<br />
+                        {t("contactPage.location.hours.sunday")}
                       </p>
                     </div>
                   </div>
@@ -425,7 +425,7 @@ export default async function ContactUsPage() {
                   >
                     <Button className="w-full bg-turquoise-600 hover:bg-turquoise-700 text-white font-semibold py-3 transition-all duration-200 transform hover:scale-105 cursor-pointer">
                       <MapPin className="h-5 w-5 mr-2" />
-                      Get Directions
+                      {t("contactPage.location.getDirections")}
                     </Button>
                   </a>
                   <Link href="/equipment-rental" className="flex-1">
@@ -433,7 +433,7 @@ export default async function ContactUsPage() {
                       variant="outline"
                       className="w-full border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white font-semibold py-3 transition-all duration-200 transform hover:scale-105 cursor-pointer"
                     >
-                      Browse Equipment
+                      {t("contactPage.location.browseEquipment")}
                       <ChevronRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
@@ -460,10 +460,10 @@ export default async function ContactUsPage() {
         <section className="bg-gradient-to-r from-turquoise-600 to-turquoise-700">
           <div className="container mx-auto px-4 py-16 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Get Started?
+              {t("contactPage.cta.title")}
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-              Browse our equipment inventory or contact us for personalized assistance with your project needs.
+              {t("contactPage.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/equipment-rental">
@@ -472,7 +472,7 @@ export default async function ContactUsPage() {
                   className="bg-white text-turquoise-700 hover:bg-gray-100 font-bold px-10 py-3 text-lg transition-all duration-200 transform hover:scale-105 cursor-pointer shadow-lg"
                 >
                   <Search className="mr-2 h-5 w-5" />
-                  Browse Equipment
+                  {t("contactPage.cta.browseEquipment")}
                 </Button>
               </Link>
               <a href="tel:+13372345678">
@@ -482,7 +482,7 @@ export default async function ContactUsPage() {
                   className="border-2 border-white text-white hover:bg-white hover:text-turquoise-700 font-bold px-10 py-3 text-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (337) 545-2935
+                  {t("contactPage.cta.callButton")}
                 </Button>
               </a>
             </div>
