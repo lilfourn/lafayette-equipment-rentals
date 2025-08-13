@@ -296,12 +296,24 @@ async function renderLafayetteSEOPage(
 export async function generateMetadata({
   params,
 }: CatchAllPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { locale, slug } = params;
+  const baseUrl = "https://www.lafayetteequipmentrental.com";
 
   // Check if this is a Lafayette SEO URL
   const parsed = parseSEOUrl(slug);
   if (parsed?.isLafayetteSEO) {
     const metadata = generateSEOMetadata(parsed.type, parsed.category || "");
+    
+    // Generate the canonical URL (always use English version as canonical)
+    const canonicalPath = `/en/equipment-rental/${slug.join("/")}`;
+    
+    // Generate alternate language URLs
+    const languages = {
+      "en": `${baseUrl}/en/equipment-rental/${slug.join("/")}`,
+      "es": `${baseUrl}/es/equipment-rental/${slug.join("/")}`,
+      "x-default": `${baseUrl}/en/equipment-rental/${slug.join("/")}` // Default to English
+    };
+    
     return {
       title: metadata.title,
       description: metadata.description,
@@ -309,14 +321,22 @@ export async function generateMetadata({
       openGraph: {
         title: metadata.title,
         description: metadata.description,
-        locale: "en_US",
+        locale: locale === "es" ? "es_ES" : "en_US",
         siteName: "Lafayette Equipment Rentals",
         type: "website",
+        url: `${baseUrl}/${locale}/equipment-rental/${slug.join("/")}`,
       },
       alternates: {
-        canonical: `https://www.lafayetteequipmentrental.com/equipment-rental/${slug.join(
-          "/"
-        )}`,
+        canonical: `${baseUrl}${canonicalPath}`,
+        languages: languages,
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+        },
       },
     };
   }

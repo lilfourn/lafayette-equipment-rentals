@@ -108,6 +108,94 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Redirect old URL patterns to new ones
+      {
+        source: '/en/equipment-rental/type/:type/baton-rouge-la',
+        destination: '/en/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/type/:type/baton-rouge-la',
+        destination: '/es/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/en/equipment-rental/type/:type/new-orleans-la',
+        destination: '/en/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/type/:type/new-orleans-la',
+        destination: '/es/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/en/equipment-rental/type/:type/lake-charles-la',
+        destination: '/en/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/type/:type/lake-charles-la',
+        destination: '/es/equipment-rental/type/:type/lafayette-la',
+        permanent: true,
+      },
+      // Redirect equipment pattern variations to canonical URLs
+      {
+        source: '/en/equipment-rental/make/:make',
+        destination: '/en/equipment-rental/brand/:make-equipment-rental-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/make/:make',
+        destination: '/es/equipment-rental/brand/:make-equipment-rental-lafayette-la',
+        permanent: true,
+      },
+      // Redirect trailing slash variations
+      {
+        source: '/en/equipment-rental/machines/:machineId/',
+        destination: '/en/equipment-rental/machines/:machineId',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/machines/:machineId/',
+        destination: '/es/equipment-rental/machines/:machineId',
+        permanent: true,
+      },
+      // Redirect variations of Lafayette SEO URLs to canonical versions
+      {
+        source: '/en/equipment-rental/pricing/:type',
+        destination: '/en/equipment-rental/pricing/:type-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/pricing/:type',
+        destination: '/es/equipment-rental/pricing/:type-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/en/equipment-rental/guide/:type',
+        destination: '/en/equipment-rental/guide/:type-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/guide/:type',
+        destination: '/es/equipment-rental/guide/:type-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/en/equipment-rental/attachment/:type',
+        destination: '/en/equipment-rental/attachment/:type-lafayette-la',
+        permanent: true,
+      },
+      {
+        source: '/es/equipment-rental/attachment/:type',
+        destination: '/es/equipment-rental/attachment/:type-lafayette-la',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

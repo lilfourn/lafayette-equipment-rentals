@@ -96,6 +96,7 @@ function createMachineTitle(machine: Machine): string {
 
 interface MachineDetailsPageProps {
   params: {
+    locale: string;
     machineId: string;
   };
 }
@@ -173,8 +174,9 @@ async function getMachineDetails(machineId: string): Promise<Machine | null> {
 export async function generateMetadata({
   params,
 }: MachineDetailsPageProps): Promise<Metadata> {
-  const { machineId } = await params;
+  const { machineId, locale } = await params;
   const machine = await getMachineDetails(machineId);
+  const baseUrl = "https://www.lafayetteequipmentrental.com";
 
   if (!machine) {
     return {
@@ -214,6 +216,16 @@ export async function generateMetadata({
       ? `Check out this ${titleParts.join(" ")}`
       : `Check out this ${machine.displayName || "equipment"}`;
 
+  // Generate canonical URL (always use English version as canonical)
+  const canonicalPath = `/en/equipment-rental/machines/${machineId}`;
+  
+  // Generate alternate language URLs
+  const languages = {
+    "en": `${baseUrl}/en/equipment-rental/machines/${machineId}`,
+    "es": `${baseUrl}/es/equipment-rental/machines/${machineId}`,
+    "x-default": `${baseUrl}/en/equipment-rental/machines/${machineId}`
+  };
+
   return {
     title: `${name} for Rent | ${LAFAYETTE_LOCATION.businessName}`,
     description: `Rent the ${name} ${
@@ -224,6 +236,8 @@ export async function generateMetadata({
       description: `Rent the ${name} ${
         machine.primaryType || ""
       } in ${location}. View details, specs, and availability.`,
+      locale: locale === "es" ? "es_ES" : "en_US",
+      url: `${baseUrl}/${locale}/equipment-rental/machines/${machineId}`,
       images: [
         {
           url: ogImage,
@@ -240,6 +254,18 @@ export async function generateMetadata({
         machine.primaryType || ""
       } in ${location}. View details, specs, and availability.`,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `${baseUrl}${canonicalPath}`,
+      languages: languages,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
     },
   };
 }
