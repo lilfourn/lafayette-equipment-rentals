@@ -522,10 +522,23 @@ export default function Footer() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="md:hidden fixed bottom-6 right-6 z-50 bg-turquoise-500 hover:bg-turquoise-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+          className="md:hidden fixed bottom-6 right-6 z-50 bg-turquoise-500 hover:bg-turquoise-600 active:bg-turquoise-700 text-white rounded-full transition-colors duration-200"
+          style={{ width: '48px', height: '48px', padding: '0', border: 'none', appearance: 'none', WebkitAppearance: 'none', MozAppearance: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-6 w-6" />
+          <svg 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            style={{ pointerEvents: 'none' }}
+          >
+            <path d="M12 19V5M12 5l-7 7M12 5l7 7" />
+          </svg>
         </button>
       )}
     </>

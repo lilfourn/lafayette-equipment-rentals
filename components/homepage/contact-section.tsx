@@ -2,7 +2,7 @@
 
 import BusinessHoursBanner from "@/components/business-hours-banner";
 import { Button } from "@/components/ui/button";
-import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { memo } from "react";
@@ -15,10 +15,6 @@ export const ContactSection = memo(function ContactSection({
   locale,
 }: ContactSectionProps) {
   const t = useTranslations();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <section className="py-20 bg-gray-50 relative">
@@ -103,14 +99,6 @@ export const ContactSection = memo(function ContactSection({
         <BusinessHoursBanner />
       </div>
 
-      {/* Scroll to top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-turquoise-600 hover:bg-turquoise-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 z-50"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="h-6 w-6" />
-      </button>
     </section>
   );
 });

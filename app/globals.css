@@ -248,6 +248,30 @@ html {
     );
   }
 
+  /* Scroll to top button fix */
+  button[aria-label="Scroll to top"] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+    position: fixed !important;
+    isolation: isolate !important;
+    transform: none !important;
+    background-image: none !important;
+  }
+  
+  button[aria-label="Scroll to top"]::before,
+  button[aria-label="Scroll to top"]::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+  
+  button[aria-label="Scroll to top"] svg {
+    display: block !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Special gradient for CTAs */
   .gradient-red-yellow {
     background: linear-gradient(
